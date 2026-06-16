@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Addiction Frontier Fund — Impact BOTEC</title>
+<title>Addiction Frontier Fund BOTEC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:wght@600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -175,10 +175,6 @@
   <h1>Addiction Frontier Fund BOTEC</h1>
   <p class="subtitle">A back-of-the-envelope cost-effectiveness estimate for the Addiction Frontier Fund: expected approvals, the lives and QALYs that follow, and cost per QALY.</p>
 
-  <div class="disclaimer">
-    <strong>How to read this.</strong> A BOTEC (back-of-the-envelope calculation) is a simple chain of assumptions, not a forecast. Every number has a <em>Low / Base / High</em> range and a source, and you can change them in the calculator below. We charge the <em>whole</em> fund against the medicines it produces and leave out its other benefits (deployment, co-investment, field-building), so the base case runs conservative. The goal is an order of magnitude a funder can defend, not a decimal place.
-  </div>
-
   <div class="findings">
     <div class="label">Summary</div>
     <ul>
@@ -247,7 +243,6 @@
   <!-- 04 -->
   <section class="section">
     <h2>Key parameters</h2>
-    <p>Each row is a Low / Base / High estimate. The Base column multiplies straight down the chain.</p>
     <div class="tbl-wrap">
       <table>
         <thead><tr><th>Parameter</th><th class="num">Low</th><th class="num">Base</th><th class="num">High</th><th>Basis</th></tr></thead>
@@ -268,7 +263,7 @@
       </table>
       <caption>[13] QALYs/yr decomposes into mortality (lives/yr × ~9 quality-adjusted life-years per death averted, reflecting the ~15-year OUD life-expectancy gap) plus morbidity (incremental treated patients × ~0.08 QALY/yr). Base: 3,000 × 9 ≈ 27k from mortality + ~23k from morbidity ≈ 50k.</caption>
     </div>
-    <p>About one approved medicine from $250M is consistent with precedent. The two leading venture-philanthropy funds each produced roughly that: the Cystic Fibrosis Foundation got one transformative Vertex program from ~$150M, and the T1D Fund has one approval (Tzield) so far. The base case assumes AFF matches that record, not that it beats it.</p>
+    <p>About one approved medicine from $250M is consistent with precedent. The two leading venture-philanthropy funds each produced roughly that: the Cystic Fibrosis Foundation got one transformative Vertex program from ~$150M, and the T1D Fund has one approval (Tzield) so far.</p>
   </section>
 
   <!-- 05 -->
@@ -288,14 +283,14 @@
       </table>
       <caption>Benefit valued at $150k/QALY (the conservative end of the US value-per-QALY range; ICER anchors near $104k, HHS VSLY central is ~$495k). Valuing the 28,350 base-case lives at the HHS central VSL of $13.1M instead gives ~$371B of benefit and a ~1,500:1 ratio. We report the lower, $/QALY-based figure as the headline.</caption>
     </div>
-    <p><strong>No scenario makes the fund a poor use of money.</strong> The worst case still buys health at ~$27,000/QALY, inside the range US payers fund every day, and returns ~5:1. The base case is far better, and the best case rivals the top global-health buys anywhere.</p>
+    <p>No scenario makes the fund a poor use of money. The worst case still buys health at ~$27,000/QALY, inside the range US payers fund every day, and returns ~5:1. The base case is far better, and the best case rivals the top global-health buys anywhere.</p>
     <h3>The full distribution</h3>
     <p>The Low and High columns above are scenario corners: every parameter pessimistic at once, or every one optimistic at once. Those are extreme tails, not a 90% interval. Treating each input as a lognormal centered on its Base value, with the tabled spread, and drawing 20,000 times gives the real distribution of cost per QALY.</p>
     <div class="chart-card">
       <div class="chart-title">Distribution of cost per QALY (20,000 Monte Carlo draws)</div>
       <div class="chart-sub">Log scale · dashed line marks the $150k/QALY US threshold</div>
       <svg id="mc-hist" viewBox="0 0 760 240" role="img" aria-label="Monte Carlo distribution of cost per QALY"></svg>
-      <p style="margin:16px 0 0;font-size:13px;line-height:1.6;">Across 20,000 draws: median <strong id="mc-med">—</strong>, 90% interval <strong id="mc-ci">—</strong>, and a <strong id="mc-prob">—</strong> chance of beating the $150k/QALY threshold. The spread is far narrower than the scenario corners because the parameters are roughly independent; for the result to approach the threshold, several would have to break the wrong way together.</p>
+      <p style="margin:16px 0 0;font-size:13px;line-height:1.6;">Across 20,000 draws: median <strong id="mc-med">…</strong>, 90% interval <strong id="mc-ci">…</strong>, and a <strong id="mc-prob">…</strong> chance of beating the $150k/QALY threshold. The spread is far narrower than the scenario corners because the parameters are roughly independent; for the result to approach the threshold, several would have to break the wrong way together.</p>
     </div>
     <h3>How it scales with fund size</h3>
     <div class="tbl-wrap">
@@ -307,14 +302,12 @@
           <tr><td class="lbl">$1B</td><td class="num">4.2</td><td class="num">~1,890,000</td><td class="num">~113,400</td><td class="num">~$530*</td></tr>
         </tbody>
       </table>
-      <caption>* The linear model holds $/QALY flat across fund sizes. The real picture has two opposing forces: diminishing returns (the best shots get funded first, and addiction has a thin deal supply) raise the marginal $/QALY as the fund grows, while recycled exits (see below) lower it. The first $250M is the most cost-effective dollar; $1B still clears the bar, but at a higher marginal $/QALY than the flat figures suggest.</caption>
+      <caption>* The linear model holds $/QALY flat across fund sizes.</caption>
     </div>
   </section>
 
   <!-- 06 -->
   <section class="section">
-    <h2>Interactive calculator</h2>
-    <p>Every assumption is a slider. Drag them to your own numbers; the defaults are the Base column above.</p>
     <div class="calc" id="calc">
       <div class="calc-head"><span>AFF Impact Calculator</span><span class="reset" id="resetBtn">Reset to base</span></div>
       <div class="calc-body">
@@ -381,13 +374,12 @@
       <div class="chart-sub">Lower is better · base case marked at $529/QALY</div>
       <svg id="tornado" viewBox="0 0 760 312" role="img" aria-label="Tornado sensitivity chart of cost per QALY"></svg>
     </div>
-    <p>The dominant lever is <strong>per-medicine reach</strong>, how many people a new drug gets onto effective treatment, followed by the odds of approval and the credit share. More important for the conclusion: <strong>the worst end of the worst single parameter</strong> ($2,200/QALY) still beats the US threshold by ~70×, so the result is robust to any one assumption.</p>
+    <p>The dominant lever is per-medicine reach, how many people a new drug gets onto effective treatment, followed by the odds of approval and the credit share. More important for the conclusion: the worst end of the worst single parameter ($2,200/QALY) still beats the US threshold by ~70×, so the result is robust to any one assumption.</p>
   </section>
 
   <!-- 08 -->
   <section class="section">
     <h2>Benchmarking</h2>
-    <p>A cost-effectiveness number needs a yardstick. Three place it: the threshold US payers use, the best global-health philanthropy, and what venture-philanthropy funds doing this exact work have returned.</p>
     <div class="tbl-wrap">
       <table>
         <thead><tr><th>Benchmark</th><th class="num">Cost-effectiveness</th><th>How AFF base (~$530/QALY) compares</th></tr></thead>
@@ -401,15 +393,12 @@
         </tbody>
       </table>
     </div>
-    <p>AFF will not be as cheap per life as anti-malaria bed nets. Almost nothing in a rich country is, because a year of American life is priced far above a year in the poorest places GiveWell funds. Against the benchmarks a US health funder actually uses, and what venture philanthropy has already returned, the fund is highly cost-effective, and plausibly much more.</p>
   </section>
 
   <!-- 09 -->
   <section class="section">
     <h2>Why this is a lower bound</h2>
-    <p>The base case already counts a modest return of capital (the recycling row above), with a CFF- or T1D-scale exit as the High case. Even so, three real benefits are in none of the figures:</p>
     <ul>
-      <li><strong>Deployment.</strong> Existing addiction medicine already saves money and reaches fewer than 1 in 5 people who need it. Dollars that move insurance coverage or get treatment into jails and prisons save lives cheaply, and none of that is in the headline.</li>
       <li><strong>Co-investment.</strong> The T1D Fund turned $81M into more than $634M of private capital alongside it (~8×). Every AFF dollar pulls in others; the model credits the fund as if it acted alone.</li>
       <li><strong>Field effects.</strong> AI drug discovery, shared data, and a discovery engine make <em>every future</em> addiction program cheaper and likelier to work. That helps the whole field and is not priced here.</li>
     </ul>
@@ -418,7 +407,6 @@
   <!-- 10 -->
   <section class="section">
     <h2>Key uncertainties</h2>
-    <p>The ranges and the Monte Carlo above handle <em>parameter</em> uncertainty. The bigger risk is <em>structural</em>, whether the model is the right shape at all. The load-bearing structural assumptions:</p>
     <ul>
       <li><strong>Attribution is the weakest assumption.</strong> Credit share and acceleration are judgment calls, not measurements. We set credit at 50%. A stricter rule pulls the base case toward the Low column, but not below the US threshold.</li>
       <li><strong>No addiction-specific success-rate data exists.</strong> We use psychiatry as the proxy for probability of approval (~14% from Phase 2), bounded below by neurology. Addiction could run worse; the repurposing-heavy portfolio (GLP-1s, orexin and kappa-opioid antagonists) argues it runs better.</li>
@@ -426,10 +414,6 @@
       <li><strong>One fund does not solve addiction.</strong> The base case averts ~28,000 deaths over ~15 years, on the order of ~1,900 a year at peak, against ~260,000 substance-related US deaths a year. The claim here is cost-effectiveness, not a cure. The math works precisely because the fund is small next to the problem and still moves it cheaply.</li>
       <li><strong>Per-medicine reach dominates the result.</strong> The whole estimate swings on the QALYs/yr term. If you think a new anti-craving or anti-overdose medicine reaches far fewer people than today's medicines do, lower that slider; the fund still clears the bar.</li>
     </ul>
-    <div class="info-box">
-      <div class="label">Bottom line</div>
-      <p>On conservative assumptions that charge the whole fund against the medicines alone and still leave out deployment and co-investment, AFF buys a year of healthy life for about <strong>$530</strong> and a saved life for about <strong>$8,800</strong>, a <strong>~285:1</strong> return. The downside case is still a good investment; the upside is among the most cost-effective philanthropy available. What is uncertain is the size of the win, not whether there is one.</p>
-    </div>
   </section>
 
   <!-- Sources -->
@@ -521,7 +505,7 @@
     document.getElementById('o-appr').textContent  = appr.toFixed(2);
     document.getElementById('o-qaly').textContent  = fmt(qalys);
     document.getElementById('o-lives').textContent = fmt(lives);
-    document.getElementById('o-cpq').textContent   = cpq>0 ? money(cpq) : '—';
+    document.getElementById('o-cpq').textContent   = cpq>0 ? money(cpq) : '…';
     document.getElementById('o-bcr').textContent   = Math.round(bcr).toLocaleString()+':1';
 
     var v = document.getElementById('o-verdict');
