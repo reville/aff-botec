@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Addiction Frontier Fund — Impact BOTEC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:wght@600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:     #ffffff;
+    --ink:    #1a1a1a;
+    --ink-2:  #444444;
+    --muted:  #777777;
+    --line:   #e5e5e5;
+    --panel:  #fafafa;
+    --accent: #ff6b4a;
+    --good:   #1f9d6b;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    background: var(--bg);
+    padding: 56px clamp(20px, 4vw, 64px) 96px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+
+  .brand, .topmeta, .eyebrow, h1, h2, h3, .section-num, .pill, .byline,
+  .stat-num, .stat-label, .label, .tl-date, .pull-quote cite, footer,
+  table th, .mono, .calc-val, .axis, .bar-tag {
+    font-family: "Space Mono", ui-monospace, Menlo, monospace;
+  }
+
+  a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--ink); }
+  a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* Header */
+  header.topbar {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px; margin-bottom: 52px;
+  }
+  .brand { font-weight: 700; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); }
+  .topmeta { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+
+  /* Hero */
+  .eyebrow { font-weight: 700; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+  h1 { font-family: "Source Sans 3", system-ui, -apple-system, sans-serif; font-weight: 700; font-size: clamp(32px, 5.5vw, 54px); line-height: 1.05; letter-spacing: -0.015em; color: var(--ink); margin: 0 0 22px; }
+  .subtitle { font-size: 17px; line-height: 1.6; color: var(--ink); max-width: 64ch; margin-bottom: 28px; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 26px; }
+  .pill { display: inline-flex; align-items: center; padding: 7px 12px; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pill.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .byline { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-top: 1px solid var(--line); padding-top: 18px; }
+  .byline strong { color: var(--ink); font-weight: 700; }
+
+  /* Disclaimer / read-me */
+  .disclaimer { border: 1px solid var(--line); padding: 16px 20px; margin: 40px 0; font-size: 13px; line-height: 1.6; color: var(--ink-2); background: var(--panel); }
+  .disclaimer strong { color: var(--ink); }
+
+  /* Key findings */
+  .findings { border: 1px solid var(--line); padding: 26px 28px; margin: 40px 0; }
+  .findings .label { font-weight: 700; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+  .findings ul { list-style: none; margin: 0; padding: 0; }
+  .findings li { position: relative; padding-left: 24px; margin-bottom: 13px; font-size: 14px; line-height: 1.6; color: var(--ink); }
+  .findings li:last-child { margin-bottom: 0; }
+  .findings li::before { content: "—"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+  /* Stats */
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin: 40px 0; border: 1px solid var(--line); }
+  .stat-cell { padding: 22px 20px; border-right: 1px solid var(--line); }
+  .stat-cell:last-child { border-right: 0; }
+  .stat-cell.highlight { background: var(--ink); color: #fff; }
+  .stat-num { font-weight: 700; font-size: 31px; line-height: 1; letter-spacing: -0.01em; color: var(--ink); }
+  .stat-cell.highlight .stat-num { color: #fff; }
+  .stat-num .unit { font-size: 13px; color: var(--muted); margin-left: 4px; }
+  .stat-cell.highlight .stat-num .unit { color: rgba(255,255,255,0.65); }
+  .stat-label { margin-top: 12px; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); line-height: 1.45; }
+  .stat-cell.highlight .stat-label { color: rgba(255,255,255,0.7); }
+
+  /* Sections */
+  .section { margin: 60px 0; }
+  .section-num { font-weight: 700; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  h2 { font-weight: 700; font-size: 21px; line-height: 1.3; color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 16px; margin: 0 0 22px; }
+  h3 { font-weight: 700; font-size: 14px; letter-spacing: 0.04em; color: var(--ink); margin: 28px 0 10px; text-transform: uppercase; }
+  .section p { margin: 0 0 16px; }
+  .section ul { margin: 0 0 16px; padding-left: 20px; }
+  .section li { margin-bottom: 8px; }
+
+  /* Info / equation box */
+  .info-box { border: 1px solid var(--line); background: var(--panel); padding: 22px 24px; margin: 28px 0; }
+  .info-box .label { font-weight: 700; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .info-box p { margin: 0 0 10px; font-size: 14px; }
+  .info-box p:last-child { margin-bottom: 0; }
+  .eqn { font-family: "Space Mono", monospace; font-size: 14px; line-height: 1.9; color: var(--ink); background: #fff; border: 1px solid var(--line); padding: 18px 20px; margin: 8px 0 0; overflow-x: auto; }
+  .eqn .op { color: var(--accent); }
+
+  /* Tables */
+  .tbl-wrap { overflow-x: auto; margin: 24px 0; border: 1px solid var(--line); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-weight: 700; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); background: var(--panel); }
+  td { color: var(--ink-2); }
+  td.num, th.num { text-align: right; font-family: "Space Mono", monospace; white-space: nowrap; }
+  td.lbl { color: var(--ink); font-weight: 500; }
+  tr:last-child td { border-bottom: 0; }
+  tr.total td { background: var(--ink); color: #fff; font-weight: 700; }
+  tr.total td.num { color: #fff; }
+  .src { font-size: 11px; color: var(--muted); }
+  caption { caption-side: bottom; text-align: left; font-size: 11px; color: var(--muted); padding: 10px 14px; line-height: 1.5; }
+
+  /* Pull quote */
+  .pull-quote { border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); padding: 24px 0; margin: 40px 0; }
+  .pull-quote p { font-size: 20px; line-height: 1.5; color: var(--ink); margin: 0 0 14px; }
+  .pull-quote cite { font-style: normal; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+  /* Calculator */
+  .calc { border: 1px solid var(--ink); margin: 28px 0; }
+  .calc-head { background: var(--ink); color: #fff; padding: 14px 20px; font: 700 11px/1 "Space Mono"; letter-spacing: 0.22em; text-transform: uppercase; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;}
+  .calc-head .reset { color: rgba(255,255,255,0.7); font-size: 10px; cursor: pointer; border:1px solid rgba(255,255,255,0.3); padding:4px 9px; letter-spacing:0.14em;}
+  .calc-head .reset:hover { color:#fff; border-color:#fff; }
+  .calc-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .calc-controls { padding: 22px 24px; border-right: 1px solid var(--line); }
+  .calc-out { padding: 22px 24px; background: var(--panel); }
+  .ctrl { margin-bottom: 20px; }
+  .ctrl:last-child { margin-bottom: 0; }
+  .ctrl label { display: flex; justify-content: space-between; align-items: baseline; font: 700 10.5px/1.4 "Space Mono"; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); margin-bottom: 8px; }
+  .ctrl label .v { color: var(--accent); font-size: 13px; }
+  .ctrl input[type=range] { width: 100%; accent-color: var(--accent); margin: 0; }
+  .ctrl .hint { font-size: 10px; color: var(--muted); margin-top: 4px; letter-spacing: 0.02em; }
+  .out-row { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .out-row:last-child { border-bottom: 0; }
+  .out-row .k { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .out-row .calc-val { font-weight: 700; font-size: 21px; color: var(--ink); }
+  .out-row.big .calc-val { font-size: 27px; color: var(--accent); }
+  .verdict { margin-top: 16px; font-size: 11.5px; line-height: 1.5; padding: 12px 14px; border: 1px solid var(--line); background: #fff; color: var(--ink-2); }
+  .verdict b { color: var(--good); }
+
+  /* Charts */
+  .chart-card { border: 1px solid var(--line); padding: 24px; margin: 28px 0; }
+  .chart-title { font: 700 11px/1 "Space Mono"; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .chart-sub { font-size: 12px; color: var(--muted); margin-bottom: 18px; }
+  svg { display: block; max-width: 100%; height: auto; }
+  .bar-tag { font-size: 10px; fill: var(--muted); letter-spacing: 0.06em; }
+  .axis { font-size: 10px; fill: var(--muted); }
+
+  /* Sources */
+  .sources { margin-top: 60px; border-top: 1px solid var(--line); padding-top: 24px; }
+  .sources .label { font-weight: 700; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  .sources ol { margin: 0; padding-left: 22px; }
+  .sources li { font-size: 12px; line-height: 1.6; color: var(--ink-2); margin-bottom: 9px; }
+
+  footer { margin-top: 72px; padding-top: 22px; border-top: 1px solid var(--line); text-align: center; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+
+  @media (max-width: 720px) {
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .stat-cell:nth-child(2) { border-right: 0; }
+    .stat-cell:nth-child(1), .stat-cell:nth-child(2) { border-bottom: 1px solid var(--line); }
+    .calc-body { grid-template-columns: 1fr; }
+    .calc-controls { border-right: 0; border-bottom: 1px solid var(--line); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Addiction Frontier Fund BOTEC</h1>
+  <p class="subtitle">A back-of-the-envelope cost-effectiveness estimate for the Addiction Frontier Fund: expected approvals, the lives and QALYs that follow, and cost per QALY.</p>
+
+  <div class="disclaimer">
+    <strong>How to read this.</strong> A BOTEC (back-of-the-envelope calculation) is a simple chain of assumptions, not a forecast. Every number has a <em>Low / Base / High</em> range and a source, and you can change them in the calculator below. We charge the <em>whole</em> fund against the medicines it produces and leave out its other benefits (deployment, co-investment, field-building), so the base case runs conservative. The goal is an order of magnitude a funder can defend, not a decimal place.
+  </div>
+
+  <div class="findings">
+    <div class="label">Summary</div>
+    <ul>
+      <li>A <strong>$250M</strong> fund should produce about <strong>one new or materially better addiction medicine</strong> that would not otherwise exist (range 0.3–3.0).</li>
+      <li>Base case: <strong>~470,000 quality-adjusted life-years (QALYs)</strong> and <strong>~28,000 lives</strong> saved, after crediting the fund a fair share of each win and counting a modest return of capital.</li>
+      <li>That is <strong>~$530 per QALY</strong> and <strong>~$8,800 per life</strong>, roughly <strong>280× better</strong> than what US health payers treat as good value ($100–150k/QALY).</li>
+      <li>Benefit-to-cost ratio <strong>~285:1</strong> in the base case (range ~5:1 to ~10,000:1). Even the worst case beats that value bar by ~5×.</li>
+      <li>Every scenario is worth funding. The open question is <strong>how big</strong> the win is, and that turns mostly on per-medicine reach and the odds of approval.</li>
+    </ul>
+  </div>
+
+  <!-- 01 -->
+  <section class="section">
+    <h2>The problem</h2>
+    <p>Addiction is one of the largest under-treated health problems in the country, and it is starved of drug development.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Dimension</th><th class="num">Figure</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">US annual cost of addiction (conservative, all-substance)</td><td class="num">~$1.77T</td><td class="src">CDC + Florence + Sacks + CEA synthesis [1]</td></tr>
+          <tr><td class="lbl">Drug-overdose deaths, 2023 → 2024</td><td class="num">105k → 79k</td><td class="src">CDC/NCHS Data Brief 549 [2]</td></tr>
+          <tr><td class="lbl">Alcohol-attributable deaths / year</td><td class="num">~178k</td><td class="src">CDC; Esser et al., MMWR 2024 [3]</td></tr>
+          <tr><td class="lbl">People with a substance use disorder (12+)</td><td class="num">~48.5M</td><td class="src">2024 NSDUH, SAMHSA [4]</td></tr>
+          <tr><td class="lbl">Opioid use disorder / Alcohol use disorder</td><td class="num">~5M / ~28M</td><td class="src">2024 NSDUH [4]</td></tr>
+          <tr><td class="lbl">OUD patients on medication (the treatment gap)</td><td class="num">~18%</td><td class="src">NIDA/SAMHSA [5]</td></tr>
+          <tr><td class="lbl">AUD patients on medication</td><td class="num">&lt;2%</td><td class="src">PMC8394149 [6]</td></tr>
+          <tr class="total"><td class="lbl">New FDA addiction approvals, 2000–2023 (vs 222 for cancer)</td><td class="num">6</td><td class="src">comparables.html [7]</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="section">
+    <h2>The model</h2>
+    <div class="info-box">
+      <div class="label">The chain</div>
+      <div class="eqn">QALYs <span class="op">=</span> shots-on-goal <span class="op">×</span> P(approval) <span class="op">×</span> QALYs/yr per medicine <span class="op">×</span> years of benefit <span class="op">×</span> credit share <span class="op">×</span> capital recycled</div>
+      <p style="margin-top:14px;">Then: <span class="mono">$/QALY = total fund cost ÷ QALYs</span>, and <span class="mono">benefit–cost ratio = (QALYs × value-per-QALY) ÷ cost</span>.</p>
+    </div>
+    <ul>
+      <li>We assume the fund mostly pulls a therapy <em>forward in time</em> rather than inventing one from nothing, and count the years of benefit gained, not the drug's whole future. [8]</li>
+      <li>The fund is one of several backers of any winning asset (co-investors, acquirers, NIH-funded science upstream). We credit it a <em>share</em> of the impact, 50% in the base case. That is higher than a pure funding-share rule, because in a field with almost no other early backers the fund is often the reason the asset exists at all. [8]</li>
+    </ul>
+  </section>
+
+  <!-- 03 -->
+  <section class="section">
+    <h2>Costs</h2>
+    <p>We use <strong>$250M</strong> as the base. The fund deploys over ~5 years; each medicine then pays out over a ~15-year window, discounted at 3%.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Use of capital</th><th class="num">Share</th><th class="num">$ (of $250M)</th><th>In the model</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">Drug development / venture (shots on goal)</td><td class="num">56%</td><td class="num">$140M</td><td>Drives the medicines channel</td></tr>
+          <tr><td class="lbl">Deployment &amp; access (close the treatment gap)</td><td class="num">24%</td><td class="num">$60M</td><td>Upside, not counted</td></tr>
+          <tr><td class="lbl">Discovery infrastructure (AI targets, datasets)</td><td class="num">12%</td><td class="num">$30M</td><td>Upside, not counted</td></tr>
+          <tr><td class="lbl">Operating / policy / field-building</td><td class="num">8%</td><td class="num">$20M</td><td>Upside, not counted</td></tr>
+          <tr class="total"><td class="lbl">Total charged against medicines channel</td><td class="num">100%</td><td class="num">$250M</td><td>Conservative</td></tr>
+        </tbody>
+      </table>
+      <caption>Only 56% of the fund builds the medicines that produce the modeled QALYs, but we divide by the full $250M. That alone makes the true $/QALY roughly 1.8× better than the headline. The allocation is illustrative of the activities the memo describes.</caption>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="section">
+    <h2>Key parameters</h2>
+    <p>Each row is a Low / Base / High estimate. The Base column multiplies straight down the chain.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Parameter</th><th class="num">Low</th><th class="num">Base</th><th class="num">High</th><th>Basis</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">Development capital</td><td class="num">$140M</td><td class="num">$140M</td><td class="num">$140M</td><td class="src">56% of $250M</td></tr>
+          <tr><td class="lbl">Effective philanthropic $ / shot on goal</td><td class="num">$35M</td><td class="num">$20M</td><td class="num">$12M</td><td class="src">CNS Ph-2 trial $14–25M [9]; co-investment leverage ~8× [10]; repurposing cheaper [11]</td></tr>
+          <tr><td class="lbl">Shots on goal funded (first round)</td><td class="num">4</td><td class="num">7</td><td class="num">12</td><td class="src">development capital ÷ cost per shot</td></tr>
+          <tr><td class="lbl">P(approval) per shot</td><td class="num">8%</td><td class="num">15%</td><td class="num">25%</td><td class="src">psychiatry Ph-2→approval 13.8%, neurology 12.3% floor [12]; repurposing + stage-gate uplift</td></tr>
+          <tr style="background:var(--panel)"><td class="lbl"><strong>= Expected approved medicines</strong></td><td class="num">0.3</td><td class="num">1.05</td><td class="num">3.0</td><td class="src">shots × P(approval)</td></tr>
+          <tr><td class="lbl">QALYs / year per medicine at US scale</td><td class="num">12k</td><td class="num">50k</td><td class="num">160k</td><td class="src">mortality + morbidity; see note [13]</td></tr>
+          <tr><td class="lbl">Lives saved / year per medicine at scale</td><td class="num">1,000</td><td class="num">3,000</td><td class="num">10,000</td><td class="src">treatment-gap closure × Sordo 55% mortality cut [14]</td></tr>
+          <tr><td class="lbl">Effective discounted years of benefit</td><td class="num">8</td><td class="num">12</td><td class="num">15</td><td class="src">~15-yr window, 3% discount, ramp</td></tr>
+          <tr><td class="lbl">AFF counterfactual credit share</td><td class="num">25%</td><td class="num">50%</td><td class="num">80%</td><td class="src">credit ≈ funding share, raised for catalytic role [8]</td></tr>
+          <tr><td class="lbl">Capital recycled into new shots (×)</td><td class="num">1.2×</td><td class="num">1.5×</td><td class="num">3.0×</td><td class="src">exits return capital that funds more shots; High = a CFF/T1D-scale exit [10][20]</td></tr>
+          <tr class="total"><td class="lbl">Cumulative QALYs</td><td class="num">9.2k</td><td class="num">472k</td><td class="num">17.3M</td><td>product of the chain</td></tr>
+          <tr class="total"><td class="lbl">Cumulative lives saved</td><td class="num">770</td><td class="num">28.4k</td><td class="num">1.08M</td><td>parallel, on lives/yr</td></tr>
+        </tbody>
+      </table>
+      <caption>[13] QALYs/yr decomposes into mortality (lives/yr × ~9 quality-adjusted life-years per death averted, reflecting the ~15-year OUD life-expectancy gap) plus morbidity (incremental treated patients × ~0.08 QALY/yr). Base: 3,000 × 9 ≈ 27k from mortality + ~23k from morbidity ≈ 50k.</caption>
+    </div>
+    <p>About one approved medicine from $250M is consistent with precedent. The two leading venture-philanthropy funds each produced roughly that: the Cystic Fibrosis Foundation got one transformative Vertex program from ~$150M, and the T1D Fund has one approval (Tzield) so far. The base case assumes AFF matches that record, not that it beats it.</p>
+  </section>
+
+  <!-- 05 -->
+  <section class="section">
+    <h2>Results</h2>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Output ($250M fund)</th><th class="num">Low</th><th class="num">Base</th><th class="num">High</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">Cumulative QALYs</td><td class="num">9,200</td><td class="num">472,500</td><td class="num">17,300,000</td></tr>
+          <tr><td class="lbl">Cumulative lives saved</td><td class="num">770</td><td class="num">28,350</td><td class="num">1,080,000</td></tr>
+          <tr><td class="lbl">Cost per QALY</td><td class="num">~$27,100</td><td class="num">~$530</td><td class="num">~$14</td></tr>
+          <tr><td class="lbl">Cost per life saved</td><td class="num">~$326k</td><td class="num">~$8,800</td><td class="num">~$232</td></tr>
+          <tr><td class="lbl">Health benefit @ $150k/QALY</td><td class="num">$1.4B</td><td class="num">$71B</td><td class="num">$2.6T</td></tr>
+          <tr class="total"><td class="lbl">Benefit–cost ratio</td><td class="num">~5:1</td><td class="num">~285:1</td><td class="num">~10,000:1</td></tr>
+        </tbody>
+      </table>
+      <caption>Benefit valued at $150k/QALY (the conservative end of the US value-per-QALY range; ICER anchors near $104k, HHS VSLY central is ~$495k). Valuing the 28,350 base-case lives at the HHS central VSL of $13.1M instead gives ~$371B of benefit and a ~1,500:1 ratio. We report the lower, $/QALY-based figure as the headline.</caption>
+    </div>
+    <p><strong>No scenario makes the fund a poor use of money.</strong> The worst case still buys health at ~$27,000/QALY, inside the range US payers fund every day, and returns ~5:1. The base case is far better, and the best case rivals the top global-health buys anywhere.</p>
+    <h3>The full distribution</h3>
+    <p>The Low and High columns above are scenario corners: every parameter pessimistic at once, or every one optimistic at once. Those are extreme tails, not a 90% interval. Treating each input as a lognormal centered on its Base value, with the tabled spread, and drawing 20,000 times gives the real distribution of cost per QALY.</p>
+    <div class="chart-card">
+      <div class="chart-title">Distribution of cost per QALY (20,000 Monte Carlo draws)</div>
+      <div class="chart-sub">Log scale · dashed line marks the $150k/QALY US threshold</div>
+      <svg id="mc-hist" viewBox="0 0 760 240" role="img" aria-label="Monte Carlo distribution of cost per QALY"></svg>
+      <p style="margin:16px 0 0;font-size:13px;line-height:1.6;">Across 20,000 draws: median <strong id="mc-med">—</strong>, 90% interval <strong id="mc-ci">—</strong>, and a <strong id="mc-prob">—</strong> chance of beating the $150k/QALY threshold. The spread is far narrower than the scenario corners because the parameters are roughly independent; for the result to approach the threshold, several would have to break the wrong way together.</p>
+    </div>
+    <h3>How it scales with fund size</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Fund size</th><th class="num">Expected approvals (base)</th><th class="num">QALYs (base)</th><th class="num">Lives (base)</th><th class="num">$/QALY</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">$100M</td><td class="num">0.42</td><td class="num">~189,000</td><td class="num">~11,340</td><td class="num">~$530</td></tr>
+          <tr><td class="lbl">$250M (base)</td><td class="num">1.05</td><td class="num">~472,500</td><td class="num">~28,350</td><td class="num">~$530</td></tr>
+          <tr><td class="lbl">$1B</td><td class="num">4.2</td><td class="num">~1,890,000</td><td class="num">~113,400</td><td class="num">~$530*</td></tr>
+        </tbody>
+      </table>
+      <caption>* The linear model holds $/QALY flat across fund sizes. The real picture has two opposing forces: diminishing returns (the best shots get funded first, and addiction has a thin deal supply) raise the marginal $/QALY as the fund grows, while recycled exits (see below) lower it. The first $250M is the most cost-effective dollar; $1B still clears the bar, but at a higher marginal $/QALY than the flat figures suggest.</caption>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section class="section">
+    <h2>Interactive calculator</h2>
+    <p>Every assumption is a slider. Drag them to your own numbers; the defaults are the Base column above.</p>
+    <div class="calc" id="calc">
+      <div class="calc-head"><span>AFF Impact Calculator</span><span class="reset" id="resetBtn">Reset to base</span></div>
+      <div class="calc-body">
+        <div class="calc-controls">
+          <div class="ctrl">
+            <label>Fund size <span class="v" id="v-fund">$250M</span></label>
+            <input type="range" id="s-fund" min="50" max="1000" step="25" value="250">
+            <div class="hint">Total raise, charged in full against the medicines it funds.</div>
+          </div>
+          <div class="ctrl">
+            <label>$ per shot on goal <span class="v" id="v-cost">$20M</span></label>
+            <input type="range" id="s-cost" min="8" max="40" step="1" value="20">
+            <div class="hint">Roughly what it costs the fund to push one drug through a key trial.</div>
+          </div>
+          <div class="ctrl">
+            <label>P(approval) per shot <span class="v" id="v-pos">15%</span></label>
+            <input type="range" id="s-pos" min="4" max="30" step="1" value="15">
+            <div class="hint">Psychiatry proxy ~14%; repurposing and stage-gating push higher.</div>
+          </div>
+          <div class="ctrl">
+            <label>QALYs/yr per medicine <span class="v" id="v-qaly">50k</span></label>
+            <input type="range" id="s-qaly" min="5" max="200" step="5" value="50">
+            <div class="hint">Reach × effectiveness at US scale. The dominant uncertainty.</div>
+          </div>
+          <div class="ctrl">
+            <label>Years of benefit <span class="v" id="v-yrs">12</span></label>
+            <input type="range" id="s-yrs" min="5" max="20" step="1" value="12">
+            <div class="hint">Discounted-equivalent years on market within the horizon.</div>
+          </div>
+          <div class="ctrl">
+            <label>AFF credit share <span class="v" id="v-cred">50%</span></label>
+            <input type="range" id="s-cred" min="10" max="100" step="5" value="50">
+            <div class="hint">Share of a winning asset's impact credited to the fund.</div>
+          </div>
+          <div class="ctrl">
+            <label>Capital recycled <span class="v" id="v-rec">1.5×</span></label>
+            <input type="range" id="s-rec" min="1" max="4" step="0.1" value="1.5">
+            <div class="hint">Returned exits redeployed into new shots. High ≈ a CFF/T1D-scale hit.</div>
+          </div>
+          <div class="ctrl">
+            <label>Dev. capital share <span class="v" id="v-dev">56%</span></label>
+            <input type="range" id="s-dev" min="30" max="80" step="1" value="56">
+            <div class="hint">Portion of the fund spent on shots on goal.</div>
+          </div>
+        </div>
+        <div class="calc-out">
+          <div class="out-row"><span class="k">Expected approvals</span><span class="calc-val" id="o-appr">1.05</span></div>
+          <div class="out-row"><span class="k">Cumulative QALYs</span><span class="calc-val" id="o-qaly">472.5k</span></div>
+          <div class="out-row"><span class="k">Lives saved</span><span class="calc-val" id="o-lives">28.4k</span></div>
+          <div class="out-row big"><span class="k">Cost / QALY</span><span class="calc-val" id="o-cpq">$530</span></div>
+          <div class="out-row"><span class="k">Benefit–cost @ $150k</span><span class="calc-val" id="o-bcr">284:1</span></div>
+          <div class="verdict" id="o-verdict"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 -->
+  <section class="section">
+    <h2>Sensitivity analysis</h2>
+    <p>We vary each parameter from Low to High, holding the rest at base, and recompute the cost per QALY. Longer bars are the parameters that matter most. The base case sits at the dotted line (~$530/QALY); <em>left</em> is cheaper, <em>right</em> is worse.</p>
+    <div class="chart-card">
+      <div class="chart-title">Tornado: cost per QALY ($), one parameter swung at a time</div>
+      <div class="chart-sub">Lower is better · base case marked at $529/QALY</div>
+      <svg id="tornado" viewBox="0 0 760 312" role="img" aria-label="Tornado sensitivity chart of cost per QALY"></svg>
+    </div>
+    <p>The dominant lever is <strong>per-medicine reach</strong>, how many people a new drug gets onto effective treatment, followed by the odds of approval and the credit share. More important for the conclusion: <strong>the worst end of the worst single parameter</strong> ($2,200/QALY) still beats the US threshold by ~70×, so the result is robust to any one assumption.</p>
+  </section>
+
+  <!-- 08 -->
+  <section class="section">
+    <h2>Benchmarking</h2>
+    <p>A cost-effectiveness number needs a yardstick. Three place it: the threshold US payers use, the best global-health philanthropy, and what venture-philanthropy funds doing this exact work have returned.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Benchmark</th><th class="num">Cost-effectiveness</th><th>How AFF base (~$530/QALY) compares</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">US value-per-QALY threshold (ICER)</td><td class="num">$100–150k/QALY</td><td>AFF is ~190–280× better [15]</td></tr>
+          <tr><td class="lbl">UK NICE threshold</td><td class="num">£20–30k/QALY</td><td>AFF is ~50–70× better [16]</td></tr>
+          <tr><td class="lbl">Existing addiction meds (already a bargain)</td><td class="num">$4.6k–19k/QALY</td><td>AFF develops <em>new</em> ones at lower $/QALY than running the old ones [17]</td></tr>
+          <tr><td class="lbl">GiveWell top charities (global health)</td><td class="num">~$80/DALY; ~$4k/life</td><td>GiveWell is cheaper per unit, as expected: US lives are priced ~10–50× higher than global ones [18]</td></tr>
+          <tr><td class="lbl">MMV antimalarials (realized, peer-reviewed)</td><td class="num">$13 benefit / $1</td><td>AFF base BCR ~285:1; same family once currencies align [19]</td></tr>
+          <tr><td class="lbl">Cystic Fibrosis Foundation (realized)</td><td class="num">$150M → $3.3B + ~23 yrs/patient</td><td>A full CFF-scale exit is AFF's High case, not its base [20]</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>AFF will not be as cheap per life as anti-malaria bed nets. Almost nothing in a rich country is, because a year of American life is priced far above a year in the poorest places GiveWell funds. Against the benchmarks a US health funder actually uses, and what venture philanthropy has already returned, the fund is highly cost-effective, and plausibly much more.</p>
+  </section>
+
+  <!-- 09 -->
+  <section class="section">
+    <h2>Why this is a lower bound</h2>
+    <p>The base case already counts a modest return of capital (the recycling row above), with a CFF- or T1D-scale exit as the High case. Even so, three real benefits are in none of the figures:</p>
+    <ul>
+      <li><strong>Deployment.</strong> Existing addiction medicine already saves money and reaches fewer than 1 in 5 people who need it. Dollars that move insurance coverage or get treatment into jails and prisons save lives cheaply, and none of that is in the headline.</li>
+      <li><strong>Co-investment.</strong> The T1D Fund turned $81M into more than $634M of private capital alongside it (~8×). Every AFF dollar pulls in others; the model credits the fund as if it acted alone.</li>
+      <li><strong>Field effects.</strong> AI drug discovery, shared data, and a discovery engine make <em>every future</em> addiction program cheaper and likelier to work. That helps the whole field and is not priced here.</li>
+    </ul>
+  </section>
+
+  <!-- 10 -->
+  <section class="section">
+    <h2>Key uncertainties</h2>
+    <p>The ranges and the Monte Carlo above handle <em>parameter</em> uncertainty. The bigger risk is <em>structural</em>, whether the model is the right shape at all. The load-bearing structural assumptions:</p>
+    <ul>
+      <li><strong>Attribution is the weakest assumption.</strong> Credit share and acceleration are judgment calls, not measurements. We set credit at 50%. A stricter rule pulls the base case toward the Low column, but not below the US threshold.</li>
+      <li><strong>No addiction-specific success-rate data exists.</strong> We use psychiatry as the proxy for probability of approval (~14% from Phase 2), bounded below by neurology. Addiction could run worse; the repurposing-heavy portfolio (GLP-1s, orexin and kappa-opioid antagonists) argues it runs better.</li>
+      <li><strong>Pricing health is not settled.</strong> Value per QALY ($100–150k), value per life-year (~$495k), and value per statistical life ($13.1M) give very different totals. We headline the most conservative, the $/QALY figure, and never mix them. [21]</li>
+      <li><strong>One fund does not solve addiction.</strong> The base case averts ~28,000 deaths over ~15 years, on the order of ~1,900 a year at peak, against ~260,000 substance-related US deaths a year. The claim here is cost-effectiveness, not a cure. The math works precisely because the fund is small next to the problem and still moves it cheaply.</li>
+      <li><strong>Per-medicine reach dominates the result.</strong> The whole estimate swings on the QALYs/yr term. If you think a new anti-craving or anti-overdose medicine reaches far fewer people than today's medicines do, lower that slider; the fund still clears the bar.</li>
+    </ul>
+    <div class="info-box">
+      <div class="label">Bottom line</div>
+      <p>On conservative assumptions that charge the whole fund against the medicines alone and still leave out deployment and co-investment, AFF buys a year of healthy life for about <strong>$530</strong> and a saved life for about <strong>$8,800</strong>, a <strong>~285:1</strong> return. The downside case is still a good investment; the upside is among the most cost-effective philanthropy available. What is uncertain is the size of the win, not whether there is one.</p>
+    </div>
+  </section>
+
+  <!-- Sources -->
+  <div class="sources">
+    <div class="label">Sources &amp; notes</div>
+    <ol>
+      <li>US annual cost of addiction (~$1.77T conservative, all-substance): synthesis of CDC tobacco, Sacks/Esser alcohol, Florence/JEC/CEA opioids; see <span class="mono">sources.html</span> and <span class="mono">iceberg-data-research.md</span> in this repo. The hybrid most-defensible total is ~$2.1T; $1.77T is the conservative figure used as the memo headline.</li>
+      <li>CDC/NCHS, "Drug Overdose Deaths 2023–2024," Data Brief 549 (2024). 105,007 (2023) → 79,384 (2024). cdc.gov/nchs/products/databriefs/db549.htm</li>
+      <li>Esser MB et al., "Deaths from Excessive Alcohol Use — US, 2016–2021," MMWR 2024;73(8). ~178,000/yr. cdc.gov/mmwr</li>
+      <li>SAMHSA, 2024 National Survey on Drug Use and Health (released 2025). SUD ~48.5M; AUD ~28M; OUD ~5M.</li>
+      <li>NIDA/SAMHSA, "Only 1 in 5 US adults with OUD received medications" (2023). ~18% on MOUD.</li>
+      <li>Naltrexone use in AUD treatment admissions (~1.6%), PMC8394149. AUD medication use &lt;2%.</li>
+      <li>FDA approvals 2000–2023 (addiction 6 / cancer 222 / heart 57): <span class="mono">comparables.html</span> (CDC, FDA), this repo.</li>
+      <li>Open Philanthropy, "How we use back-of-the-envelope calculations" (EA Forum) and "Hits-Based Giving" / GHW framework: acceleration framing, P(success) and funding-share/credit adjustments. openphilanthropy.org; forum.effectivealtruism.org/posts/wxzZQSes2YrXoBDqu</li>
+      <li>Sertkaya A et al. (2016), clinical-trial cost study via HHS/ASPE: CNS Phase 1 ~$3.9M, Phase 2 ~$13.9M, Phase 3 ~$19.2M out-of-pocket. aspe.hhs.gov</li>
+      <li>Breakthrough T1D / T1D Fund: ~$81M invested catalyzing &gt;$634M co-investment (~8× leverage). breakthrought1d.org/t1d-fund</li>
+      <li>Nosengo N., "Can you teach old drugs new tricks?" Nature 2016 (~$300M, ~6.5 yr for repurposing vs ~$2–3B de novo); drug-repurposing reviews on PoS uplift.</li>
+      <li>Thomas D et al., BIO / Informa / QLS, "Clinical Development Success Rates 2011–2020": psychiatry Phase-1→approval LOA 7.3% / Phase-2→approval 13.8%; neurology 5.9% / 12.3%. go.bio.org</li>
+      <li>QALYs/yr decomposition: mortality (lives/yr × ~9 quality-adjusted life-years per averted death; OUD life-expectancy gap ~15 yr, Lewer et al. 2020) + morbidity (incremental treated patients × ~0.08 QALY/yr). Lifetime MOUD QALY gain estimated up to ~9.7 (PMC10940194).</li>
+      <li>Sordo L et al., BMJ 2017;357:j1550: all-cause mortality ~50–70% lower on MOUD; overdose ~70–80% lower. Wakeman S et al., JAMA Netw Open 2020 (comparative effectiveness). Untreated OUD all-cause mortality ~3.6%/yr.</li>
+      <li>ICER, "Perspectives on Cost-Effectiveness Threshold Ranges" (2019/2023): US value-per-QALY ~$100–150k, anchor ~$104k. icer.org</li>
+      <li>NICE cost-effectiveness threshold £20–30k/QALY (rising to £25–35k from April 2026). nice.org.uk</li>
+      <li>Existing-treatment $/QALY: methadone ~$16–18k, buprenorphine ~$19k (PMC10940194); varenicline ~$4.6k or cost-saving (PMC11059041).</li>
+      <li>GiveWell, "Cost to Save a Life" (2024) ~$3,000–5,500/life; ~$80/DALY for best global-health buys; Open Phil 1 DALY ≈ $100k in "OP dollars." givewell.org; openphilanthropy.org</li>
+      <li>Medicines for Malaria Venture, impact analysis (Lancet Global Health 2026): ~1.59M deaths and ~86.9M DALYs averted; ~$13 monetized health benefit per $1 invested, 2000–2023. mmv.org</li>
+      <li>Cystic Fibrosis Foundation: ~$150M into Vertex CFTR-modulator science; royalty sold for $3.3B (Royalty Pharma, 2014); Trikafta raised projected CF survival ~+23–26 years. cff.org; Scientific American 2014.</li>
+      <li>HHS/ASPE, "Standard Values for Regulatory Analysis, 2024": VSL central $13.1M (range $6.1–19.9M); VSLY central $495k (range $231–754k). aspe.hhs.gov</li>
+    </ol>
+    <p class="src" style="margin-top:18px;">Method note: The scenario table is deterministic, and its Low/High columns are scenario corners rather than a confidence interval. The Monte Carlo in Results propagates the same ranges as independent lognormals (median = Base, 90% range = the tabled Low/High) to produce the distribution and the 90% interval. All dollar figures are nominal US dollars; benefits are discounted at 3% inside the effective-years parameter. The model and its arithmetic are fully contained in this page; view source or use the calculator to audit any number.</p>
+  </div>
+
+  <footer>
+    Addiction Frontier Fund · Impact BOTEC · <a href="https://aff.caspr.org">aff.caspr.org</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var base = { fund:250, cost:20, pos:15, qaly:50, yrs:12, cred:50, rec:1.5, dev:56 };
+  var ids = Object.keys(base);
+  var el = {};
+  ids.forEach(function(k){ el[k] = document.getElementById('s-'+k); });
+
+  function fmt(n){
+    if (n >= 1e6) return (n/1e6).toFixed(2).replace(/\.00$/,'')+'M';
+    if (n >= 1e3) return (n/1e3).toFixed(1).replace(/\.0$/,'')+'k';
+    return Math.round(n).toString();
+  }
+  function money(n){
+    if (n >= 1e9) return '$'+(n/1e9).toFixed(1).replace(/\.0$/,'')+'B';
+    if (n >= 1e6) return '$'+(n/1e6).toFixed(1).replace(/\.0$/,'')+'M';
+    if (n >= 1e3) return '$'+(n/1e3).toFixed(1).replace(/\.0$/,'')+'k';
+    if (n >= 100) return '$'+(Math.round(n/10)*10);
+    return '$'+Math.round(n);
+  }
+
+  function compute(){
+    var fund = +el.fund.value;          // $M
+    var cost = +el.cost.value;          // $M per shot
+    var pos  = +el.pos.value/100;
+    var qy   = +el.qaly.value*1000;     // QALYs/yr
+    var yrs  = +el.yrs.value;
+    var cred = +el.cred.value/100;
+    var rec  = +el.rec.value;
+    var dev  = +el.dev.value/100;
+
+    var devCap = fund*dev;              // $M
+    var shots  = devCap/cost;
+    var appr   = shots*pos;
+    var qalys  = appr*qy*yrs*cred*rec;
+    // lives scale off qalys via the base mortality fraction: base 472.5k QALYs -> 28.4k lives
+    var lives  = qalys * (28350/472500);
+    var costDollars = fund*1e6;
+    var cpq    = qalys>0 ? costDollars/qalys : 0;
+    var benefit = qalys*150000;
+    var bcr    = benefit/costDollars;
+
+    // labels
+    document.getElementById('v-fund').textContent = '$'+fund+'M';
+    document.getElementById('v-cost').textContent = '$'+cost+'M';
+    document.getElementById('v-pos').textContent  = el.pos.value+'%';
+    document.getElementById('v-qaly').textContent = fmt(qy);
+    document.getElementById('v-yrs').textContent  = yrs;
+    document.getElementById('v-cred').textContent = el.cred.value+'%';
+    document.getElementById('v-rec').textContent  = el.rec.value+'×';
+    document.getElementById('v-dev').textContent  = el.dev.value+'%';
+
+    document.getElementById('o-appr').textContent  = appr.toFixed(2);
+    document.getElementById('o-qaly').textContent  = fmt(qalys);
+    document.getElementById('o-lives').textContent = fmt(lives);
+    document.getElementById('o-cpq').textContent   = cpq>0 ? money(cpq) : '—';
+    document.getElementById('o-bcr').textContent   = Math.round(bcr).toLocaleString()+':1';
+
+    var v = document.getElementById('o-verdict');
+    var thresh = 150000;
+    if (cpq>0 && cpq < thresh){
+      var x = Math.round(thresh/cpq);
+      v.innerHTML = 'At <b>'+money(cpq)+'/QALY</b>, this is about <b>'+x+'×</b> better than the US $150k/QALY funding threshold.';
+    } else if (cpq>0) {
+      v.innerHTML = 'At '+money(cpq)+'/QALY this is above the US $150k threshold. To get here you have to push every slider to its pessimistic extreme at once.';
+    } else {
+      v.innerHTML = 'Set a non-zero probability and reach to see a result.';
+    }
+  }
+
+  ids.forEach(function(k){ el[k].addEventListener('input', compute); });
+  document.getElementById('resetBtn').addEventListener('click', function(){
+    ids.forEach(function(k){ el[k].value = base[k]; });
+    compute();
+  });
+  compute();
+})();
+</script>
+
+<script>
+// Monte Carlo: propagate parameter uncertainty into the distribution of $/QALY.
+(function(){
+  var svg = document.getElementById('mc-hist');
+  if (!svg) return;
+
+  // Seeded PRNG (mulberry32) so the figure is identical on every load.
+  function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; var t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+  var rand = mulberry32(20260616);
+  var spare = null;
+  function gauss(){ if(spare!==null){ var s=spare; spare=null; return s; } var u,v,r; do{ u=rand()*2-1; v=rand()*2-1; r=u*u+v*v; }while(r===0||r>=1); var m=Math.sqrt(-2*Math.log(r)/r); spare=v*m; return u*m; }
+  // lognormal: median m, 90% range ~ [lo,hi] -> sigma from the geometric half-width around the median.
+  function sig(m,lo,hi){ return ((Math.log(m/lo)+Math.log(hi/m))/2)/1.645; }
+  function lnorm(m,s){ return m*Math.exp(gauss()*s); }
+
+  var P = {
+    cost: {m:20,    lo:12,    hi:35},     // $M per shot on goal
+    pos:  {m:0.15,  lo:0.08,  hi:0.25},   // P(approval) per shot
+    qaly: {m:50000, lo:12000, hi:160000}, // QALYs/yr per medicine at scale
+    yrs:  {m:12,    lo:8,     hi:15},     // effective discounted years
+    cred: {m:0.50,  lo:0.25,  hi:0.80},   // AFF credit share
+    rec:  {m:1.5,   lo:1.2,   hi:3.0}     // capital recycled into new shots
+  };
+  for (var k in P){ P[k].s = sig(P[k].m, P[k].lo, P[k].hi); }
+
+  var FUND = 250e6, DEVCAP = 140, THRESH = 150000, N = 20000;
+  var vals = new Array(N), below = 0;
+  for (var i=0;i<N;i++){
+    var cost = lnorm(P.cost.m,P.cost.s);
+    var qalys = (DEVCAP/cost) * lnorm(P.pos.m,P.pos.s) * lnorm(P.qaly.m,P.qaly.s) * lnorm(P.yrs.m,P.yrs.s) * lnorm(P.cred.m,P.cred.s) * lnorm(P.rec.m,P.rec.s);
+    var cpq = FUND/qalys;
+    vals[i] = cpq;
+    if (cpq < THRESH) below++;
+  }
+  vals.sort(function(a,b){ return a-b; });
+  function q(p){ return vals[Math.min(N-1, Math.floor(p*N))]; }
+  function money(n){ if(n>=1e6) return '$'+(n/1e6).toFixed(1)+'M'; if(n>=1e3) return '$'+(n/1e3).toFixed(1).replace(/\.0$/,'')+'k'; if(n>=100) return '$'+(Math.round(n/10)*10); return '$'+Math.round(n); }
+  var med=q(0.5), p5=q(0.05), p95=q(0.95), prob=below/N;
+  document.getElementById('mc-med').textContent  = money(med)+'/QALY';
+  document.getElementById('mc-ci').textContent   = money(p5)+'–'+money(p95);
+  document.getElementById('mc-prob').textContent = prob>0.999 ? '>99.9%' : (100*prob).toFixed(1)+'%';
+
+  // Histogram on a log10 axis.
+  var W=760,H=240,padL=8,padR=8,padT=12,padB=34;
+  var lo=Math.log10(50), hi=Math.log10(300000), bins=32;
+  var counts=new Array(bins).fill(0), maxc=0;
+  for (var j=0;j<N;j++){ var lv=Math.log10(vals[j]); if(lv<lo)lv=lo; if(lv>hi)lv=hi; var b=Math.min(bins-1,Math.floor((lv-lo)/(hi-lo)*bins)); counts[b]++; }
+  for (var c=0;c<bins;c++){ if(counts[c]>maxc) maxc=counts[c]; }
+  var plotW=W-padL-padR, plotH=H-padT-padB, bw=plotW/bins;
+  function xOf(v){ return padL+(Math.log10(v)-lo)/(hi-lo)*plotW; }
+  var out=[];
+  for (var d=0;d<bins;d++){ var bh=maxc?counts[d]/maxc*plotH:0; out.push('<rect x="'+(padL+d*bw+0.5).toFixed(1)+'" y="'+(padT+plotH-bh).toFixed(1)+'" width="'+(bw-1).toFixed(1)+'" height="'+bh.toFixed(1)+'" fill="#1a1a1a" opacity="0.78"/>'); }
+  var xt=xOf(THRESH);
+  out.push('<line x1="'+xt.toFixed(1)+'" y1="'+padT+'" x2="'+xt.toFixed(1)+'" y2="'+(padT+plotH)+'" stroke="#ff6b4a" stroke-width="1.5" stroke-dasharray="3 3"/>');
+  out.push('<text x="'+(xt-5).toFixed(1)+'" y="'+(padT+11)+'" text-anchor="end" class="axis" style="fill:#ff6b4a">$150k threshold</text>');
+  var xm=xOf(med);
+  out.push('<line x1="'+xm.toFixed(1)+'" y1="'+padT+'" x2="'+xm.toFixed(1)+'" y2="'+(padT+plotH)+'" stroke="#1a1a1a" stroke-width="1"/>');
+  out.push('<text x="'+xm.toFixed(1)+'" y="'+(padT-2)+'" text-anchor="middle" class="axis" style="fill:#1a1a1a">median '+money(med)+'</text>');
+  var ticks=[100,1000,10000,100000], labs=['$100','$1k','$10k','$100k'];
+  for (var t=0;t<ticks.length;t++){ var xx=xOf(ticks[t]); out.push('<line x1="'+xx.toFixed(1)+'" y1="'+(padT+plotH)+'" x2="'+xx.toFixed(1)+'" y2="'+(padT+plotH+4)+'" stroke="#777"/>'); out.push('<text x="'+xx.toFixed(1)+'" y="'+(padT+plotH+17)+'" text-anchor="middle" class="axis">'+labs[t]+'</text>'); }
+  svg.innerHTML = out.join('');
+})();
+</script>
+
+<script>
+// Tornado: one-way sensitivity of $/QALY. Each parameter swung Low<->High, others at base.
+(function(){
+  var svg = document.getElementById('tornado');
+  if (!svg) return;
+  var FUND = 250e6;
+  var B = { shots:7, pos:0.15, qaly:50000, yrs:12, cred:0.50, rec:1.5 };
+  function val(key,v){ var p={}; for (var k in B) p[k]=B[k]; p[key]=v; return FUND/(p.shots*p.pos*p.qaly*p.yrs*p.cred*p.rec); }
+  var base = FUND/(B.shots*B.pos*B.qaly*B.yrs*B.cred*B.rec);
+  var rows = [
+    {label:'QALYs/yr per medicine', key:'qaly',  lo:12000, hi:160000},
+    {label:'Credit share',          key:'cred',  lo:0.25,  hi:0.80},
+    {label:'P(approval) per shot',  key:'pos',   lo:0.08,  hi:0.25},
+    {label:'Shots on goal',         key:'shots', lo:4,     hi:12},
+    {label:'Capital recycled',      key:'rec',   lo:1.2,   hi:3.0},
+    {label:'Years of benefit',      key:'yrs',   lo:8,     hi:15}
+  ];
+  rows.forEach(function(r){ var a=val(r.key,r.lo), b=val(r.key,r.hi); r.loV=Math.min(a,b); r.hiV=Math.max(a,b); r.range=r.hiV-r.loV; });
+  rows.sort(function(a,b){ return b.range-a.range; });
+  var maxV=0; rows.forEach(function(r){ if(r.hiV>maxV) maxV=r.hiV; });
+  var AX=Math.ceil(maxV/200)*200;
+  var W=760, padL=162, padR=72, padT=34, top=50, rowH=28, gap=12;
+  var plotW=W-padL-padR;
+  function X(v){ return padL+(v/AX)*plotW; }
+  var bottom=top+rows.length*(rowH+gap)-gap, H=bottom+34;
+  svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  function axlab(v){ return v===0?'$0':(v>=1000?'$'+(v/1000).toFixed(v%1000?1:0)+'k':'$'+v); }
+  var o=[];
+  for (var t=0;t<=4;t++){ var gv=AX/4*t, gx=X(gv); o.push('<line x1="'+gx.toFixed(1)+'" y1="'+padT+'" x2="'+gx.toFixed(1)+'" y2="'+bottom+'" stroke="'+(t===0?'#e5e5e5':'#f2f2f2')+'"/>'); o.push('<text class="axis" x="'+gx.toFixed(1)+'" y="'+(bottom+16)+'" text-anchor="middle">'+axlab(gv)+'</text>'); }
+  var bx=X(base);
+  o.push('<line x1="'+bx.toFixed(1)+'" y1="'+(padT-8)+'" x2="'+bx.toFixed(1)+'" y2="'+bottom+'" stroke="#1a1a1a" stroke-dasharray="3 3"/>');
+  o.push('<text class="axis" x="'+bx.toFixed(1)+'" y="'+(padT-12)+'" text-anchor="middle" style="fill:#1a1a1a">base $'+Math.round(base)+'</text>');
+  rows.forEach(function(r,i){
+    var y=top+i*(rowH+gap), xL=X(r.loV), xR=X(r.hiV), coral=(r.key==='qaly');
+    o.push('<rect x="'+xL.toFixed(1)+'" y="'+y+'" width="'+Math.max(1,xR-xL).toFixed(1)+'" height="'+rowH+'" fill="'+(coral?'#ff6b4a':'#1a1a1a')+'" opacity="'+(coral?'0.30':'0.12')+'"/>');
+    o.push('<text class="bar-tag" x="'+(padL-10)+'" y="'+(y+rowH/2+4)+'" text-anchor="end">'+r.label+'</text>');
+    o.push('<text class="bar-tag" x="'+(xL-5).toFixed(1)+'" y="'+(y+rowH/2+4)+'" text-anchor="end" style="fill:#1a1a1a">$'+Math.round(r.loV).toLocaleString()+'</text>');
+    o.push('<text class="bar-tag" x="'+(xR+5).toFixed(1)+'" y="'+(y+rowH/2+4)+'" text-anchor="start" style="fill:#1a1a1a">$'+Math.round(r.hiV).toLocaleString()+'</text>');
+  });
+  svg.innerHTML=o.join('');
+})();
+</script>
+
+</body>
+</html>
