@@ -179,27 +179,27 @@
     <div class="label">Summary</div>
     <ul>
       <li>A <strong>$250M</strong> fund should produce about <strong>one new or materially better addiction medicine</strong> that would not otherwise exist (range 0.3–3.0).</li>
-      <li>Base case: <strong>~633,000 quality-adjusted life-years (QALYs)</strong> and <strong>~38,000 lives</strong> saved, after crediting the fund a fair share of each win and counting a modest return of capital.</li>
-      <li>That is <strong>~$395 per QALY</strong> and <strong>~$6,600 per life</strong>, roughly <strong>380× better</strong> than what US health payers treat as good value ($100–150k/QALY).</li>
-      <li>Benefit-to-cost ratio <strong>~380:1</strong> in the base case (range ~5:1 to ~21,000:1).</li>
+      <li>Base case: <strong>~710,000 quality-adjusted life-years (QALYs)</strong> and <strong>~47,000 lives</strong> saved, after crediting the fund a fair share of each win and counting a modest return of capital.</li>
+      <li>That is <strong>~$350 per QALY</strong> and <strong>~$5,300 per life</strong>, roughly <strong>425× better</strong> than what US health payers treat as good value ($100–150k/QALY).</li>
+      <li>Benefit-to-cost ratio <strong>~425:1</strong> in the base case (range ~5:1 to ~29,000:1).</li>
     </ul>
   </div>
 
   <!-- 01 -->
   <section class="section">
     <h2>The problem</h2>
-    <p>Addiction is one of the largest under-treated health problems in the country, and it is starved of drug development.</p>
+    <p>Addiction is the largest under-treated health problem in the country. Tobacco, alcohol, and other drugs together kill more than 700,000 Americans a year, and outside of smoking the field is starved of drug development.</p>
     <div class="tbl-wrap">
       <table>
         <thead><tr><th>Dimension</th><th class="num">Figure</th><th>Source</th></tr></thead>
         <tbody>
-          <tr><td class="lbl">US annual cost of addiction (conservative, all-substance)</td><td class="num">~$1.77T</td><td class="src">CDC + Florence + Sacks + CEA synthesis [1]</td></tr>
-          <tr><td class="lbl">Drug-overdose deaths, 2023 → 2024</td><td class="num">105k → 79k</td><td class="src">CDC/NCHS Data Brief 549 [2]</td></tr>
+          <tr><td class="lbl">US annual cost of addiction (conservative, all-substance incl. tobacco)</td><td class="num">~$1.77T</td><td class="src">CDC + Florence + Sacks + CEA synthesis [1]</td></tr>
+          <tr><td class="lbl">Smoking-attributable deaths / year (the largest single cause)</td><td class="num">~480k</td><td class="src">CDC [22]</td></tr>
           <tr><td class="lbl">Alcohol-attributable deaths / year</td><td class="num">~178k</td><td class="src">CDC; Esser et al., MMWR 2024 [3]</td></tr>
-          <tr><td class="lbl">People with a substance use disorder (12+)</td><td class="num">~48.5M</td><td class="src">2024 NSDUH, SAMHSA [4]</td></tr>
-          <tr><td class="lbl">Opioid use disorder / Alcohol use disorder</td><td class="num">~5M / ~28M</td><td class="src">2024 NSDUH [4]</td></tr>
+          <tr><td class="lbl">Drug-overdose deaths, 2023 → 2024</td><td class="num">105k → 79k</td><td class="src">CDC/NCHS Data Brief 549 [2]</td></tr>
+          <tr><td class="lbl">Cigarette smokers / alcohol use disorder / opioid use disorder</td><td class="num">~28.8M / ~28M / ~5M</td><td class="src">CDC; 2024 NSDUH [4][22]</td></tr>
           <tr><td class="lbl">OUD patients on medication (the treatment gap)</td><td class="num">~18%</td><td class="src">NIDA/SAMHSA [5]</td></tr>
-          <tr><td class="lbl">AUD patients on medication</td><td class="num">&lt;2%</td><td class="src">PMC8394149 [6]</td></tr>
+          <tr><td class="lbl">AUD on medication / quit attempts using a cessation drug</td><td class="num">&lt;2% / &lt;1 in 3</td><td class="src">PMC8394149; CDC [6][22]</td></tr>
           <tr class="total"><td class="lbl">New FDA addiction approvals, 2000–2023 (vs 222 for cancer)</td><td class="num">6</td><td class="src">comparables.html [7]</td></tr>
         </tbody>
       </table>
@@ -251,16 +251,16 @@
           <tr><td class="lbl">Shots on goal funded (first round)</td><td class="num">4</td><td class="num">7</td><td class="num">12</td><td class="src">development capital ÷ cost per shot</td></tr>
           <tr><td class="lbl">P(approval) per shot</td><td class="num">8%</td><td class="num">15%</td><td class="num">25%</td><td class="src">psychiatry Ph-2→approval 13.8%, neurology 12.3% floor [12]; repurposing + stage-gate uplift</td></tr>
           <tr style="background:var(--panel)"><td class="lbl"><strong>= Expected approved medicines</strong></td><td class="num">0.3</td><td class="num">1.05</td><td class="num">3.0</td><td class="src">shots × P(approval)</td></tr>
-          <tr><td class="lbl">QALYs / year per medicine at US scale</td><td class="num">12k</td><td class="num">67k</td><td class="num">320k</td><td class="src">mortality + morbidity; see note [13]</td></tr>
-          <tr><td class="lbl">Lives saved / year per medicine at scale</td><td class="num">1,000</td><td class="num">4,000</td><td class="num">20,000</td><td class="src">treatment-gap closure × Sordo 55% mortality cut; High = a high-uptake GLP-1 for AUD [14]</td></tr>
+          <tr><td class="lbl">QALYs / year per medicine at US scale</td><td class="num">12k</td><td class="num">75k</td><td class="num">450k</td><td class="src">mortality + morbidity; see note [13]</td></tr>
+          <tr><td class="lbl">Lives saved / year per medicine at scale</td><td class="num">1,000</td><td class="num">5,000</td><td class="num">30,000</td><td class="src">treatment-gap closure × Sordo 55% mortality cut; High = a polysubstance GLP-1 across nicotine, alcohol &amp; opioids [14][22]</td></tr>
           <tr><td class="lbl">Effective discounted years of benefit</td><td class="num">8</td><td class="num">12</td><td class="num">15</td><td class="src">~15-yr window, 3% discount, ramp</td></tr>
           <tr><td class="lbl">AFF counterfactual credit share</td><td class="num">25%</td><td class="num">50%</td><td class="num">80%</td><td class="src">credit ≈ funding share, raised for catalytic role [8]</td></tr>
           <tr><td class="lbl">Capital recycled into new shots (×)</td><td class="num">1.2×</td><td class="num">1.5×</td><td class="num">3.0×</td><td class="src">exits return capital that funds more shots; High = a CFF/T1D-scale exit [10][20]</td></tr>
-          <tr class="total"><td class="lbl">Cumulative QALYs</td><td class="num">9.2k</td><td class="num">633k</td><td class="num">34.6M</td><td>product of the chain</td></tr>
-          <tr class="total"><td class="lbl">Cumulative lives saved</td><td class="num">770</td><td class="num">37.8k</td><td class="num">2.16M</td><td>parallel, on lives/yr</td></tr>
+          <tr class="total"><td class="lbl">Cumulative QALYs</td><td class="num">9.2k</td><td class="num">709k</td><td class="num">48.6M</td><td>product of the chain</td></tr>
+          <tr class="total"><td class="lbl">Cumulative lives saved</td><td class="num">770</td><td class="num">47.3k</td><td class="num">3.24M</td><td>parallel, on lives/yr</td></tr>
         </tbody>
       </table>
-      <caption>[13] QALYs/yr decomposes into mortality (lives/yr × ~9 quality-adjusted life-years per death averted, reflecting the ~15-year OUD life-expectancy gap) plus morbidity (incremental treated patients × ~0.08 QALY/yr). Base: 4,000 × 9 ≈ 36k from mortality + ~31k from morbidity ≈ 67k.</caption>
+      <caption>[13] QALYs/yr decomposes into mortality (lives/yr × ~9 quality-adjusted life-years per death averted, reflecting the ~15-year OUD life-expectancy gap) plus morbidity (incremental treated patients × ~0.08 QALY/yr). Base: 5,000 × 9 ≈ 45k from mortality + ~30k from morbidity ≈ 75k. Tobacco deaths skew older (~6 QALYs each vs ~13 for an overdose), so a tobacco-heavy medicine saves more lives per QALY.</caption>
     </div>
     <p>About one approved medicine from $250M is consistent with precedent. The two leading venture-philanthropy funds each produced roughly that: the Cystic Fibrosis Foundation got one transformative Vertex program from ~$150M, and the T1D Fund has one approval (Tzield) so far.</p>
   </section>
@@ -272,15 +272,15 @@
       <table>
         <thead><tr><th>Output ($250M fund)</th><th class="num">Low</th><th class="num">Base</th><th class="num">High</th></tr></thead>
         <tbody>
-          <tr><td class="lbl">Cumulative QALYs</td><td class="num">9,200</td><td class="num">633,000</td><td class="num">34,600,000</td></tr>
-          <tr><td class="lbl">Cumulative lives saved</td><td class="num">770</td><td class="num">37,800</td><td class="num">2,160,000</td></tr>
-          <tr><td class="lbl">Cost per QALY</td><td class="num">~$27,100</td><td class="num">~$395</td><td class="num">~$7</td></tr>
-          <tr><td class="lbl">Cost per life saved</td><td class="num">~$326k</td><td class="num">~$6,600</td><td class="num">~$116</td></tr>
-          <tr><td class="lbl">Health benefit @ $150k/QALY</td><td class="num">$1.4B</td><td class="num">$95B</td><td class="num">$5.2T</td></tr>
-          <tr class="total"><td class="lbl">Benefit–cost ratio</td><td class="num">~5:1</td><td class="num">~380:1</td><td class="num">~21,000:1</td></tr>
+          <tr><td class="lbl">Cumulative QALYs</td><td class="num">9,200</td><td class="num">709,000</td><td class="num">48,600,000</td></tr>
+          <tr><td class="lbl">Cumulative lives saved</td><td class="num">770</td><td class="num">47,250</td><td class="num">3,240,000</td></tr>
+          <tr><td class="lbl">Cost per QALY</td><td class="num">~$27,100</td><td class="num">~$350</td><td class="num">~$5</td></tr>
+          <tr><td class="lbl">Cost per life saved</td><td class="num">~$326k</td><td class="num">~$5,300</td><td class="num">~$77</td></tr>
+          <tr><td class="lbl">Health benefit @ $150k/QALY</td><td class="num">$1.4B</td><td class="num">$106B</td><td class="num">$7.3T</td></tr>
+          <tr class="total"><td class="lbl">Benefit–cost ratio</td><td class="num">~5:1</td><td class="num">~425:1</td><td class="num">~29,000:1</td></tr>
         </tbody>
       </table>
-      <caption>Benefit valued at $150k/QALY (the conservative end of the US value-per-QALY range; ICER anchors near $104k, HHS VSLY central is ~$495k). Valuing the 37,800 base-case lives at the HHS central VSL of $13.1M instead gives ~$495B of benefit and a ~2,000:1 ratio. We report the lower, $/QALY-based figure as the headline.</caption>
+      <caption>Benefit valued at $150k/QALY (the conservative end of the US value-per-QALY range; ICER anchors near $104k, HHS VSLY central is ~$495k). Valuing the 47,250 base-case lives at the HHS central VSL of $13.1M instead gives ~$619B of benefit and a ~2,500:1 ratio. We report the lower, $/QALY-based figure as the headline.</caption>
     </div>
     <p>No scenario makes the fund a poor use of money. The worst case still buys health at ~$27,000/QALY, inside the range US payers fund every day, and returns ~5:1. The base case is far better, and the best case rivals the top global-health buys anywhere.</p>
     <h3>The full distribution</h3>
@@ -296,9 +296,9 @@
       <table>
         <thead><tr><th>Fund size</th><th class="num">Expected approvals (base)</th><th class="num">QALYs (base)</th><th class="num">Lives (base)</th><th class="num">$/QALY</th></tr></thead>
         <tbody>
-          <tr><td class="lbl">$100M</td><td class="num">0.42</td><td class="num">~253,000</td><td class="num">~15,100</td><td class="num">~$395</td></tr>
-          <tr><td class="lbl">$250M (base)</td><td class="num">1.05</td><td class="num">~633,000</td><td class="num">~37,800</td><td class="num">~$395</td></tr>
-          <tr><td class="lbl">$1B</td><td class="num">4.2</td><td class="num">~2,533,000</td><td class="num">~151,200</td><td class="num">~$395*</td></tr>
+          <tr><td class="lbl">$100M</td><td class="num">0.42</td><td class="num">~284,000</td><td class="num">~18,900</td><td class="num">~$350</td></tr>
+          <tr><td class="lbl">$250M (base)</td><td class="num">1.05</td><td class="num">~709,000</td><td class="num">~47,250</td><td class="num">~$350</td></tr>
+          <tr><td class="lbl">$1B</td><td class="num">4.2</td><td class="num">~2,835,000</td><td class="num">~189,000</td><td class="num">~$350*</td></tr>
         </tbody>
       </table>
       <caption>* The linear model holds $/QALY flat across fund sizes.</caption>
@@ -327,8 +327,8 @@
             <div class="hint">Psychiatry proxy ~14%; repurposing and stage-gating push higher.</div>
           </div>
           <div class="ctrl">
-            <label>QALYs/yr per medicine <span class="v" id="v-qaly">67k</span></label>
-            <input type="range" id="s-qaly" min="5" max="400" step="1" value="67">
+            <label>QALYs/yr per medicine <span class="v" id="v-qaly">75k</span></label>
+            <input type="range" id="s-qaly" min="5" max="500" step="1" value="75">
             <div class="hint">Reach × effectiveness at US scale. The dominant uncertainty.</div>
           </div>
           <div class="ctrl">
@@ -354,10 +354,10 @@
         </div>
         <div class="calc-out">
           <div class="out-row"><span class="k">Expected approvals</span><span class="calc-val" id="o-appr">1.05</span></div>
-          <div class="out-row"><span class="k">Cumulative QALYs</span><span class="calc-val" id="o-qaly">633k</span></div>
-          <div class="out-row"><span class="k">Lives saved</span><span class="calc-val" id="o-lives">37.8k</span></div>
-          <div class="out-row big"><span class="k">Cost / QALY</span><span class="calc-val" id="o-cpq">$395</span></div>
-          <div class="out-row"><span class="k">Benefit–cost @ $150k</span><span class="calc-val" id="o-bcr">380:1</span></div>
+          <div class="out-row"><span class="k">Cumulative QALYs</span><span class="calc-val" id="o-qaly">709k</span></div>
+          <div class="out-row"><span class="k">Lives saved</span><span class="calc-val" id="o-lives">47.3k</span></div>
+          <div class="out-row big"><span class="k">Cost / QALY</span><span class="calc-val" id="o-cpq">$350</span></div>
+          <div class="out-row"><span class="k">Benefit–cost @ $150k</span><span class="calc-val" id="o-bcr">425:1</span></div>
           <div class="verdict" id="o-verdict"></div>
         </div>
       </div>
@@ -367,10 +367,10 @@
   <!-- 07 -->
   <section class="section">
     <h2>Sensitivity analysis</h2>
-    <p>We vary each parameter from Low to High, holding the rest at base, and recompute the cost per QALY. Longer bars are the parameters that matter most. The base case sits at the dotted line (~$395/QALY); <em>left</em> is cheaper, <em>right</em> is worse.</p>
+    <p>We vary each parameter from Low to High, holding the rest at base, and recompute the cost per QALY. Longer bars are the parameters that matter most. The base case sits at the dotted line (~$350/QALY); <em>left</em> is cheaper, <em>right</em> is worse.</p>
     <div class="chart-card">
       <div class="chart-title">Tornado: cost per QALY ($), one parameter swung at a time</div>
-      <div class="chart-sub">Lower is better · base case marked at $395/QALY</div>
+      <div class="chart-sub">Lower is better · base case marked at $350/QALY</div>
       <svg id="tornado" viewBox="0 0 760 312" role="img" aria-label="Tornado sensitivity chart of cost per QALY"></svg>
     </div>
     <p>The dominant lever is per-medicine reach, how many people a new drug gets onto effective treatment, followed by the odds of approval and the credit share. More important for the conclusion: the worst end of the worst single parameter ($2,200/QALY) still beats the US threshold by ~70×, so the result is robust to any one assumption.</p>
@@ -381,13 +381,13 @@
     <h2>Benchmarking</h2>
     <div class="tbl-wrap">
       <table>
-        <thead><tr><th>Benchmark</th><th class="num">Cost-effectiveness</th><th>How AFF base (~$395/QALY) compares</th></tr></thead>
+        <thead><tr><th>Benchmark</th><th class="num">Cost-effectiveness</th><th>How AFF base (~$350/QALY) compares</th></tr></thead>
         <tbody>
-          <tr><td class="lbl">US value-per-QALY threshold (ICER)</td><td class="num">$100–150k/QALY</td><td>AFF is ~250–380× better [15]</td></tr>
-          <tr><td class="lbl">UK NICE threshold</td><td class="num">£20–30k/QALY</td><td>AFF is ~60–95× better [16]</td></tr>
+          <tr><td class="lbl">US value-per-QALY threshold (ICER)</td><td class="num">$100–150k/QALY</td><td>AFF is ~285–425× better [15]</td></tr>
+          <tr><td class="lbl">UK NICE threshold</td><td class="num">£20–30k/QALY</td><td>AFF is ~70–110× better [16]</td></tr>
           <tr><td class="lbl">Existing addiction meds (already a bargain)</td><td class="num">$4.6k–19k/QALY</td><td>AFF develops <em>new</em> ones at lower $/QALY than running the old ones [17]</td></tr>
           <tr><td class="lbl">GiveWell top charities (global health)</td><td class="num">~$80/DALY; ~$4k/life</td><td>GiveWell is cheaper per unit, as expected: US lives are priced ~10–50× higher than global ones [18]</td></tr>
-          <tr><td class="lbl">MMV antimalarials (realized, peer-reviewed)</td><td class="num">$13 benefit / $1</td><td>AFF base BCR ~380:1; same family once currencies align [19]</td></tr>
+          <tr><td class="lbl">MMV antimalarials (realized, peer-reviewed)</td><td class="num">$13 benefit / $1</td><td>AFF base BCR ~425:1; same family once currencies align [19]</td></tr>
           <tr><td class="lbl">Cystic Fibrosis Foundation (realized)</td><td class="num">$150M → $3.3B + ~23 yrs/patient</td><td>A full CFF-scale exit is AFF's High case, not its base [20]</td></tr>
         </tbody>
       </table>
@@ -410,8 +410,9 @@
       <li><strong>Attribution is the weakest assumption.</strong> Credit share and acceleration are judgment calls, not measurements. We set credit at 50%. A stricter rule pulls the base case toward the Low column, but not below the US threshold.</li>
       <li><strong>No addiction-specific success-rate data exists.</strong> We use psychiatry as the proxy for probability of approval (~14% from Phase 2), bounded below by neurology. Addiction could run worse; the repurposing-heavy portfolio (GLP-1s, orexin and kappa-opioid antagonists) argues it runs better.</li>
       <li><strong>Pricing health is not settled.</strong> Value per QALY ($100–150k), value per life-year (~$495k), and value per statistical life ($13.1M) give very different totals. We headline the most conservative, the $/QALY figure, and never mix them. [21]</li>
-      <li><strong>One fund does not solve addiction.</strong> The base case averts ~38,000 deaths over ~15 years, on the order of ~2,500 a year at peak, against ~260,000 substance-related US deaths a year. The claim here is cost-effectiveness, not a cure. The math works precisely because the fund is small next to the problem and still moves it cheaply.</li>
-      <li><strong>Per-medicine reach dominates the result.</strong> The whole estimate swings on the QALYs/yr term. If you think a new anti-craving or anti-overdose medicine reaches far fewer people than today's medicines do, lower that slider; the fund still clears the bar.</li>
+      <li><strong>One fund does not solve addiction.</strong> The base case averts ~47,000 deaths over ~15 years, on the order of ~3,150 a year at peak, against ~740,000 tobacco-, alcohol-, and drug-related US deaths a year. The claim here is cost-effectiveness, not a cure. The math works precisely because the fund is small next to the problem and still moves it cheaply.</li>
+      <li><strong>Per-medicine reach dominates the result.</strong> The whole estimate swings on the QALYs/yr term. If you think a new anti-craving, anti-overdose, or cessation medicine reaches far fewer people than today's medicines do, lower that slider; the fund still clears the bar.</li>
+      <li><strong>Tobacco is the biggest target but the least neglected.</strong> Smoking kills the most (~480k/yr) and is in scope, but unlike opioids, alcohol, and stimulants it already has effective drugs (varenicline, 2006). The fund's new-medicine counterfactual there is weaker, so a tobacco-heavy win deserves credit nearer the low end; the real tobacco leverage is a polysubstance GLP-1 (smoking benefit bundled with the alcohol/opioid bet) or deploying underused cessation drugs.</li>
     </ul>
   </section>
 
@@ -440,6 +441,7 @@
       <li>Medicines for Malaria Venture, impact analysis (Lancet Global Health 2026): ~1.59M deaths and ~86.9M DALYs averted; ~$13 monetized health benefit per $1 invested, 2000–2023. mmv.org</li>
       <li>Cystic Fibrosis Foundation: ~$150M into Vertex CFTR-modulator science; royalty sold for $3.3B (Royalty Pharma, 2014); Trikafta raised projected CF survival ~+23–26 years. cff.org; Scientific American 2014.</li>
       <li>HHS/ASPE, "Standard Values for Regulatory Analysis, 2024": VSL central $13.1M (range $6.1–19.9M); VSLY central $495k (range $231–754k). aspe.hhs.gov</li>
+      <li>CDC Office on Smoking and Health: cigarette smoking causes ~480,000 US deaths/year; ~28.8M US adults currently smoke; most quit attempts use no FDA-approved cessation medication; varenicline roughly doubles quit rates (Cochrane 2023). Smoking deaths skew older (~70+), so each averted death is worth fewer life-years than an averted overdose. cdc.gov/tobacco</li>
     </ol>
     <p class="src" style="margin-top:18px;">Method note: The scenario table is deterministic, and its Low/High columns are scenario corners rather than a confidence interval. The Monte Carlo in Results propagates the same ranges as independent lognormals (median = Base, 90% range = the tabled Low/High) to produce the distribution and the 90% interval. All dollar figures are nominal US dollars; benefits are discounted at 3% inside the effective-years parameter. The model and its arithmetic are fully contained in this page; view source or use the calculator to audit any number.</p>
   </div>
@@ -452,7 +454,7 @@
 
 <script>
 (function(){
-  var base = { fund:250, cost:20, pos:15, qaly:67, yrs:12, cred:50, rec:1.5, dev:56 };
+  var base = { fund:250, cost:20, pos:15, qaly:75, yrs:12, cred:50, rec:1.5, dev:56 };
   var ids = Object.keys(base);
   var el = {};
   ids.forEach(function(k){ el[k] = document.getElementById('s-'+k); });
@@ -466,7 +468,7 @@
     if (n >= 1e9) return '$'+(n/1e9).toFixed(1).replace(/\.0$/,'')+'B';
     if (n >= 1e6) return '$'+(n/1e6).toFixed(1).replace(/\.0$/,'')+'M';
     if (n >= 1e3) return '$'+(n/1e3).toFixed(1).replace(/\.0$/,'')+'k';
-    if (n >= 100) return '$'+(Math.round(n/5)*5);
+    if (n >= 100) return '$'+(Math.round(n/10)*10);
     return '$'+Math.round(n);
   }
 
@@ -484,8 +486,8 @@
     var shots  = devCap/cost;
     var appr   = shots*pos;
     var qalys  = appr*qy*yrs*cred*rec;
-    // lives scale off qalys via the base mortality fraction: base 633k QALYs -> 37.8k lives
-    var lives  = qalys * (4000/67000);
+    // lives scale off qalys via the base mortality fraction: base 709k QALYs -> 47.3k lives
+    var lives  = qalys * (5000/75000);
     var costDollars = fund*1e6;
     var cpq    = qalys>0 ? costDollars/qalys : 0;
     var benefit = qalys*150000;
@@ -546,7 +548,7 @@
   var P = {
     cost: {m:20,    lo:12,    hi:35},     // $M per shot on goal
     pos:  {m:0.15,  lo:0.08,  hi:0.25},   // P(approval) per shot
-    qaly: {m:67000, lo:12000, hi:320000}, // QALYs/yr per medicine at scale
+    qaly: {m:75000, lo:12000, hi:450000}, // QALYs/yr per medicine at scale
     yrs:  {m:12,    lo:8,     hi:15},     // effective discounted years
     cred: {m:0.50,  lo:0.25,  hi:0.80},   // AFF credit share
     rec:  {m:1.5,   lo:1.2,   hi:3.0}     // capital recycled into new shots
@@ -564,7 +566,7 @@
   }
   vals.sort(function(a,b){ return a-b; });
   function q(p){ return vals[Math.min(N-1, Math.floor(p*N))]; }
-  function money(n){ if(n>=1e6) return '$'+(n/1e6).toFixed(1)+'M'; if(n>=1e3) return '$'+(n/1e3).toFixed(1).replace(/\.0$/,'')+'k'; if(n>=100) return '$'+(Math.round(n/5)*5); return '$'+Math.round(n); }
+  function money(n){ if(n>=1e6) return '$'+(n/1e6).toFixed(1)+'M'; if(n>=1e3) return '$'+(n/1e3).toFixed(1).replace(/\.0$/,'')+'k'; if(n>=100) return '$'+(Math.round(n/10)*10); return '$'+Math.round(n); }
   var med=q(0.5), p5=q(0.05), p95=q(0.95), prob=below/N;
   document.getElementById('mc-med').textContent  = money(med)+'/QALY';
   document.getElementById('mc-ci').textContent   = money(p5)+'–'+money(p95);
@@ -598,11 +600,11 @@
   var svg = document.getElementById('tornado');
   if (!svg) return;
   var FUND = 250e6;
-  var B = { shots:7, pos:0.15, qaly:67000, yrs:12, cred:0.50, rec:1.5 };
+  var B = { shots:7, pos:0.15, qaly:75000, yrs:12, cred:0.50, rec:1.5 };
   function val(key,v){ var p={}; for (var k in B) p[k]=B[k]; p[key]=v; return FUND/(p.shots*p.pos*p.qaly*p.yrs*p.cred*p.rec); }
   var base = FUND/(B.shots*B.pos*B.qaly*B.yrs*B.cred*B.rec);
   var rows = [
-    {label:'QALYs/yr per medicine', key:'qaly',  lo:12000, hi:320000},
+    {label:'QALYs/yr per medicine', key:'qaly',  lo:12000, hi:450000},
     {label:'Credit share',          key:'cred',  lo:0.25,  hi:0.80},
     {label:'P(approval) per shot',  key:'pos',   lo:0.08,  hi:0.25},
     {label:'Shots on goal',         key:'shots', lo:4,     hi:12},
