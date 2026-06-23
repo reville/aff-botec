@@ -178,13 +178,17 @@
 
   <h1>Addiction Frontier Fund BOTEC</h1>
 
+  <div class="disclaimer">
+    <strong>Epistemic status.</strong> A rough outside-view BOTEC: a back-of-the-envelope expected-value model meant to surface the main cruxes, not to produce a precise estimate. Following Coefficient Giving and Open Philanthropy, treat it as a stress test rather than a grant decision. I have moderate confidence in the <em>sign</em> of the opportunity and low confidence in the absolute cost-effectiveness. The load-bearing uncertainties are per-medicine reach, adoption and access bottlenecks, counterfactual credit, and probability of approval. Every input is adjustable in the calculator below.
+  </div>
+
   <div class="findings">
-    <div class="label">Summary</div>
+    <div class="label">Summary — best guess</div>
     <ul>
-      <li>A $250M fund should produce about one new or materially better addiction medicine that would not otherwise exist (range 0.3–3.0).</li>
-      <li>Base case: ~710,000 quality-adjusted life-years (QALYs) and ~47,000 lives saved.</li>
-      <li>That is ~$350 per QALY and ~$5,300 per life, roughly 425× better than what US health payers treat as good value ($100–150k/QALY).</li>
-      <li>Benefit-to-cost ratio ~425:1 in the base case (range ~5:1 to ~29,000:1).</li>
+      <li>A rough expected-value BOTEC for a $250M fund. In the base case it backs ~7 serious shots, each ~15% likely to win approval: <strong>1.05 approvals in expectation</strong>, a <strong>~68% chance of at least one</strong>, and a ~32% chance of none.</li>
+      <li>Conditional on a win, a representative medicine might generate ~75k QALYs/year at US scale — the dominant and least-pinned-down assumption. After 12 discounted years of benefit, 50% counterfactual credit, and 1.5× recycled capital, that is ~710k expected QALYs, or <strong>~$350/QALY</strong> charging the full $250M.</li>
+      <li>That clears US payer thresholds ($100–150k/QALY) by a wide margin — but that is a weak bar: per-medicine reach would have to be ~400× lower than base to fail it. The harder, more decision-relevant comparison is global-health philanthropy (GiveWell ~$80/DALY), where the US base case is roughly <strong>4× more expensive</strong> per health unit and competes only via upside or global deployment.</li>
+      <li>The crux is not the valuation convention but whether AFF can cause at least one high-reach addiction medicine to exist roughly 5–10 years earlier than it otherwise would.</li>
     </ul>
   </div>
 
@@ -207,6 +211,7 @@
         </tbody>
       </table>
     </div>
+    <p>Six approvals in 23 years against 222 for cancer is the case for philanthropy, but burden alone does not make philanthropy the right marginal actor. Addiction is under-innovated for structural reasons: stigma and political economy, weak commercial incentives relative to the social burden, fragmented and under-resourced treatment delivery, payer and prescriber frictions, hard regulatory endpoints, and low venture appetite next to oncology and metabolic disease. Catalytic philanthropy is most useful where those frictions, rather than the underlying science, are the binding constraint.</p>
   </section>
 
   <!-- 02 -->
@@ -217,8 +222,9 @@
       <p style="margin-top:14px;">Then: <span class="mono">$/QALY = total fund cost ÷ QALYs</span>, and <span class="mono">benefit–cost ratio = (QALYs × value-per-QALY) ÷ cost</span>.</p>
     </div>
     <ul>
-      <li>We assume the fund mostly pulls a therapy <em>forward in time</em> rather than inventing one from nothing, and count the years of benefit gained. [8]</li>
+      <li>Acceleration, not creation. The fund mostly pulls a therapy <em>forward in time</em> rather than inventing one that would never exist. The honest unit is credited years: if a medicine arrives in year X with the fund and year Y without, the contribution is (Y − X) years of benefit, weighted by the chance it would have happened anyway. We fold that into two parameters — the 12 discounted-equivalent years of benefit (a medicine otherwise arriving ~5–10 years later, or not at all in the most neglected sub-fields) and the 50% credit share. Pure acceleration of an asset pharma would have funded regardless belongs near the Low credit end. [8]</li>
       <li>The fund is one of several backers of any winning asset (co-investors, acquirers, NIH-funded science upstream). We credit it a <em>share</em> of the impact, 50% in the base case. That is higher than a pure funding-share rule, because in a field with almost no other early backers the fund is often the reason the asset exists at all. [8]</li>
+      <li>Co-investment is internalized, not a bonus. The ~$20M cost per shot is the fund's catalytic slice; co-investors and acquirers fund the rest of each asset's roughly $1–2.6B path to market. That is also why the credit share is ~50%, not 100%. We do not separately count co-investment as upside.</li>
     </ul>
   </section>
 
@@ -237,7 +243,7 @@
           <tr class="total"><td class="lbl">Total charged against medicines channel</td><td class="num">100%</td><td class="num">$250M</td><td>Conservative</td></tr>
         </tbody>
       </table>
-      <caption>Only 56% of the fund builds the medicines that produce the modeled QALYs, but we divide by the full $250M. That alone makes the true $/QALY roughly 1.8× better than the headline. The allocation is illustrative of the activities the memo describes.</caption>
+      <caption>Only 56% of the fund builds the medicines that produce the modeled QALYs, but we divide by the full $250M. Charging on the $140M actually spent on shots would improve the apparent $/QALY by roughly 1.8×; we keep the full-fund denominator as the headline rather than that figure. The allocation is illustrative of the activities the memo describes.</caption>
     </div>
   </section>
 
@@ -254,17 +260,68 @@
           <tr><td class="lbl">P(approval) per shot</td><td class="num">8%</td><td class="num">15%</td><td class="num">25%</td><td class="src">psychiatry Ph-2→approval 13.8%, neurology 12.3% floor [12]; repurposing + stage-gate uplift</td></tr>
           <tr style="background:var(--panel)"><td class="lbl"><strong>= Expected approved medicines</strong></td><td class="num">0.3</td><td class="num">1.05</td><td class="num">3.0</td><td class="src">shots × P(approval)</td></tr>
           <tr><td class="lbl">QALYs / year per medicine at US scale</td><td class="num">12k</td><td class="num">75k</td><td class="num">450k</td><td class="src">mortality + morbidity; see note [13]</td></tr>
-          <tr><td class="lbl">Lives saved / year per medicine at scale</td><td class="num">1,000</td><td class="num">5,000</td><td class="num">30,000</td><td class="src">treatment-gap closure × Sordo 55% mortality cut; High = a polysubstance GLP-1 across nicotine, alcohol &amp; opioids [14][22]</td></tr>
+          <tr><td class="lbl">Deaths averted / year per medicine at scale</td><td class="num">1,000</td><td class="num">5,000</td><td class="num">30,000</td><td class="src">treatment-gap closure × Sordo 55% mortality cut; High = a polysubstance GLP-1 across nicotine, alcohol &amp; opioids [14][22]</td></tr>
           <tr><td class="lbl">Effective discounted years of benefit</td><td class="num">8</td><td class="num">12</td><td class="num">15</td><td class="src">~15-yr window, 3% discount, ramp</td></tr>
           <tr><td class="lbl">AFF counterfactual credit share</td><td class="num">25%</td><td class="num">50%</td><td class="num">80%</td><td class="src">credit ≈ funding share, raised for catalytic role [8]</td></tr>
           <tr><td class="lbl">Capital recycled into new shots (×)</td><td class="num">1.2×</td><td class="num">1.5×</td><td class="num">3.0×</td><td class="src">exits return capital that funds more shots; High = a CFF/T1D-scale exit [10][20]</td></tr>
           <tr class="total"><td class="lbl">Cumulative QALYs</td><td class="num">9.2k</td><td class="num">709k</td><td class="num">48.6M</td><td>product of the chain</td></tr>
-          <tr class="total"><td class="lbl">Cumulative lives saved</td><td class="num">770</td><td class="num">47.3k</td><td class="num">3.24M</td><td>parallel, on lives/yr</td></tr>
+          <tr class="total"><td class="lbl">Cumulative deaths averted</td><td class="num">770</td><td class="num">47.3k</td><td class="num">3.24M</td><td>parallel, on lives/yr</td></tr>
         </tbody>
       </table>
       <caption>[13] QALYs/yr decomposes into mortality (lives/yr × ~9 quality-adjusted life-years per death averted, reflecting the ~15-year OUD life-expectancy gap) plus morbidity (incremental treated patients × ~0.08 QALY/yr). Base: 5,000 × 9 ≈ 45k from mortality + ~30k from morbidity ≈ 75k. Tobacco deaths skew older (~6 QALYs each vs ~13 for an overdose), so a tobacco-heavy medicine saves more lives per QALY.</caption>
     </div>
     <p>About one approved medicine from $250M is consistent with precedent, and the estimate already prices in failure: about six of every seven funded shots never reach approval, so the full $250M is charged against a single expected win. The two leading venture-philanthropy funds each have one transformative approval so far (the Cystic Fibrosis Foundation's CFTR modulators; the T1D Fund's Tzield), both alongside other bets that have not yet produced a drug. CFF's often-quoted ~$150M was its own catalytic stake in the Vertex program, not the far larger total cost Vertex and its investors spent to finish the drugs.</p>
+    <div class="info-box">
+      <div class="label">Approvals are discrete — expected value is not a realized outcome</div>
+      <p>"1.05 approvals" is an expectation. A real portfolio of 7 shots at 15% each is a binomial draw, and the realized outcome is lumpy:</p>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Portfolio outcome (7 shots × 15%)</th><th class="num">Value</th></tr></thead>
+          <tbody>
+            <tr><td class="lbl">Expected approvals (first cycle)</td><td class="num">1.05</td></tr>
+            <tr><td class="lbl">P(0 approvals)</td><td class="num">~32%</td></tr>
+            <tr><td class="lbl">P(exactly 1)</td><td class="num">~40%</td></tr>
+            <tr><td class="lbl">P(≥1 approval)</td><td class="num">~68%</td></tr>
+            <tr><td class="lbl">P(≥2 approvals)</td><td class="num">~28%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>So about a third of the time the fund produces no approval at all and its realized cost-effectiveness is undefined; the expected-value figures already average that case in. Recycling is the same story over the fund's life: the 1.05 is first-cycle, returned exits fund roughly another 0.5 approvals' worth of shots, and the 1.5× recycling multiplier in the chain corresponds to <strong>~1.58 total expected approvals credited to the fund</strong> (1.05 first-cycle + ~0.53 from recycled capital).</p>
+    </div>
+  </section>
+
+  <!-- 04b -->
+  <section class="section">
+    <h2>Where the QALYs/year come from</h2>
+    <p>The 75k base is the dominant and least-grounded input, so it should not stay a single number. It decomposes as:</p>
+    <div class="info-box">
+      <div class="eqn">QALYs/yr = incremental patients on effective treatment × (baseline mortality × risk reduction × QALYs per death averted + morbidity QALYs per patient-year)</div>
+    </div>
+    <p>Worked example, an OUD adherence medicine: ~5M with opioid use disorder × ~5 points of incremental coverage ≈ 250k patients; × (3.6%/yr untreated mortality × 55% reduction [14] × ~9 QALYs per death averted + ~0.08 morbidity QALY/yr) ≈ <strong>~65,000 QALYs/yr</strong>. The 75k base sits just above this; the 450k High is the polysubstance GLP-1 in the last row.</p>
+    <p>Addiction is not one homogeneous opportunity. Archetypes differ sharply in reach, effect, neglectedness, and counterfactual credit:</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Medicine archetype</th><th class="num">Addressable</th><th class="num">Incr. uptake</th><th class="num">P(appr.)</th><th class="num">Credit</th><th class="num">QALYs/yr (gross)</th><th>Binding bottleneck</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">OUD retention / adherence</td><td class="num">5M</td><td class="num">~5 pts</td><td class="num">~18%</td><td class="num">~60%</td><td class="num">~65k</td><td>prescriber capacity, stigma</td></tr>
+          <tr><td class="lbl">AUD pharmacotherapy</td><td class="num">28M</td><td class="num">~2 pts</td><td class="num">~15%</td><td class="num">~55%</td><td class="num">~38k</td><td>screening, PCP comfort (~2% treated)</td></tr>
+          <tr><td class="lbl">Tobacco cessation / relapse</td><td class="num">28.8M</td><td class="num">~4 pts</td><td class="num">~15%</td><td class="num">~25%</td><td class="num">~62k</td><td>deployment, not availability (varenicline exists)</td></tr>
+          <tr><td class="lbl">Repurposed / better formulation</td><td class="num">varies</td><td class="num">~3 pts</td><td class="num">~25%</td><td class="num">~50%</td><td class="num">~30k</td><td>incremental over existing options</td></tr>
+          <tr style="background:var(--panel)"><td class="lbl">Polysubstance GLP-1 (upside)</td><td class="num">multi</td><td class="num">high</td><td class="num">~25%</td><td class="num">~40%</td><td class="num">~300–450k</td><td>cost / coverage; pharma entering (Lilly, Altimmune)</td></tr>
+        </tbody>
+      </table>
+      <caption>"Gross" QALYs/yr are before the 50% credit and the years/recycling multipliers. Tobacco is the clearest split: large gross health but low counterfactual credit, because effective drugs already exist — so a tobacco-weighted win should be credited near the low end, and the fund's real tobacco leverage is deployment or a genuinely novel (e.g. GLP-1) mechanism. The base case is a credit-weighted blend nearer the OUD/AUD archetypes than the GLP-1 upside.</caption>
+    </div>
+  </section>
+
+  <!-- 04c -->
+  <section class="section">
+    <h2>Adoption is not automatic</h2>
+    <p>A medicine produces QALYs only after a long cascade, and addiction is where this cascade leaks most:</p>
+    <div class="info-box">
+      <div class="eqn">approval → guideline inclusion → reimbursement → clinician adoption → patient initiation → persistence / adherence → clinical effect</div>
+    </div>
+    <p>The treatment gaps in the background table are this cascade failing for drugs that already work: only ~18% of people with OUD are on medication, under 2% for AUD, and fewer than one in three quit attempts use any cessation drug. A new molecule that is approved but lands in the same delivery system inherits the same leak. The "incremental uptake" column in the archetype table is doing all the work, and it is an assumption, not a measurement — so realistic per-medicine reach could be well below base, and the deployment/access channel (below) may matter as much as discovery.</p>
   </section>
 
   <!-- 05 -->
@@ -275,35 +332,35 @@
         <thead><tr><th>Output ($250M fund)</th><th class="num">Low</th><th class="num">Base</th><th class="num">High</th></tr></thead>
         <tbody>
           <tr><td class="lbl">Cumulative QALYs</td><td class="num">9,200</td><td class="num">709,000</td><td class="num">48,600,000</td></tr>
-          <tr><td class="lbl">Cumulative lives saved</td><td class="num">770</td><td class="num">47,250</td><td class="num">3,240,000</td></tr>
+          <tr><td class="lbl">Cumulative deaths averted</td><td class="num">770</td><td class="num">47,250</td><td class="num">3,240,000</td></tr>
           <tr><td class="lbl">Cost per QALY</td><td class="num">~$27,100</td><td class="num">~$350</td><td class="num">~$5</td></tr>
-          <tr><td class="lbl">Cost per life saved</td><td class="num">~$326k</td><td class="num">~$5,300</td><td class="num">~$77</td></tr>
+          <tr><td class="lbl">Cost per death averted</td><td class="num">~$326k</td><td class="num">~$5,300</td><td class="num">~$77</td></tr>
           <tr><td class="lbl">Health benefit @ $150k/QALY</td><td class="num">$1.4B</td><td class="num">$106B</td><td class="num">$7.3T</td></tr>
           <tr class="total"><td class="lbl">Benefit–cost ratio</td><td class="num">~5:1</td><td class="num">~425:1</td><td class="num">~29,000:1</td></tr>
         </tbody>
       </table>
-      <caption>Benefit valued at $150k/QALY (the conservative end of the US value-per-QALY range; ICER anchors near $104k, HHS VSLY central is ~$495k). Valuing the 47,250 base-case lives at the HHS central VSL of $13.1M instead gives ~$619B of benefit and a ~2,500:1 ratio. We report the lower, $/QALY-based figure as the headline.</caption>
+      <caption>Benefit valued at $150k/QALY, the conservative end of the US value-per-QALY range (ICER anchors near $104k). This is a US willingness-to-pay convention, not a welfare valuation or a cash return; the valuation note in Key uncertainties shows how VSL or VSLY would change it. The Low/High columns are scenario corners, not a confidence interval — the Monte Carlo below gives the distribution.</caption>
     </div>
-    <p>No scenario makes the fund a poor use of money. The worst case still buys health at ~$27,000/QALY, inside the range US payers fund every day, and returns ~5:1. The base case is far better, and the best case rivals the top global-health buys anywhere.</p>
+    <p>Within the parameter ranges chosen here, the cost per QALY stays below common US payer thresholds even in the Low column (~$27,000/QALY). I do not read that as proof of robustness. The Low/High corners only stress the one-way parameter ranges; the larger risk is that the model structure is wrong, for instance that adoption rather than approval is the binding constraint. The US-threshold comparison is also a weak test, as the crux table below shows.</p>
     <h3>The full distribution</h3>
-    <p>The Low and High columns above are scenario corners: every parameter pessimistic at once, or every one optimistic at once. Those are extreme tails, not a 90% interval. Treating each input as a lognormal centered on its Base value, with the tabled spread, and drawing 20,000 times gives the real distribution of cost per QALY.</p>
+    <p>The Low and High columns above are scenario corners — every parameter pessimistic at once, or every one optimistic at once — which are extreme tails, not a 90% interval. The Monte Carlo instead samples each input as a lognormal centered on its Base value with the tabled spread, and samples the number of approvals as a discrete binomial draw (7 shots × 15%) rather than a smooth 1.05, so the lumpy reality — including portfolios that produce nothing — shows up.</p>
     <div class="chart-card">
-      <div class="chart-title">Distribution of cost per QALY (20,000 Monte Carlo draws)</div>
-      <div class="chart-sub">Log scale · dashed line marks the $150k/QALY US threshold</div>
+      <div class="chart-title">Cost per QALY among portfolios with ≥1 approval (20,000 draws)</div>
+      <div class="chart-sub">Conditional on ≥1 approval · log scale · dashed line marks the $150k/QALY threshold</div>
       <svg id="mc-hist" viewBox="0 0 760 240" role="img" aria-label="Monte Carlo distribution of cost per QALY"></svg>
-      <p style="margin:16px 0 0;font-size:13px;line-height:1.6;">Across 20,000 draws: median <span id="mc-med">…</span>, 90% interval <span id="mc-ci">…</span>, and a <span id="mc-prob">…</span> chance of beating the $150k/QALY threshold. The spread is far narrower than the scenario corners because the parameters are roughly independent; for the result to approach the threshold, several would have to break the wrong way together.</p>
+      <p style="margin:16px 0 0;font-size:13px;line-height:1.6;">About <span id="mc-zero">…</span> of sampled portfolios produce no approval at all, and their realized cost-effectiveness is undefined; the headline ~$350/QALY is the expected-value figure that averages those in. Among portfolios with at least one approval, the median is <span id="mc-med">…</span> and the 90% interval is <span id="mc-ci">…</span>. This is parameter uncertainty conditional on the model being the right shape — it excludes model misspecification, and it treats the inputs as independent lognormals, which is optimistic: in practice reach, credit, and approval odds are correlated (a high-reach GLP-1 carries lower AFF credit; a niche OUD formulation, higher credit but lower reach).</p>
     </div>
     <h3>How it scales with fund size</h3>
     <div class="tbl-wrap">
       <table>
-        <thead><tr><th>Fund size</th><th class="num">Expected approvals (base)</th><th class="num">QALYs (base)</th><th class="num">Lives (base)</th><th class="num">$/QALY</th></tr></thead>
+        <thead><tr><th>Fund size</th><th class="num">Expected approvals (base)</th><th class="num">QALYs (base)</th><th class="num">Deaths averted (base)</th><th class="num">$/QALY</th></tr></thead>
         <tbody>
           <tr><td class="lbl">$100M</td><td class="num">0.42</td><td class="num">~284,000</td><td class="num">~18,900</td><td class="num">~$350</td></tr>
           <tr><td class="lbl">$250M (base)</td><td class="num">1.05</td><td class="num">~709,000</td><td class="num">~47,250</td><td class="num">~$350</td></tr>
           <tr><td class="lbl">$1B</td><td class="num">4.2</td><td class="num">~2,835,000</td><td class="num">~189,000</td><td class="num">~$350*</td></tr>
         </tbody>
       </table>
-      <caption>* The linear model holds $/QALY flat across fund sizes.</caption>
+      <caption>* This is a mechanical linear extrapolation, not my actual belief. Marginal cost-effectiveness should decline with size: the first ~$50–100M funds the most neglected, highest-value shots; by $1B the marginal assets are weaker and deal supply, management capacity, and crowd-in/crowd-out all bind (recycling pushes the other way). Treat the $1B row as an upper bound on average cost-effectiveness at that scale, not a marginal estimate.</caption>
     </div>
     <div class="info-box">
       <div class="label">If deployed globally</div>
@@ -363,7 +420,7 @@
         <div class="calc-out">
           <div class="out-row"><span class="k">Expected approvals</span><span class="calc-val" id="o-appr">1.05</span></div>
           <div class="out-row"><span class="k">Cumulative QALYs</span><span class="calc-val" id="o-qaly">709k</span></div>
-          <div class="out-row"><span class="k">Lives saved</span><span class="calc-val" id="o-lives">47.3k</span></div>
+          <div class="out-row"><span class="k">Deaths averted</span><span class="calc-val" id="o-lives">47.3k</span></div>
           <div class="out-row big"><span class="k">Cost / QALY</span><span class="calc-val" id="o-cpq">$350</span></div>
           <div class="out-row"><span class="k">Benefit–cost @ $150k</span><span class="calc-val" id="o-bcr">425:1</span></div>
           <div class="verdict" id="o-verdict"></div>
@@ -381,23 +438,41 @@
       <div class="chart-sub">Lower is better · base case marked at $350/QALY</div>
       <svg id="tornado" viewBox="0 0 760 312" role="img" aria-label="Tornado sensitivity chart of cost per QALY"></svg>
     </div>
-    <p>The dominant lever is per-medicine reach, how many people a new drug gets onto effective treatment, followed by the odds of approval and the credit share. More important for the conclusion: the worst end of the worst single parameter ($2,200/QALY) still beats the US threshold by ~70×, so the result is robust to any one assumption.</p>
+    <p>The dominant lever is per-medicine reach, how many people a new drug actually gets onto effective treatment, followed by the odds of approval and the credit share. One-way sensitivity is a weak robustness test, though: it holds the model structure fixed and moves one parameter at a time. Even the worst single-parameter end stays under the US threshold, but that mostly reflects how weak that threshold is here (see the crux table), not that the estimate is secure.</p>
+  </section>
+
+  <!-- 07b -->
+  <section class="section">
+    <h2>Cruxes — what would change the conclusion</h2>
+    <p>Low / Base / High shows how the answer moves; thresholds show what would flip it. Holding the other inputs at base, here is how far each one would have to move to cross a given bar.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Input (base)</th><th>To <em>fail</em> the US $150k/QALY bar</th><th>To <em>match</em> GiveWell (~$80 per health unit)</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">QALYs/yr per medicine (75,000)</td><td>fall below ~180 (≈420× lower)</td><td>rise to ~330,000 (≈4.4× base)</td></tr>
+          <tr><td class="lbl">Counterfactual credit (50%)</td><td>fall below ~0.1%</td><td>cannot close a ~4× gap on its own</td></tr>
+          <tr><td class="lbl">P(approval) per shot (15%)</td><td>fall below ~0.04%</td><td>cannot close it on its own</td></tr>
+        </tbody>
+      </table>
+      <caption>The US-payer comparison is nearly unconditional: every input would have to be hundreds of times worse than base to fail it, which is why "425× the US threshold" carries little information. The decision-relevant bar is global-health cost-effectiveness (GiveWell ~$80 per unweighted DALY). On a straight cost-per-health-unit basis the base case is ~4× short of it; closing that gap takes the high-reach archetype (a polysubstance GLP-1) or genuine global deployment, not a different valuation convention.</caption>
+    </div>
   </section>
 
   <!-- 08 -->
   <section class="section">
     <h2>Benchmarking</h2>
+    <p>These mix four different yardsticks; keep them separate. Health units are QALYs or DALYs. The US payer threshold ($100–150k/QALY) is a willingness-to-pay convention. VSL and VSLY ($13.1M and ~$495k) are regulatory valuations. Open Philanthropy's "OP dollars" (~$100k per DALY) is a welfare valuation. A $350/QALY result looks very different against each, and they are not interchangeable. Ordered below with the decision-relevant global-health bars first and the US payer bars last.</p>
     <div class="tbl-wrap">
       <table>
-        <thead><tr><th>Benchmark</th><th class="num">Cost-effectiveness</th><th>How AFF base (~$350/QALY) compares</th></tr></thead>
+        <thead><tr><th>Benchmark</th><th class="num">Cost-effectiveness</th><th>AFF base (~$350/QALY) against it</th></tr></thead>
         <tbody>
-          <tr><td class="lbl">US value-per-QALY threshold (ICER)</td><td class="num">$100–150k/QALY</td><td>AFF is ~285–425× better [15]</td></tr>
-          <tr><td class="lbl">UK NICE threshold</td><td class="num">£20–30k/QALY</td><td>AFF is ~70–110× better [16]</td></tr>
-          <tr><td class="lbl">Existing addiction meds (already a bargain)</td><td class="num">$4.6k–19k/QALY</td><td>AFF develops <em>new</em> ones at lower $/QALY than running the old ones [17]</td></tr>
-          <tr><td class="lbl">GiveWell top charities (global health)</td><td class="num">~$80/DALY; ~$4k/life</td><td>GiveWell is cheaper per unit, as expected: US lives are priced ~10–50× higher than global ones [18]</td></tr>
-          <tr><td class="lbl">MMV antimalarials (realized, peer-reviewed)</td><td class="num">$13 benefit / $1</td><td>AFF base BCR ~425:1; same family once currencies align [19]</td></tr>
-          <tr><td class="lbl">Multiple Myeloma Research Foundation (realized)</td><td class="num">$600M+ → 15+ drugs</td><td>A repeatable VP track record without a CFF-scale windfall; myeloma survival roughly doubled [24]</td></tr>
-          <tr><td class="lbl">Cystic Fibrosis Foundation (realized)</td><td class="num">$150M → $3.3B + ~23 yrs/patient</td><td>A full CFF-scale exit is AFF's High case, not its base [20]</td></tr>
+          <tr><td class="lbl">GiveWell top charities (global health)</td><td class="num">~$80 / DALY</td><td>AFF base is ~4× more expensive per unweighted health unit; competes only via upside or global deployment [18]</td></tr>
+          <tr><td class="lbl">Open Phil / Coefficient GHW bar</td><td class="num">~$100k / DALY value; funds ≳2,000× cash</td><td>AFF clears the per-DALY valuation easily, but so does almost anything — the cost-side line above is the binding test [18]</td></tr>
+          <tr><td class="lbl">MMV antimalarials (realized)</td><td class="num">~$13 benefit / $1</td><td>Develop-once, deploy-worldwide; AFF's global case, not its US case, is the comparable [19]</td></tr>
+          <tr><td class="lbl">Multiple Myeloma Research Foundation (realized)</td><td class="num">$600M+ → 15+ drugs</td><td>A repeatable VP record without a CFF-scale windfall; myeloma survival roughly doubled [24]</td></tr>
+          <tr><td class="lbl">Cystic Fibrosis Foundation (realized)</td><td class="num">~$150M catalytic → $3.3B royalty</td><td>A full CFF-scale exit is AFF's High case, not its base [20]</td></tr>
+          <tr><td class="lbl">Existing addiction meds</td><td class="num">$4.6k–19k/QALY</td><td>AFF would develop new ones near or below the cost of running today's [17]</td></tr>
+          <tr><td class="lbl">US ICER / UK NICE payer thresholds</td><td class="num">$100–150k/QALY; £20–30k</td><td>Cleared by ~70–425×, but a weak bar — see Cruxes [15][16]</td></tr>
         </tbody>
       </table>
     </div>
@@ -405,24 +480,65 @@
 
   <!-- 09 -->
   <section class="section">
-    <h2>Additional non-modeled benefits</h2>
+    <h2>Ways this could be wrong</h2>
+    <p>An EA-adjacent reader should weight these at least as heavily as the headline. The model can be roughly right and the opportunity still disappoint, mostly through structure rather than the parameter ranges above.</p>
     <ul>
-      <li><strong>Co-investment.</strong> The T1D Fund drew more than $634M of private capital alongside its own ~$81M (~8×). The model credits the fund as if it funded each asset alone, so this leverage is excluded.</li>
-      <li><strong>Field effects.</strong> AI target discovery, shared datasets, and a discovery-to-IND engine lower the cost and raise the success rate of later addiction programs. These spillovers are not priced in the model.</li>
+      <li><strong>Adoption, not approval, is the real bottleneck.</strong> If new medicines land in the same leaky delivery system (stigma, payer restrictions, prescriber capacity), realized reach is far below the uptake assumed in the archetype table, and per-medicine QALYs/yr could be a fraction of base.</li>
+      <li><strong>Counterfactual credit is too high.</strong> If pharma, NIH, the GLP-1 sponsors now entering AUD (Lilly, Altimmune), or existing addiction companies would have advanced the same assets, the fund mostly buys a modest speed-up and credit belongs near the Low end or below.</li>
+      <li><strong>Substitution, not expansion.</strong> An approved medicine may displace an existing effective one rather than add net treatment, in which case incremental QALYs are much smaller than the gross figures.</li>
+      <li><strong>Approval base rates are the wrong proxy.</strong> Psychiatry/neurology success rates may overstate addiction assets, which face harder endpoints and weaker biomarkers.</li>
+      <li><strong>Access and pricing erode reach.</strong> IP, list price, and coverage decisions (acute for GLP-1s) can keep population reach low even after approval.</li>
+      <li><strong>The portfolio realizes zero approvals.</strong> About 32% of the time, despite positive expected value, the fund produces no drug and its realized cost-effectiveness is undefined. Expected-value framing is correct but hides this.</li>
+      <li><strong>Downside and harm are possible.</strong> Addiction medicines carry tail risks — abuse liability, diversion, adverse events, substitution away from better-proven treatments, political backlash, or overpricing that suppresses access. None are likely to dominate, but a serious BOTEC names them.</li>
+      <li><strong>It does not solve addiction.</strong> The base case averts ~3,150 US deaths a year at peak against ~740,000 — a cost-effectiveness claim, not a solution.</li>
+      <li><strong>Valuation is a convention.</strong> Value per QALY ($100–150k), VSLY (~$495k), and VSL ($13.1M) differ by ~50×; we headline the lowest and never combine them. [21]</li>
     </ul>
+    <h3>Outside view vs inside view</h3>
+    <p><strong>Outside view</strong> (base rates): addiction/psychiatry development succeeds ~12–15% from Phase 2; CNS Phase 2 trials cost ~$14–25M; new addiction medicines reach a small share of the eligible population. On these alone, AFF is an ordinary, risky biotech portfolio.</p>
+    <p><strong>Inside view</strong> (the case for AFF specifically): it can select unusually neglected and repurposable assets, supply catalytic early capital where almost no one else does, and work the deployment side. The estimate leans on the inside view for credit (50% rather than a lower funding-share) and for above-floor approval odds. A reader skeptical of AFF's sourcing or edge should discount toward the outside view, which pushes credit and P(approval) down and the result toward the Low column.</p>
   </section>
 
   <!-- 10 -->
   <section class="section">
-    <h2>Key uncertainties</h2>
+    <h2>Channels and what is counted</h2>
+    <p>To keep the conservatism legible rather than rhetorical, here is what the headline does and does not include.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Channel</th><th class="num">Cost</th><th>In the headline?</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">Medicine development (the modeled chain)</td><td class="num">$140M</td><td>Yes — this is the BOTEC</td></tr>
+          <tr><td class="lbl">Full-fund conservative denominator</td><td class="num">$250M</td><td>Yes — only medicine benefits counted, full fund charged</td></tr>
+          <tr><td class="lbl">Deployment / access (close the treatment gap)</td><td class="num">$60M</td><td>No — plausibly the highest-value dollar, given the leaky adoption cascade; a separate BOTEC</td></tr>
+          <tr><td class="lbl">Discovery infrastructure (AI targets, data)</td><td class="num">$30M</td><td>No — option value / field-building</td></tr>
+          <tr><td class="lbl">Field spillovers</td><td class="num">—</td><td>No — cheaper, likelier future addiction programs</td></tr>
+        </tbody>
+      </table>
+      <caption>Charging the full $250M against the medicine channel alone is the conservative choice — it makes the medicine-only $/QALY look about 1.8× worse than if charged on the $140M actually spent on shots — and we use it as the headline rather than as a separate boast. Deployment may be the highest-value channel given how leaky the adoption cascade is, but it is not in the headline figure.</caption>
+    </div>
+    <h3>Is gross capital the right denominator?</h3>
+    <p>For a venture-style fund the social cost is arguably not the full $250M gross. Three denominators bracket it: gross deployed capital ($250M, the headline); expected net philanthropic cost after returns (lower — exits and recycling return capital, so the loss-adjusted subsidy is smaller); and donor opportunity cost (the next-best use of the same dollars). We use gross capital because it is the most conservative and least assumption-laden; a net-of-returns denominator would improve the apparent cost-effectiveness, and the recycling multiplier already captures part of it.</p>
+  </section>
+
+  <!-- 11 -->
+  <section class="section">
+    <h2>What I would research next</h2>
+    <p>The highest-value diligence is on the inputs that are assumptions rather than data:</p>
     <ul>
-      <li><strong>Attribution.</strong> Credit share and the acceleration assumption are judgment calls, not measurements. The base case credits the fund 50%; a stricter funding-share rule lowers the result toward the Low column but not below the US threshold.</li>
-      <li><strong>Probability of approval.</strong> No addiction-specific success-rate data exists. We use psychiatry as the proxy (~14% from Phase 2), with neurology (~12%) as a floor. The rate for a repurposing-weighted portfolio could fall on either side.</li>
-      <li><strong>Health valuation.</strong> Value per QALY ($100–150k), value per life-year (~$495k), and value per statistical life ($13.1M) give different totals. We report the most conservative, the $/QALY figure, and do not combine them. [21]</li>
-      <li><strong>Scale.</strong> The base case averts ~47,000 deaths over ~15 years, about ~3,150 a year at peak, against ~740,000 tobacco-, alcohol-, and drug-related US deaths a year. This is a cost-effectiveness estimate, not a claim to solve the problem.</li>
-      <li><strong>Per-medicine reach.</strong> The result is most sensitive to the QALYs/yr term. Across its plausible range, the cost per QALY stays below the US threshold.</li>
-      <li><strong>Tobacco.</strong> Smoking is the largest target (~480k deaths/yr) but the least neglected: effective drugs already exist (varenicline, 2006). The new-medicine counterfactual is weaker for tobacco, so a tobacco-weighted result warrants credit near the low end. The fund's tobacco leverage is mainly a polysubstance GLP-1 or wider deployment of existing cessation drugs.</li>
+      <li>Addiction-specific clinical success rates by modality and phase, versus the psychiatry/neurology proxy.</li>
+      <li>The actual venture and philanthropic funding gap by asset class — is addiction as abandoned as the approval count implies?</li>
+      <li>Adoption elasticity: empirical uptake curves for varenicline, buprenorphine formulations, naltrexone, nalmefene, and off-label GLP-1 use — does a better molecule actually move coverage?</li>
+      <li>Payer and reimbursement barriers, and what it costs to move them (the deployment channel).</li>
+      <li>Expert elicitation on counterfactual timelines, with versus without AFF, for a handful of concrete assets.</li>
+      <li>Whether AFF has enough proprietary sourcing advantage to justify credit above a pure funding-share rule.</li>
     </ul>
+  </section>
+
+  <!-- 12 -->
+  <section class="section">
+    <div class="info-box">
+      <div class="label">Bottom line</div>
+      <p>The case for AFF is not that the base case is precise — it is not — but that addiction medicine appears unusually important and neglected, and a venture-philanthropy portfolio has plausible hit-driven upside. The base case clears US payer thresholds by a wide margin, but that bar is nearly unconditional and carries little information. The decision-relevant question is whether the fund can cause at least one high-reach medicine to exist 5–10 years earlier than it otherwise would, and at what counterfactual credit. The most valuable diligence is on reach/adoption and counterfactual credit, not on refining the $150k/QALY valuation.</p>
+    </div>
   </section>
 
   <!-- Sources -->
@@ -454,7 +570,7 @@
       <li>Global addiction mortality: WHO (tobacco &gt;8M deaths/year; alcohol ~2.6M/year, Global status report 2024) + GBD / UNODC (drug use disorders ~0.5–0.6M/year). US is ~4% of world population. who.int</li>
       <li>Multiple Myeloma Research Foundation: $600M+ raised since 1998; the MMRC network helped move 15+ FDA-approved myeloma drugs forward; five-year survival roughly doubled (~32% to over 60%). themmrf.org; see <span class="mono">mmrf-case-study.html</span> in this repo.</li>
     </ol>
-    <p class="src" style="margin-top:18px;">Method note: The scenario table is deterministic, and its Low/High columns are scenario corners rather than a confidence interval. The Monte Carlo in Results propagates the same ranges as independent lognormals (median = Base, 90% range = the tabled Low/High) to produce the distribution and the 90% interval. All dollar figures are nominal US dollars; benefits are discounted at 3% inside the effective-years parameter. The model and its arithmetic are fully contained in this page; view source or use the calculator to audit any number.</p>
+    <p class="src" style="margin-top:18px;">Method note: The scenario table is deterministic, and its Low/High columns are scenario corners rather than a confidence interval. The Monte Carlo in Results propagates the same ranges as independent lognormals (median = Base, 90% range = the tabled Low/High) to produce the distribution and the 90% interval. All dollar figures are nominal US dollars; benefits are discounted at 3% inside the effective-years parameter. The model and its arithmetic are fully contained in this page; view source or use the calculator to audit any number. <a href="#" id="dl-json">Download the model parameters as JSON</a> for inspection.</p>
   </div>
 
   <footer>
@@ -522,13 +638,16 @@
 
     var v = document.getElementById('o-verdict');
     var thresh = 150000;
-    if (cpq>0 && cpq < thresh){
-      var x = Math.round(thresh/cpq);
-      v.innerHTML = 'At <b>'+money(cpq)+'/QALY</b>, this is about <b>'+x+'×</b> better than the US $150k/QALY funding threshold.';
-    } else if (cpq>0) {
-      v.innerHTML = 'At '+money(cpq)+'/QALY this is above the US $150k threshold. To get here you have to push every slider to its pessimistic extreme at once.';
+    if (cpq>0){
+      if (cpq < 80){
+        v.innerHTML = 'At <b>'+money(cpq)+'/QALY</b> this approaches top global-health cost-effectiveness (~$80 per DALY) — only under the most optimistic reach assumptions.';
+      } else if (cpq < thresh){
+        v.innerHTML = 'At <b>'+money(cpq)+'/QALY</b> this clears US payer thresholds easily; the binding comparison is global-health cost-effectiveness (~$80 per DALY), not this bar.';
+      } else {
+        v.innerHTML = 'At '+money(cpq)+'/QALY this is above the US $150k payer threshold — reachable only by pushing several sliders to pessimistic extremes together.';
+      }
     } else {
-      v.innerHTML = 'Set a non-zero probability and reach to see a result.';
+      v.innerHTML = 'Set a non-zero reach and probability to see a result.';
     }
   }
 
@@ -567,27 +686,31 @@
   for (var k in P){ P[k].s = sig(P[k].m, P[k].lo, P[k].hi); }
 
   var FUND = 250e6, DEVCAP = 140, THRESH = 150000, N = 20000;
-  var vals = new Array(N), below = 0;
+  function binom(n,p){ var c=0; for(var t=0;t<n;t++){ if(rand()<p) c++; } return c; }
+  var vals = [], zero = 0;        // vals = $/QALY for portfolios with >=1 approval
   for (var i=0;i<N;i++){
-    var cost = lnorm(P.cost.m,P.cost.s);
-    var qalys = (DEVCAP/cost) * lnorm(P.pos.m,P.pos.s) * lnorm(P.qaly.m,P.qaly.s) * lnorm(P.yrs.m,P.yrs.s) * lnorm(P.cred.m,P.cred.s) * lnorm(P.rec.m,P.rec.s);
-    var cpq = FUND/qalys;
-    vals[i] = cpq;
-    if (cpq < THRESH) below++;
+    var cost  = lnorm(P.cost.m,P.cost.s);
+    var shots = Math.max(1, Math.round(DEVCAP/cost));
+    var pos   = Math.min(1, lnorm(P.pos.m,P.pos.s));
+    var appr  = binom(shots, pos);                 // discrete approvals — lumpy, can be 0
+    if (appr === 0){ zero++; continue; }            // no approval -> cost-effectiveness undefined
+    var per = lnorm(P.qaly.m,P.qaly.s) * lnorm(P.yrs.m,P.yrs.s) * lnorm(P.cred.m,P.cred.s) * lnorm(P.rec.m,P.rec.s);
+    vals.push(FUND/(appr*per));
   }
   vals.sort(function(a,b){ return a-b; });
-  function q(p){ return vals[Math.min(N-1, Math.floor(p*N))]; }
+  var M = vals.length;
+  function q(p){ return vals[Math.min(M-1, Math.floor(p*M))]; }
   function money(n){ if(n>=1e6) return '$'+(n/1e6).toFixed(1)+'M'; if(n>=1e3) return '$'+(n/1e3).toFixed(1).replace(/\.0$/,'')+'k'; if(n>=100) return '$'+(Math.round(n/10)*10); return '$'+Math.round(n); }
-  var med=q(0.5), p5=q(0.05), p95=q(0.95), prob=below/N;
+  var med=q(0.5), p5=q(0.05), p95=q(0.95);
+  document.getElementById('mc-zero').textContent = (100*zero/N).toFixed(0)+'%';
   document.getElementById('mc-med').textContent  = money(med)+'/QALY';
   document.getElementById('mc-ci').textContent   = money(p5)+'–'+money(p95);
-  document.getElementById('mc-prob').textContent = prob>0.999 ? '>99.9%' : (100*prob).toFixed(1)+'%';
 
   // Histogram on a log10 axis.
   var W=760,H=240,padL=8,padR=8,padT=12,padB=34;
   var lo=Math.log10(50), hi=Math.log10(300000), bins=32;
   var counts=new Array(bins).fill(0), maxc=0;
-  for (var j=0;j<N;j++){ var lv=Math.log10(vals[j]); if(lv<lo)lv=lo; if(lv>hi)lv=hi; var b=Math.min(bins-1,Math.floor((lv-lo)/(hi-lo)*bins)); counts[b]++; }
+  for (var j=0;j<M;j++){ var lv=Math.log10(vals[j]); if(lv<lo)lv=lo; if(lv>hi)lv=hi; var b=Math.min(bins-1,Math.floor((lv-lo)/(hi-lo)*bins)); counts[b]++; }
   for (var c=0;c<bins;c++){ if(counts[c]>maxc) maxc=counts[c]; }
   var plotW=W-padL-padR, plotH=H-padT-padB, bw=plotW/bins;
   function xOf(v){ return padL+(Math.log10(v)-lo)/(hi-lo)*plotW; }
@@ -645,6 +768,39 @@
     o.push('<text class="bar-tag" x="'+(xR+5).toFixed(1)+'" y="'+(y+rowH/2+4)+'" text-anchor="start" style="fill:#1a1a1a">$'+Math.round(r.hiV).toLocaleString()+'</text>');
   });
   svg.innerHTML=o.join('');
+})();
+</script>
+
+<script>
+// Downloadable machine-readable model (item: source auditability).
+(function(){
+  var a = document.getElementById('dl-json'); if(!a) return;
+  var model = {
+    note: "Rough expected-value BOTEC for the Addiction Frontier Fund. $/QALY uses the full $250M deployed capital as cost. Expectation, not a forecast; see page for caveats.",
+    fund_usd: 250000000,
+    dev_capital_share: 0.56,
+    chain: "expected QALYs = shots × P(approval) × QALYs_per_year_per_medicine × years × credit × capital_recycled",
+    parameters: {
+      cost_per_shot_musd: { low: 35, base: 20, high: 12 },
+      shots_first_round: { low: 4, base: 7, high: 12 },
+      p_approval_per_shot: { low: 0.08, base: 0.15, high: 0.25 },
+      qalys_per_year_per_medicine: { low: 12000, base: 75000, high: 450000 },
+      deaths_averted_per_year_per_medicine: { low: 1000, base: 5000, high: 30000 },
+      effective_years_of_benefit: { low: 8, base: 12, high: 15 },
+      counterfactual_credit_share: { low: 0.25, base: 0.50, high: 0.80 },
+      capital_recycled_multiple: { low: 1.2, base: 1.5, high: 3.0 }
+    },
+    approval_distribution_7x15pct: { expected: 1.05, p_zero: 0.32, p_one: 0.40, p_ge_one: 0.68, p_ge_two: 0.28 },
+    base_outputs: { expected_approvals_first_cycle: 1.05, total_expected_approvals_incl_recycling: 1.58, cumulative_qalys: 709000, deaths_averted: 47250, usd_per_qaly: 350, deaths_averted_cost_usd: 5300, benefit_cost_at_150k_per_qaly: 425 },
+    value_conventions: { us_payer_per_qaly_usd: [100000,150000], vsly_usd: 495000, vsl_usd: 13100000, givewell_per_dalY_usd: 80, openphil_per_daly_usd: 100000 }
+  };
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    var blob = new Blob([JSON.stringify(model, null, 2)], { type: 'application/json' });
+    var url = URL.createObjectURL(blob);
+    var t = document.createElement('a'); t.href = url; t.download = 'aff-botec-model.json'; document.body.appendChild(t); t.click(); t.remove();
+    URL.revokeObjectURL(url);
+  });
 })();
 </script>
 
