@@ -183,7 +183,7 @@
     <ul>
       <li>A rough expected-value BOTEC for a $250M fund. In the base case it backs ~9 serious shots, each ~15% likely to win approval: <strong>1.35 approvals in expectation</strong>, a <strong>~77% chance of at least one</strong>, and a ~23% chance of none.</li>
       <li>Conditional on a win, a representative medicine might generate ~75k QALYs/year at US scale — the dominant and least-pinned-down assumption. After 12 discounted years of benefit, 50% counterfactual credit, and 1.5× recycled capital, that is ~911k expected QALYs, or <strong>~$270/QALY</strong> charging the full $250M.</li>
-      <li>That clears US payer thresholds ($100–150k/QALY) by a wide margin — but that is a weak bar: per-medicine reach would have to be ~550× lower than base to fail it. The harder, more decision-relevant comparison is global-health philanthropy (GiveWell ~$80/DALY), where the US base case is roughly <strong>3.4× more expensive</strong> per health unit and competes only via upside or global deployment.</li>
+      <li>That clears the US ICER anchor ($104k/QALY) by a wide margin — but that is a weak bar: per-medicine reach would have to be ~380× lower than base to fail it. The harder, more decision-relevant comparison is global-health philanthropy (GiveWell ~$80/DALY), where the US base case is roughly <strong>3.4× more expensive</strong> per health unit and competes only via upside or global deployment.</li>
       <li>The crux is not the valuation convention but whether AFF can cause at least one high-reach addiction medicine to exist roughly 5–10 years earlier than it otherwise would.</li>
     </ul>
   </div>
@@ -326,7 +326,7 @@
     <p>The Low and High columns above are scenario corners. The Monte Carlo instead samples each input as a lognormal centered on its Base value with the tabled spread, and samples the number of approvals as a discrete binomial draw (9 shots × 15%) rather than a smooth 1.35, so the lumpy reality, including portfolios that produce nothing, shows up.</p>
     <div class="chart-card">
       <div class="chart-title">Cost per QALY among portfolios with ≥1 approval (20,000 draws)</div>
-      <div class="chart-sub">Conditional on ≥1 approval · log scale · dashed line marks the $150k/QALY threshold</div>
+      <div class="chart-sub">Conditional on ≥1 approval · log scale · dashed line marks the $104k/QALY ICER anchor</div>
       <svg id="mc-hist" viewBox="0 0 760 240" role="img" aria-label="Monte Carlo distribution of cost per QALY"></svg>
       <p style="margin:16px 0 0;font-size:13px;line-height:1.6;">About <span id="mc-zero">…</span> of sampled portfolios produce no approval at all, and their realized cost-effectiveness is undefined; the headline ~$270/QALY is the expected-value figure that averages those in. Among portfolios with at least one approval, the median is <span id="mc-med">…</span> and the 90% interval is <span id="mc-ci">…</span>.</p>
     </div>
@@ -402,7 +402,7 @@
           <div class="out-row"><span class="k">Cumulative QALYs</span><span class="calc-val" id="o-qaly">911k</span></div>
           <div class="out-row"><span class="k">Deaths averted</span><span class="calc-val" id="o-lives">60.8k</span></div>
           <div class="out-row big"><span class="k">Cost / QALY</span><span class="calc-val" id="o-cpq">$270</span></div>
-          <div class="out-row"><span class="k">Benefit–cost @ $150k</span><span class="calc-val" id="o-bcr">547:1</span></div>
+          <div class="out-row"><span class="k">Benefit–cost @ $104k</span><span class="calc-val" id="o-bcr">380:1</span></div>
           <div class="verdict" id="o-verdict"></div>
         </div>
       </div>
@@ -427,14 +427,14 @@
     <p>Low / Base / High shows how the answer moves; thresholds show what would flip it. Holding the other inputs at base, here is how far each one would have to move to cross a given bar.</p>
     <div class="tbl-wrap">
       <table>
-        <thead><tr><th>Input (base)</th><th>To <em>fail</em> the US $150k/QALY bar</th><th>To <em>match</em> GiveWell (~$80 per health unit)</th></tr></thead>
+        <thead><tr><th>Input (base)</th><th>To <em>fail</em> the US $104k/QALY ICER anchor</th><th>To <em>match</em> GiveWell (~$80 per health unit)</th></tr></thead>
         <tbody>
-          <tr><td class="lbl">QALYs/yr per medicine (75,000)</td><td>fall below ~140 (≈550× lower)</td><td>rise to ~260,000 (≈3.4× base)</td></tr>
-          <tr><td class="lbl">Counterfactual credit (50%)</td><td>fall below ~0.09%</td><td>cannot close a ~3.4× gap on its own</td></tr>
-          <tr><td class="lbl">P(approval) per shot (15%)</td><td>fall below ~0.03%</td><td>cannot close it on its own</td></tr>
+          <tr><td class="lbl">QALYs/yr per medicine (75,000)</td><td>fall below ~200 (≈380× lower)</td><td>rise to ~260,000 (≈3.4× base)</td></tr>
+          <tr><td class="lbl">Counterfactual credit (50%)</td><td>fall below ~0.13%</td><td>cannot close a ~3.4× gap on its own</td></tr>
+          <tr><td class="lbl">P(approval) per shot (15%)</td><td>fall below ~0.04%</td><td>cannot close it on its own</td></tr>
         </tbody>
       </table>
-      <caption>The US-payer comparison is nearly unconditional: every input would have to be hundreds of times worse than base to fail it, which is why "~550× the US threshold" carries little information. The decision-relevant bar is global-health cost-effectiveness (GiveWell ~$80 per unweighted DALY). On a straight cost-per-health-unit basis the base case is ~3.4× short of it; closing that gap takes the high-reach archetype (a polysubstance GLP-1) or genuine global deployment, not a different valuation convention.</caption>
+      <caption>The US-payer comparison is nearly unconditional: every input would have to be hundreds of times worse than base to fail it, which is why "~380× the US anchor" carries little information. The decision-relevant bar is global-health cost-effectiveness (GiveWell ~$80 per unweighted DALY). On a straight cost-per-health-unit basis the base case is ~3.4× short of it; closing that gap takes the high-reach archetype (a polysubstance GLP-1) or genuine global deployment, not a different valuation convention.</caption>
     </div>
   </section>
 
@@ -452,7 +452,7 @@
           <tr><td class="lbl">Multiple Myeloma Research Foundation (realized)</td><td class="num">$600M+ → 15+ drugs</td><td>A repeatable VP record without a CFF-scale windfall; myeloma survival roughly doubled [24]</td></tr>
           <tr><td class="lbl">Cystic Fibrosis Foundation (realized)</td><td class="num">~$150M catalytic → $3.3B royalty</td><td>A full CFF-scale exit is AFF's High case, not its base [20]</td></tr>
           <tr><td class="lbl">Existing addiction meds</td><td class="num">$4.6k–19k/QALY</td><td>AFF would develop new ones near or below the cost of running today's [17]</td></tr>
-          <tr><td class="lbl">US ICER / UK NICE payer thresholds</td><td class="num">$100–150k/QALY; £20–30k</td><td>Cleared by ~85–550×, but a weak bar — see Cruxes [15][16]</td></tr>
+          <tr><td class="lbl">US ICER anchor / UK NICE payer thresholds</td><td class="num">$104k/QALY; £20–30k</td><td>Cleared by ~385×, but a weak bar — see Cruxes [15][16]</td></tr>
         </tbody>
       </table>
     </div>
@@ -488,7 +488,7 @@
         <tbody>
           <tr><td class="lbl">Medicine development (the modeled chain)</td><td class="num">$180M</td><td>Yes — this is the BOTEC</td></tr>
           <tr><td class="lbl">Full-fund conservative denominator</td><td class="num">$250M</td><td>Yes — only medicine benefits counted, full fund charged</td></tr>
-          <tr><td class="lbl">Deployment / access (close the treatment gap)</td><td class="num">$40M</td><td>No — plausibly the highest-value dollar, given the leaky adoption cascade; a separate BOTEC</td></tr>
+          <tr><td class="lbl">Translational research grants</td><td class="num">$40M</td><td>No — upstream science that feeds the shots-on-goal pipeline; not in the headline</td></tr>
           <tr><td class="lbl">Discovery infrastructure (AI targets, data)</td><td class="num">$20M</td><td>No — option value / field-building</td></tr>
           <tr><td class="lbl">Field spillovers</td><td class="num">—</td><td>No — cheaper, likelier future addiction programs</td></tr>
         </tbody>
@@ -517,7 +517,7 @@
   <section class="section">
     <div class="info-box">
       <div class="label">Bottom line</div>
-      <p>The case for AFF is not that the base case is precise — it is not — but that addiction medicine appears unusually important and neglected, and a venture-philanthropy portfolio has plausible hit-driven upside. The base case clears US payer thresholds by a wide margin, but that bar is nearly unconditional and carries little information. The decision-relevant question is whether the fund can cause at least one high-reach medicine to exist 5–10 years earlier than it otherwise would, and at what counterfactual credit. The most valuable diligence is on reach/adoption and counterfactual credit, not on refining the $150k/QALY valuation.</p>
+      <p>The case for AFF is not that the base case is precise — it is not — but that addiction medicine appears unusually important and neglected, and a venture-philanthropy portfolio has plausible hit-driven upside. The base case clears US payer thresholds by a wide margin, but that bar is nearly unconditional and carries little information. The decision-relevant question is whether the fund can cause at least one high-reach medicine to exist 5–10 years earlier than it otherwise would, and at what counterfactual credit. The most valuable diligence is on reach/adoption and counterfactual credit, not on refining the $104k/QALY valuation.</p>
     </div>
   </section>
 
@@ -597,7 +597,7 @@
     var lives  = qalys * (5000/75000);
     var costDollars = fund*1e6;
     var cpq    = qalys>0 ? costDollars/qalys : 0;
-    var benefit = qalys*150000;
+    var benefit = qalys*104000;
     var bcr    = benefit/costDollars;
 
     // labels
@@ -617,14 +617,14 @@
     document.getElementById('o-bcr').textContent   = Math.round(bcr).toLocaleString()+':1';
 
     var v = document.getElementById('o-verdict');
-    var thresh = 150000;
+    var thresh = 104000;
     if (cpq>0){
       if (cpq < 80){
         v.innerHTML = 'At <b>'+money(cpq)+'/QALY</b> this approaches top global-health cost-effectiveness (~$80 per DALY) — only under the most optimistic reach assumptions.';
       } else if (cpq < thresh){
         v.innerHTML = 'At <b>'+money(cpq)+'/QALY</b> this clears US payer thresholds easily; the binding comparison is global-health cost-effectiveness (~$80 per DALY), not this bar.';
       } else {
-        v.innerHTML = 'At '+money(cpq)+'/QALY this is above the US $150k payer threshold — reachable only by pushing several sliders to pessimistic extremes together.';
+        v.innerHTML = 'At '+money(cpq)+'/QALY this is above the US $104k ICER anchor — reachable only by pushing several sliders to pessimistic extremes together.';
       }
     } else {
       v.innerHTML = 'Set a non-zero reach and probability to see a result.';
@@ -665,7 +665,7 @@
   };
   for (var k in P){ P[k].s = sig(P[k].m, P[k].lo, P[k].hi); }
 
-  var FUND = 250e6, DEVCAP = 180, THRESH = 150000, N = 20000;
+  var FUND = 250e6, DEVCAP = 180, THRESH = 104000, N = 20000;
   function binom(n,p){ var c=0; for(var t=0;t<n;t++){ if(rand()<p) c++; } return c; }
   var vals = [], zero = 0;        // vals = $/QALY for portfolios with >=1 approval
   for (var i=0;i<N;i++){
@@ -698,7 +698,7 @@
   for (var d=0;d<bins;d++){ var bh=maxc?counts[d]/maxc*plotH:0; out.push('<rect x="'+(padL+d*bw+0.5).toFixed(1)+'" y="'+(padT+plotH-bh).toFixed(1)+'" width="'+(bw-1).toFixed(1)+'" height="'+bh.toFixed(1)+'" fill="#1a1a1a" opacity="0.78"/>'); }
   var xt=xOf(THRESH);
   out.push('<line x1="'+xt.toFixed(1)+'" y1="'+padT+'" x2="'+xt.toFixed(1)+'" y2="'+(padT+plotH)+'" stroke="#4D52FF" stroke-width="1.5" stroke-dasharray="3 3"/>');
-  out.push('<text x="'+(xt-5).toFixed(1)+'" y="'+(padT+11)+'" text-anchor="end" class="axis" style="fill:#4D52FF">$150k threshold</text>');
+  out.push('<text x="'+(xt-5).toFixed(1)+'" y="'+(padT+11)+'" text-anchor="end" class="axis" style="fill:#4D52FF">$104k ICER anchor</text>');
   var xm=xOf(med);
   out.push('<line x1="'+xm.toFixed(1)+'" y1="'+padT+'" x2="'+xm.toFixed(1)+'" y2="'+(padT+plotH)+'" stroke="#1a1a1a" stroke-width="1"/>');
   out.push('<text x="'+xm.toFixed(1)+'" y="'+(padT-2)+'" text-anchor="middle" class="axis" style="fill:#1a1a1a">median '+money(med)+'</text>');
@@ -771,8 +771,8 @@
       capital_recycled_multiple: { low: 1.2, base: 1.5, high: 3.0 }
     },
     approval_distribution_9x15pct: { expected: 1.35, p_zero: 0.23, p_one: 0.37, p_ge_one: 0.77, p_ge_two: 0.40 },
-    base_outputs: { expected_approvals_first_cycle: 1.35, total_expected_approvals_incl_recycling: 2.03, cumulative_qalys: 911000, deaths_averted: 60750, usd_per_qaly: 274, deaths_averted_cost_usd: 4115, benefit_cost_at_150k_per_qaly: 547 },
-    value_conventions: { us_payer_per_qaly_usd: [100000,150000], vsly_usd: 495000, vsl_usd: 13100000, givewell_per_dalY_usd: 80, openphil_per_daly_usd: 100000 }
+    base_outputs: { expected_approvals_first_cycle: 1.35, total_expected_approvals_incl_recycling: 2.03, cumulative_qalys: 911000, deaths_averted: 60750, usd_per_qaly: 274, deaths_averted_cost_usd: 4115, benefit_cost_at_104k_per_qaly: 380 },
+    value_conventions: { us_icer_anchor_per_qaly_usd: 104000, us_payer_threshold_per_qaly_usd: [100000,150000], vsly_usd: 495000, vsl_usd: 13100000, givewell_per_daly_usd: 80, openphil_per_daly_usd: 100000 }
   };
   a.addEventListener('click', function(e){
     e.preventDefault();
