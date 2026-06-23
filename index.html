@@ -6,7 +6,8 @@
 <title>Addiction Frontier Fund BOTEC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:wght@600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg:     #ffffff;
@@ -15,14 +16,14 @@
     --muted:  #777777;
     --line:   #e5e5e5;
     --panel:  #fafafa;
-    --accent: #ff6b4a;
+    --accent: #4D52FF;
     --good:   #1f9d6b;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     font-size: 15px;
     line-height: 1.6;
     color: var(--ink-2);
@@ -33,10 +34,13 @@
   }
   .wrap { max-width: 880px; margin: 0 auto; }
 
-  .brand, .topmeta, .eyebrow, h1, h2, h3, .section-num, .pill, .byline,
-  .stat-num, .stat-label, .label, .tl-date, .pull-quote cite, footer,
-  table th, .mono, .calc-val, .axis, .bar-tag {
-    font-family: "Space Mono", ui-monospace, Menlo, monospace;
+  h1, h2, h3, .stat-num, .calc-val {
+    font-family: "Cabinet Grotesk", "Helvetica Neue", Arial, sans-serif;
+  }
+  .brand, .topmeta, .eyebrow, .section-num, .pill, .byline,
+  .stat-label, .label, .tl-date, .pull-quote cite, footer,
+  table th, .mono, .axis, .bar-tag {
+    font-family: "Manrope", system-ui, sans-serif;
   }
 
   a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--ink); }
@@ -54,7 +58,7 @@
 
   /* Hero */
   .eyebrow { font-weight: 700; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
-  h1 { font-family: "Source Sans 3", system-ui, -apple-system, sans-serif; font-weight: 700; font-size: clamp(32px, 5.5vw, 54px); line-height: 1.05; letter-spacing: -0.015em; color: var(--ink); margin: 0 0 22px; }
+  h1 { font-family: "Cabinet Grotesk", "Helvetica Neue", Arial, sans-serif; font-weight: 800; font-size: clamp(32px, 5.5vw, 54px); line-height: 1.05; letter-spacing: -0.015em; color: var(--ink); margin: 0 0 22px; }
   .subtitle { font-size: 17px; line-height: 1.6; color: var(--ink); max-width: 64ch; margin-bottom: 28px; }
   .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 26px; }
   .pill { display: inline-flex; align-items: center; padding: 7px 12px; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -100,7 +104,7 @@
   .info-box .label { font-weight: 700; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
   .info-box p { margin: 0 0 10px; font-size: 14px; }
   .info-box p:last-child { margin-bottom: 0; }
-  .eqn { font-family: "Space Mono", monospace; font-size: 14px; line-height: 1.9; color: var(--ink); background: #fff; border: 1px solid var(--line); padding: 18px 20px; margin: 8px 0 0; overflow-x: auto; }
+  .eqn { font-family: "Manrope", system-ui, sans-serif; font-size: 14px; line-height: 1.9; color: var(--ink); background: #fff; border: 1px solid var(--line); padding: 18px 20px; margin: 8px 0 0; overflow-x: auto; }
   .eqn .op { color: var(--accent); }
 
   /* Tables */
@@ -109,7 +113,7 @@
   th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
   th { font-weight: 700; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); background: var(--panel); }
   td { color: var(--ink-2); }
-  td.num, th.num { text-align: right; font-family: "Space Mono", monospace; white-space: nowrap; }
+  td.num, th.num { text-align: right; font-family: "Manrope", system-ui, sans-serif; white-space: nowrap; }
   td.lbl { color: var(--ink); font-weight: 500; }
   tr:last-child td { border-bottom: 0; }
   tr.total td { background: var(--ink); color: #fff; font-weight: 700; }
@@ -124,7 +128,7 @@
 
   /* Calculator */
   .calc { border: 1px solid var(--ink); margin: 28px 0; }
-  .calc-head { background: var(--ink); color: #fff; padding: 14px 20px; font: 700 11px/1 "Space Mono"; letter-spacing: 0.22em; text-transform: uppercase; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;}
+  .calc-head { background: var(--ink); color: #fff; padding: 14px 20px; font: 700 11px/1 "Manrope"; letter-spacing: 0.22em; text-transform: uppercase; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;}
   .calc-head .reset { color: rgba(255,255,255,0.7); font-size: 10px; cursor: pointer; border:1px solid rgba(255,255,255,0.3); padding:4px 9px; letter-spacing:0.14em;}
   .calc-head .reset:hover { color:#fff; border-color:#fff; }
   .calc-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
@@ -132,7 +136,7 @@
   .calc-out { padding: 22px 24px; background: var(--panel); }
   .ctrl { margin-bottom: 20px; }
   .ctrl:last-child { margin-bottom: 0; }
-  .ctrl label { display: flex; justify-content: space-between; align-items: baseline; font: 700 10.5px/1.4 "Space Mono"; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); margin-bottom: 8px; }
+  .ctrl label { display: flex; justify-content: space-between; align-items: baseline; font: 700 10.5px/1.4 "Manrope"; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); margin-bottom: 8px; }
   .ctrl label .v { color: var(--accent); font-size: 13px; }
   .ctrl input[type=range] { width: 100%; accent-color: var(--accent); margin: 0; }
   .ctrl .hint { font-size: 10px; color: var(--muted); margin-top: 4px; letter-spacing: 0.02em; }
@@ -146,7 +150,7 @@
 
   /* Charts */
   .chart-card { border: 1px solid var(--line); padding: 24px; margin: 28px 0; }
-  .chart-title { font: 700 11px/1 "Space Mono"; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .chart-title { font: 700 11px/1 "Manrope"; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
   .chart-sub { font-size: 12px; color: var(--muted); margin-bottom: 18px; }
   svg { display: block; max-width: 100%; height: auto; }
   .bar-tag { font-size: 10px; fill: var(--muted); letter-spacing: 0.06em; }
@@ -590,8 +594,8 @@
   var out=[];
   for (var d=0;d<bins;d++){ var bh=maxc?counts[d]/maxc*plotH:0; out.push('<rect x="'+(padL+d*bw+0.5).toFixed(1)+'" y="'+(padT+plotH-bh).toFixed(1)+'" width="'+(bw-1).toFixed(1)+'" height="'+bh.toFixed(1)+'" fill="#1a1a1a" opacity="0.78"/>'); }
   var xt=xOf(THRESH);
-  out.push('<line x1="'+xt.toFixed(1)+'" y1="'+padT+'" x2="'+xt.toFixed(1)+'" y2="'+(padT+plotH)+'" stroke="#ff6b4a" stroke-width="1.5" stroke-dasharray="3 3"/>');
-  out.push('<text x="'+(xt-5).toFixed(1)+'" y="'+(padT+11)+'" text-anchor="end" class="axis" style="fill:#ff6b4a">$150k threshold</text>');
+  out.push('<line x1="'+xt.toFixed(1)+'" y1="'+padT+'" x2="'+xt.toFixed(1)+'" y2="'+(padT+plotH)+'" stroke="#4D52FF" stroke-width="1.5" stroke-dasharray="3 3"/>');
+  out.push('<text x="'+(xt-5).toFixed(1)+'" y="'+(padT+11)+'" text-anchor="end" class="axis" style="fill:#4D52FF">$150k threshold</text>');
   var xm=xOf(med);
   out.push('<line x1="'+xm.toFixed(1)+'" y1="'+padT+'" x2="'+xm.toFixed(1)+'" y2="'+(padT+plotH)+'" stroke="#1a1a1a" stroke-width="1"/>');
   out.push('<text x="'+xm.toFixed(1)+'" y="'+(padT-2)+'" text-anchor="middle" class="axis" style="fill:#1a1a1a">median '+money(med)+'</text>');
@@ -635,7 +639,7 @@
   o.push('<text class="axis" x="'+bx.toFixed(1)+'" y="'+(padT-12)+'" text-anchor="middle" style="fill:#1a1a1a">base $'+Math.round(base)+'</text>');
   rows.forEach(function(r,i){
     var y=top+i*(rowH+gap), xL=X(r.loV), xR=X(r.hiV), coral=(r.key==='qaly');
-    o.push('<rect x="'+xL.toFixed(1)+'" y="'+y+'" width="'+Math.max(1,xR-xL).toFixed(1)+'" height="'+rowH+'" fill="'+(coral?'#ff6b4a':'#1a1a1a')+'" opacity="'+(coral?'0.30':'0.12')+'"/>');
+    o.push('<rect x="'+xL.toFixed(1)+'" y="'+y+'" width="'+Math.max(1,xR-xL).toFixed(1)+'" height="'+rowH+'" fill="'+(coral?'#4D52FF':'#1a1a1a')+'" opacity="'+(coral?'0.30':'0.12')+'"/>');
     o.push('<text class="bar-tag" x="'+(padL-10)+'" y="'+(y+rowH/2+4)+'" text-anchor="end">'+r.label+'</text>');
     o.push('<text class="bar-tag" x="'+(xL-5).toFixed(1)+'" y="'+(y+rowH/2+4)+'" text-anchor="end" style="fill:#1a1a1a">$'+Math.round(r.loV).toLocaleString()+'</text>');
     o.push('<text class="bar-tag" x="'+(xR+5).toFixed(1)+'" y="'+(y+rowH/2+4)+'" text-anchor="start" style="fill:#1a1a1a">$'+Math.round(r.hiV).toLocaleString()+'</text>');
