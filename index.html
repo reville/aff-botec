@@ -194,9 +194,9 @@
     <div class="label">Summary, best guess</div>
     <ul>
       <li>A rough expected-value BOTEC for a fixed $250M R&amp;D and portfolio-development cost. In the base case it backs ~9 serious portfolio programs, each ~15% likely to win approval: 1.35 first-cycle approvals in expectation, a ~77% chance of at least one, and a ~23% chance of none.</li>
-      <li>In the US-only case, the model produces ~911k expected QALYs, ~60.8k deaths averted, and ~$270/QALY using the full $250M denominator.</li>
+      <li>In the US-only case, the model produces ~1.14M expected QALYs, ~75.9k deaths averted, and ~$220/QALY using the full $250M denominator.</li>
       <li>The key question is whether AFF can cause a high-reach medicine to exist years earlier than it otherwise would, and deserve meaningful counterfactual credit for that acceleration.</li>
-      <li>Globally, the upside depends on reachable deployment rather than burden alone: rich-country diffusion implies ~$137/QALY, global partial access ~$55/QALY, and broad global access ~$18/QALY, conditional on affordability, regulatory approval, prescribing, adherence, and procurement.</li>
+      <li>Globally, the upside depends on reachable deployment rather than burden alone: rich-country diffusion implies ~$110/QALY, global partial access ~$44/QALY, and broad global access ~$15/QALY, conditional on affordability, regulatory approval, prescribing, adherence, and procurement.</li>
     </ul>
   </div>
 
@@ -208,7 +208,7 @@
       <p style="margin-top:14px;">Then: <span class="mono">$/QALY = total fund cost ÷ QALYs</span>, and <span class="mono">benefit–cost ratio = (QALYs × value-per-QALY) ÷ cost</span>.</p>
     </div>
     <ul>
-      <li>The fund mostly pulls a therapy <em>forward in time</em> rather than inventing one that would never exist. The honest unit is credited years: if a medicine arrives in year X with the fund and year Y without, the contribution is (Y − X) years of benefit, weighted by the chance it would have happened anyway. We fold that into two parameters: the 12 discounted-equivalent years of benefit (a medicine otherwise arriving ~5–10 years later, or not at all in the most neglected sub-fields) and the 50% credit share. Pure acceleration of an asset pharma would have funded regardless belongs near the Low credit end. [8]</li>
+      <li>The fund mostly pulls a therapy <em>forward in time</em>, but some addiction-medicine candidates may not be investigated at all without a field-building funder. The honest unit is credited years: if a medicine arrives in year X with the fund and year Y without, the contribution is (Y − X) years of benefit, weighted by the chance it would have happened anyway. We fold that into two parameters: 15 discounted-equivalent years of benefit and the 50% credit share. Pure acceleration of an asset pharma would have funded regardless belongs near the Low credit end; an otherwise-unfunded candidate belongs nearer the base or high end. [8]</li>
       <li>The fund is one of several backers of any winning asset (co-investors, acquirers, NIH-funded science upstream). We credit it a <em>share</em> of the impact, 50% in the base case. That is higher than a pure funding-share rule, because in a field with almost no other early backers the fund is often the reason the asset exists at all. [8]</li>
       <li>The ~$20M cost per portfolio program is the fund's catalytic slice; co-investors and acquirers fund the rest of each asset's roughly $1–2.6B path to market. That is also why the credit share is ~50%, not 100%. We do not separately count co-investment as upside.</li>
     </ul>
@@ -229,7 +229,7 @@
           <tr><td class="lbl">Portfolio programs / portfolio size</td><td class="num">~9 first-round programs</td><td>Converts development capital into a portfolio of serious clinical bets</td><td>$180M development capital ÷ ~$20M per philanthropic program.</td></tr>
           <tr><td class="lbl">Approval probability per program</td><td class="num">15%</td><td>Turns the portfolio into expected approvals</td><td>Psychiatry / neurology proxy with some uplift for repurposing and stage-gating.</td></tr>
           <tr><td class="lbl">Expected approvals</td><td class="num">1.35 first-cycle; ~2.03 incl. recycling</td><td>Expected-value mechanics, not a realized outcome</td><td>About 23% of portfolios produce no approval; about 77% produce at least one.</td></tr>
-          <tr><td class="lbl">Discounted-equivalent benefit duration</td><td class="num">12 years</td><td>Approximates credited benefit over the relevant market window</td><td>Captures discounting, ramp, and acceleration rather than permanent creation.</td></tr>
+          <tr><td class="lbl">Discounted-equivalent benefit duration</td><td class="num">15 years</td><td>Approximates credited benefit over the relevant market window</td><td>Captures discounting, ramp, acceleration, and cases where the asset otherwise may not be investigated.</td></tr>
           <tr><td class="lbl">Counterfactual credit</td><td class="num">50%</td><td>Credits only the share of benefit plausibly caused by AFF</td><td>Decision-relevant crux; lower if pharma, NIH, or other funders would have advanced the same asset.</td></tr>
           <tr><td class="lbl">Capital recycling / reinvestment</td><td class="num">1.5×</td><td>Models returned capital funding additional programs</td><td>Treated as an impact multiplier, not a reduction in the gross $250M cost denominator.</td></tr>
           <tr class="total"><td class="lbl">Cost denominator used in headline</td><td class="num">Full $250M</td><td>Denominator for all deployment-scope cost-effectiveness figures</td><td>Conservative relative to charging only the $180M medicine-development line or netting out returns.</td></tr>
@@ -243,10 +243,10 @@
       <table class="scenario-table">
         <thead><tr><th>Deployment scenario</th><th class="num">Burden ×</th><th class="num">Reachable ×</th><th class="num">Expected QALYs</th><th class="num">Deaths averted</th><th class="num">$/QALY</th><th class="num">OP multiple</th><th>Interpretation</th></tr></thead>
         <tbody>
-          <tr><td class="lbl">US-only / narrow case</td><td class="num">1×</td><td class="num">1×</td><td class="num">~0.91M</td><td class="num">~61k</td><td class="num">~$270</td><td class="num">~365×</td><td>Counts only US health benefits; strongest evidentiary base, weakest global-health comparison.</td></tr>
-          <tr><td class="lbl">US + rich-country diffusion</td><td class="num">~3×</td><td class="num">~2×</td><td class="num">~1.8M</td><td class="num">~122k</td><td class="num">~$137</td><td class="num">~730×</td><td>Assumes other high-income markets eventually get partial access and uptake, but not a full US-equivalent cascade.</td></tr>
-          <tr><td class="lbl">Global partial access</td><td class="num">~15×</td><td class="num">~5×</td><td class="num">~4.6M</td><td class="num">~304k</td><td class="num">~$55</td><td class="num">~1,820×</td><td>Burden-weighted sensitivity where global uptake reaches roughly one-third of US fractional uptake.</td></tr>
-          <tr><td class="lbl">Global broad access</td><td class="num">~15×</td><td class="num">~15×</td><td class="num">~13.7M</td><td class="num">~911k</td><td class="num">~$18</td><td class="num">~5,480×</td><td>Aggressive upside case requiring broad regulatory approval, affordability, supply, prescribing, adherence, and procurement.</td></tr>
+          <tr><td class="lbl">US-only / narrow case</td><td class="num">1×</td><td class="num">1×</td><td class="num">~1.14M</td><td class="num">~76k</td><td class="num">~$220</td><td class="num">~456×</td><td>Counts only US health benefits; strongest evidentiary base, weakest global-health comparison.</td></tr>
+          <tr><td class="lbl">US + rich-country diffusion</td><td class="num">~3×</td><td class="num">~2×</td><td class="num">~2.3M</td><td class="num">~152k</td><td class="num">~$110</td><td class="num">~910×</td><td>Assumes other high-income markets eventually get partial access and uptake, but not a full US-equivalent cascade.</td></tr>
+          <tr><td class="lbl">Global partial access</td><td class="num">~15×</td><td class="num">~5×</td><td class="num">~5.7M</td><td class="num">~380k</td><td class="num">~$44</td><td class="num">~2,280×</td><td>Burden-weighted sensitivity where global uptake reaches roughly one-third of US fractional uptake.</td></tr>
+          <tr><td class="lbl">Global broad access</td><td class="num">~15×</td><td class="num">~15×</td><td class="num">~17.1M</td><td class="num">~1.14M</td><td class="num">~$15</td><td class="num">~6,830×</td><td>Aggressive upside case requiring broad regulatory approval, affordability, supply, prescribing, adherence, and procurement.</td></tr>
         </tbody>
       </table>
       <caption>OP-style multiple is approximated as $100,000 per health unit divided by cost per QALY; it is a comparability heuristic, not cash return. Global burden is addiction-mortality-weighted rather than population-weighted: the US is about 4% of world population and about 7% of addiction deaths, while global addiction mortality is roughly 15× the US addiction-mortality burden. The key uncertainty is how much of that burden is actually reachable through access, affordability, regulatory approval, prescribing, adherence, and procurement. [23]</caption>
@@ -257,21 +257,23 @@
       <div class="chart-sub">Expected QALYs after separating global burden from reachable access and adoption</div>
       <svg viewBox="0 0 760 314" role="img" aria-label="Bar chart of expected QALYs by reachable deployment scope">
         <line x1="86" y1="230" x2="684" y2="230" stroke="#1a1a1a" stroke-width="1"/>
-        <line x1="86" y1="170" x2="684" y2="170" stroke="#e5e5e5"/>
-        <line x1="86" y1="110" x2="684" y2="110" stroke="#e5e5e5"/>
+        <line x1="86" y1="185" x2="684" y2="185" stroke="#e5e5e5"/>
+        <line x1="86" y1="140" x2="684" y2="140" stroke="#e5e5e5"/>
+        <line x1="86" y1="95" x2="684" y2="95" stroke="#e5e5e5"/>
         <line x1="86" y1="50" x2="684" y2="50" stroke="#e5e5e5"/>
         <text class="axis" x="78" y="233" text-anchor="end">0</text>
-        <text class="axis" x="78" y="173" text-anchor="end">5M</text>
-        <text class="axis" x="78" y="113" text-anchor="end">10M</text>
-        <text class="axis" x="78" y="53" text-anchor="end">15M</text>
-        <rect x="116" y="219" width="80" height="11" fill="#1a1a1a" opacity="0.50"/>
-        <rect x="264" y="208" width="80" height="22" fill="#1a1a1a" opacity="0.60"/>
-        <rect x="412" y="175" width="80" height="55" fill="#1a1a1a" opacity="0.74"/>
-        <rect x="560" y="66" width="80" height="164" fill="#1a1a1a" opacity="0.88"/>
-        <text class="bar-tag" x="156" y="211" text-anchor="middle" style="fill:#1a1a1a">0.91M</text>
-        <text class="bar-tag" x="304" y="200" text-anchor="middle" style="fill:#1a1a1a">1.8M</text>
-        <text class="bar-tag" x="452" y="167" text-anchor="middle" style="fill:#1a1a1a">4.6M</text>
-        <text class="bar-tag" x="600" y="58" text-anchor="middle" style="fill:#1a1a1a">13.7M</text>
+        <text class="axis" x="78" y="188" text-anchor="end">5M</text>
+        <text class="axis" x="78" y="143" text-anchor="end">10M</text>
+        <text class="axis" x="78" y="98" text-anchor="end">15M</text>
+        <text class="axis" x="78" y="53" text-anchor="end">20M</text>
+        <rect x="116" y="220" width="80" height="10" fill="#1a1a1a" opacity="0.50"/>
+        <rect x="264" y="210" width="80" height="20" fill="#1a1a1a" opacity="0.60"/>
+        <rect x="412" y="179" width="80" height="51" fill="#1a1a1a" opacity="0.74"/>
+        <rect x="560" y="76" width="80" height="154" fill="#1a1a1a" opacity="0.88"/>
+        <text class="bar-tag" x="156" y="212" text-anchor="middle" style="fill:#1a1a1a">1.14M</text>
+        <text class="bar-tag" x="304" y="202" text-anchor="middle" style="fill:#1a1a1a">2.3M</text>
+        <text class="bar-tag" x="452" y="171" text-anchor="middle" style="fill:#1a1a1a">5.7M</text>
+        <text class="bar-tag" x="600" y="68" text-anchor="middle" style="fill:#1a1a1a">17.1M</text>
         <text class="axis" x="156" y="252" text-anchor="middle">US-only</text>
         <text class="axis" x="304" y="252" text-anchor="middle"><tspan x="304" dy="0">Rich-country</tspan><tspan x="304" dy="13">diffusion</tspan></text>
         <text class="axis" x="452" y="252" text-anchor="middle"><tspan x="452" dy="0">Global partial</tspan><tspan x="452" dy="13">access</tspan></text>
@@ -294,14 +296,14 @@
         <text class="axis" x="78" y="113" text-anchor="end">$200</text>
         <text class="axis" x="78" y="53" text-anchor="end">$300</text>
         <text class="axis" x="678" y="162" text-anchor="end" style="fill:#4D52FF">rough global-health benchmark: ~$50-100/DALY</text>
-        <rect x="116" y="66" width="80" height="164" fill="#1a1a1a" opacity="0.88"/>
-        <rect x="264" y="148" width="80" height="82" fill="#1a1a1a" opacity="0.78"/>
-        <rect x="412" y="197" width="80" height="33" fill="#1a1a1a" opacity="0.64"/>
-        <rect x="560" y="219" width="80" height="11" fill="#1a1a1a" opacity="0.50"/>
-        <text class="bar-tag" x="156" y="58" text-anchor="middle" style="fill:#1a1a1a">$270</text>
-        <text class="bar-tag" x="304" y="140" text-anchor="middle" style="fill:#1a1a1a">$137</text>
-        <text class="bar-tag" x="452" y="189" text-anchor="middle" style="fill:#1a1a1a">$55</text>
-        <text class="bar-tag" x="600" y="211" text-anchor="middle" style="fill:#1a1a1a">$18</text>
+        <rect x="116" y="98" width="80" height="132" fill="#1a1a1a" opacity="0.88"/>
+        <rect x="264" y="164" width="80" height="66" fill="#1a1a1a" opacity="0.78"/>
+        <rect x="412" y="204" width="80" height="26" fill="#1a1a1a" opacity="0.64"/>
+        <rect x="560" y="221" width="80" height="9" fill="#1a1a1a" opacity="0.50"/>
+        <text class="bar-tag" x="156" y="90" text-anchor="middle" style="fill:#1a1a1a">$220</text>
+        <text class="bar-tag" x="304" y="156" text-anchor="middle" style="fill:#1a1a1a">$110</text>
+        <text class="bar-tag" x="452" y="196" text-anchor="middle" style="fill:#1a1a1a">$44</text>
+        <text class="bar-tag" x="600" y="213" text-anchor="middle" style="fill:#1a1a1a">$15</text>
         <text class="axis" x="156" y="252" text-anchor="middle">US-only</text>
         <text class="axis" x="304" y="252" text-anchor="middle"><tspan x="304" dy="0">Rich-country</tspan><tspan x="304" dy="13">diffusion</tspan></text>
         <text class="axis" x="452" y="252" text-anchor="middle"><tspan x="452" dy="0">Global partial</tspan><tspan x="452" dy="13">access</tspan></text>
@@ -343,11 +345,11 @@
           <tr style="background:var(--panel)"><td class="lbl"><strong>= Expected approved medicines</strong></td><td class="num">0.4</td><td class="num">1.35</td><td class="num">3.75</td><td class="src">programs × P(approval)</td></tr>
           <tr><td class="lbl">QALYs / year per medicine at US scale</td><td class="num">12k</td><td class="num">75k</td><td class="num">450k</td><td class="src">mortality + morbidity; see note [13]</td></tr>
           <tr><td class="lbl">Deaths averted / year per medicine at scale</td><td class="num">1,000</td><td class="num">5,000</td><td class="num">30,000</td><td class="src">treatment-gap closure × Sordo 55% mortality cut; High = a polysubstance GLP-1 across nicotine, alcohol &amp; opioids [14][22]</td></tr>
-          <tr><td class="lbl">Effective discounted years of benefit</td><td class="num">8</td><td class="num">12</td><td class="num">15</td><td class="src">~15-yr window, 3% discount, ramp</td></tr>
+          <tr><td class="lbl">Effective discounted years of benefit</td><td class="num">10</td><td class="num">15</td><td class="num">20</td><td class="src">mix of acceleration and no-counterfactual cases; discounted/ramped</td></tr>
           <tr><td class="lbl">AFF counterfactual credit share</td><td class="num">25%</td><td class="num">50%</td><td class="num">80%</td><td class="src">credit ≈ funding share, raised for catalytic role [8]</td></tr>
           <tr><td class="lbl">Capital recycled into new programs (×)</td><td class="num">1.2×</td><td class="num">1.5×</td><td class="num">3.0×</td><td class="src">exits return capital that funds more programs; High = a CFF/T1D-scale exit [10][20]</td></tr>
-          <tr class="total"><td class="lbl">Cumulative QALYs</td><td class="num">11.5k</td><td class="num">911k</td><td class="num">60.8M</td><td>product of the chain</td></tr>
-          <tr class="total"><td class="lbl">Cumulative deaths averted</td><td class="num">960</td><td class="num">60.8k</td><td class="num">4.05M</td><td>parallel, on deaths averted / yr</td></tr>
+          <tr class="total"><td class="lbl">Cumulative QALYs</td><td class="num">14.4k</td><td class="num">1.14M</td><td class="num">81.0M</td><td>product of the chain</td></tr>
+          <tr class="total"><td class="lbl">Cumulative deaths averted</td><td class="num">1.2k</td><td class="num">75.9k</td><td class="num">5.40M</td><td>parallel, on deaths averted / yr</td></tr>
         </tbody>
       </table>
     </div>
@@ -420,32 +422,32 @@
       <table>
         <thead><tr><th>Output ($250M fund)</th><th class="num">Low</th><th class="num">Base</th><th class="num">High</th></tr></thead>
         <tbody>
-          <tr><td class="lbl">Cumulative QALYs</td><td class="num">11,500</td><td class="num">911,000</td><td class="num">60,800,000</td></tr>
-          <tr><td class="lbl">Cumulative deaths averted</td><td class="num">960</td><td class="num">60,750</td><td class="num">4,050,000</td></tr>
-          <tr><td class="lbl">Cost per QALY</td><td class="num">~$21,700</td><td class="num">~$270</td><td class="num">~$4</td></tr>
-          <tr><td class="lbl">Cost per death averted</td><td class="num">~$260k</td><td class="num">~$4,100</td><td class="num">~$62</td></tr>
-          <tr><td class="lbl">Health benefit @ $104k/QALY (ICER level)</td><td class="num">$1.2B</td><td class="num">$95B</td><td class="num">$6.3T</td></tr>
-          <tr class="total"><td class="lbl">Benefit–cost ratio</td><td class="num">~5:1</td><td class="num">~380:1</td><td class="num">~25,000:1</td></tr>
+          <tr><td class="lbl">Cumulative QALYs</td><td class="num">14,400</td><td class="num">1,139,000</td><td class="num">81,000,000</td></tr>
+          <tr><td class="lbl">Cumulative deaths averted</td><td class="num">1,200</td><td class="num">75,900</td><td class="num">5,400,000</td></tr>
+          <tr><td class="lbl">Cost per QALY</td><td class="num">~$17,400</td><td class="num">~$220</td><td class="num">~$3</td></tr>
+          <tr><td class="lbl">Cost per death averted</td><td class="num">~$208k</td><td class="num">~$3,300</td><td class="num">~$46</td></tr>
+          <tr><td class="lbl">Health benefit @ $104k/QALY (ICER level)</td><td class="num">$1.5B</td><td class="num">$118B</td><td class="num">$8.4T</td></tr>
+          <tr class="total"><td class="lbl">Benefit–cost ratio</td><td class="num">~6:1</td><td class="num">~474:1</td><td class="num">~33,700:1</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Within the parameter ranges chosen here, the US-only cost per QALY stays below common US payer thresholds even in the Low column (~$21,700/QALY). The Low/High corners only stress the one-way parameter ranges; the larger risk is model-structure uncertainty, for instance that adoption rather than approval is the binding constraint. The US-threshold comparison is also a weak test, as the crux table below shows.</p>
+    <p>Within the parameter ranges chosen here, the US-only cost per QALY stays below common US payer thresholds even in the Low column (~$17,400/QALY). The Low/High corners only stress the one-way parameter ranges; the larger risk is model-structure uncertainty, for instance that adoption rather than approval is the binding constraint. The US-threshold comparison is also a weak test, as the crux table below shows.</p>
     <h3>The full distribution</h3>
     <p>The Low and High columns above are scenario corners. The Monte Carlo instead samples each input as a lognormal centered on its Base value with the tabled spread, and samples the number of approvals as a discrete binomial draw (9 programs × 15%) rather than a smooth 1.35. This matters because zero-approval portfolios are not tail trivia; they are a central feature of the opportunity.</p>
     <div class="chart-card">
       <div class="chart-title">Cost per QALY among portfolios with ≥1 approval (20,000 draws)</div>
       <div class="chart-sub">Conditional on ≥1 approval · log scale · dashed line marks the $104k/QALY ICER anchor</div>
       <svg id="mc-hist" viewBox="0 0 760 240" role="img" aria-label="Monte Carlo distribution of cost per QALY"></svg>
-      <p style="margin:16px 0 0;font-size:13px;line-height:1.6;">About <span id="mc-zero">…</span> of sampled portfolios produce no approval at all, and their realized cost-effectiveness is undefined; the headline ~$270/QALY is the expected-value figure that averages those in. Among portfolios with at least one approval, the median is <span id="mc-med">…</span> and the 90% interval is <span id="mc-ci">…</span>.</p>
+      <p style="margin:16px 0 0;font-size:13px;line-height:1.6;">About <span id="mc-zero">…</span> of sampled portfolios produce no approval at all, and their realized cost-effectiveness is undefined; the headline ~$220/QALY is the expected-value figure that averages those in. Among portfolios with at least one approval, the median is <span id="mc-med">…</span> and the 90% interval is <span id="mc-ci">…</span>.</p>
     </div>
     <h3>Fund-size scaling, US-only base</h3>
     <div class="tbl-wrap">
       <table>
         <thead><tr><th>Fund size</th><th class="num">Expected approvals (base)</th><th class="num">QALYs (base)</th><th class="num">Deaths averted (base)</th><th class="num">$/QALY</th></tr></thead>
         <tbody>
-          <tr><td class="lbl">$100M</td><td class="num">0.54</td><td class="num">~365,000</td><td class="num">~24,300</td><td class="num">~$270</td></tr>
-          <tr><td class="lbl">$250M (base)</td><td class="num">1.35</td><td class="num">~911,000</td><td class="num">~60,750</td><td class="num">~$270</td></tr>
-          <tr><td class="lbl">$1B</td><td class="num">5.4</td><td class="num">~3,645,000</td><td class="num">~243,000</td><td class="num">~$270*</td></tr>
+          <tr><td class="lbl">$100M</td><td class="num">0.54</td><td class="num">~456,000</td><td class="num">~30,400</td><td class="num">~$220</td></tr>
+          <tr><td class="lbl">$250M (base)</td><td class="num">1.35</td><td class="num">~1,139,000</td><td class="num">~75,900</td><td class="num">~$220</td></tr>
+          <tr><td class="lbl">$1B</td><td class="num">5.4</td><td class="num">~4,556,000</td><td class="num">~303,800</td><td class="num">~$220*</td></tr>
         </tbody>
       </table>
       <caption>* Marginal cost-effectiveness likely declines with size: earlier investments fund the most highest-value attempts, over time, and as the market expands, the marginal impact likely declines.</caption>
@@ -479,9 +481,9 @@
             <div class="hint">Reach × effectiveness at US scale. The dominant uncertainty.</div>
           </div>
           <div class="ctrl">
-            <label>Years of benefit <span class="v" id="v-yrs">12</span></label>
-            <input type="range" id="s-yrs" min="5" max="20" step="1" value="12">
-            <div class="hint">Discounted-equivalent years on market within the horizon.</div>
+            <label>Years of benefit <span class="v" id="v-yrs">15</span></label>
+            <input type="range" id="s-yrs" min="5" max="25" step="1" value="15">
+            <div class="hint">Discounted-equivalent credited years, including some otherwise-unfunded assets.</div>
           </div>
           <div class="ctrl">
             <label>AFF credit share <span class="v" id="v-cred">50%</span></label>
@@ -501,10 +503,10 @@
         </div>
         <div class="calc-out">
           <div class="out-row"><span class="k">Expected approvals</span><span class="calc-val" id="o-appr">1.35</span></div>
-          <div class="out-row"><span class="k">Cumulative QALYs</span><span class="calc-val" id="o-qaly">911k</span></div>
-          <div class="out-row"><span class="k">Deaths averted</span><span class="calc-val" id="o-deaths">60.8k</span></div>
-          <div class="out-row big"><span class="k">Cost / QALY</span><span class="calc-val" id="o-cpq">$270</span></div>
-          <div class="out-row"><span class="k">Benefit–cost @ $104k</span><span class="calc-val" id="o-bcr">380:1</span></div>
+          <div class="out-row"><span class="k">Cumulative QALYs</span><span class="calc-val" id="o-qaly">1.14M</span></div>
+          <div class="out-row"><span class="k">Deaths averted</span><span class="calc-val" id="o-deaths">75.9k</span></div>
+          <div class="out-row big"><span class="k">Cost / QALY</span><span class="calc-val" id="o-cpq">$220</span></div>
+          <div class="out-row"><span class="k">Benefit–cost @ $104k</span><span class="calc-val" id="o-bcr">474:1</span></div>
           <div class="verdict" id="o-verdict"></div>
         </div>
       </div>
@@ -514,10 +516,10 @@
   <!-- 07 -->
   <section class="section">
     <h2>Sensitivity analysis</h2>
-    <p>We vary each parameter from Low to High, holding the rest at base, and recompute the cost per QALY. Longer bars are the parameters that matter most. The base case sits at the dotted line (~$270/QALY); <em>left</em> is cheaper, <em>right</em> is worse.</p>
+    <p>We vary each parameter from Low to High, holding the rest at base, and recompute the cost per QALY. Longer bars are the parameters that matter most. The base case sits at the dotted line (~$220/QALY); <em>left</em> is cheaper, <em>right</em> is worse.</p>
     <div class="chart-card">
       <div class="chart-title">Tornado: cost per QALY ($), one parameter swung at a time</div>
-      <div class="chart-sub">Lower is better · base case marked at $270/QALY</div>
+      <div class="chart-sub">Lower is better · base case marked at $220/QALY</div>
       <svg id="tornado" viewBox="0 0 760 312" role="img" aria-label="Tornado sensitivity chart of cost per QALY"></svg>
     </div>
     <p>The dominant lever is per-medicine reach, how many people a new drug actually gets onto effective treatment, followed by the odds of approval and the credit share. One-way sensitivity is a weak robustness test, though: it holds the model structure fixed and moves one parameter at a time. Even the worst single-parameter end stays under the US threshold, but that mostly reflects how weak that threshold is here (see the crux table), not that the estimate is secure.</p>
@@ -531,12 +533,12 @@
       <table>
         <thead><tr><th>Input (base)</th><th>To <em>fail</em> the US $104k/QALY ICER anchor</th><th>To <em>match</em> GiveWell (~$80 per health unit)</th></tr></thead>
         <tbody>
-          <tr><td class="lbl">QALYs/yr per medicine (75,000)</td><td>fall below ~200 (≈380× lower)</td><td>rise to ~260,000 (≈3.4× base)</td></tr>
-          <tr><td class="lbl">Counterfactual credit (50%)</td><td>fall below ~0.13%</td><td>cannot close a ~3.4× gap on its own</td></tr>
-          <tr><td class="lbl">P(approval) per program (15%)</td><td>fall below ~0.04%</td><td>cannot close it on its own</td></tr>
+          <tr><td class="lbl">QALYs/yr per medicine (75,000)</td><td>fall below ~160 (≈470× lower)</td><td>rise to ~206,000 (≈2.7× base)</td></tr>
+          <tr><td class="lbl">Counterfactual credit (50%)</td><td>fall below ~0.11%</td><td>cannot close a ~2.7× gap on its own</td></tr>
+          <tr><td class="lbl">P(approval) per program (15%)</td><td>fall below ~0.03%</td><td>cannot close it on its own</td></tr>
         </tbody>
       </table>
-      <caption>The US-payer comparison is nearly unconditional: every input would have to be hundreds of times worse than base to fail it, which is why "~380× the US anchor" carries little information. The decision-relevant bar is global-health cost-effectiveness (GiveWell ~$80 per unweighted DALY). On a straight cost-per-health-unit basis the US-only base case is ~3.4× short of it; rich-country diffusion is still short; global partial access is roughly comparable; global broad access clears it, but only if the access and adoption assumptions are real.</caption>
+      <caption>The US-payer comparison is nearly unconditional: every input would have to be hundreds of times worse than base to fail it, which is why "~470× the US anchor" carries little information. The decision-relevant bar is global-health cost-effectiveness (GiveWell ~$80 per unweighted DALY). On a straight cost-per-health-unit basis the US-only base case is ~2.7× short of it; rich-country diffusion is still modestly short; global partial access and global broad access clear it, but only if the access and adoption assumptions are real.</caption>
     </div>
   </section>
 
@@ -547,13 +549,13 @@
       <table>
         <thead><tr><th>Benchmark</th><th class="num">Cost-effectiveness</th><th>AFF comparison</th></tr></thead>
         <tbody>
-          <tr><td class="lbl">GiveWell top charities (global health)</td><td class="num">~$80 / DALY</td><td>US-only and rich-country diffusion remain above the rough bar. Global partial access is roughly comparable, and global broad access clears it, subject to QALY/DALY and access caveats [18]</td></tr>
-          <tr><td class="lbl">Open Phil / Coefficient GHW bar</td><td class="num">~$100k / DALY value; funds ≳2,000× cash</td><td>US-only does not clear this bar; rich-country diffusion remains below it; global partial access is near it; global broad access clears it. The cost-per-DALY benchmark above is more decision-relevant [18]</td></tr>
+          <tr><td class="lbl">GiveWell top charities (global health)</td><td class="num">~$80 / DALY</td><td>US-only and rich-country diffusion remain above the rough bar. Global partial access and global broad access clear it, subject to QALY/DALY and access caveats [18]</td></tr>
+          <tr><td class="lbl">Open Phil / Coefficient GHW bar</td><td class="num">~$100k / DALY value; funds ≳2,000× cash</td><td>US-only does not clear this bar; rich-country diffusion remains below it; global partial access and global broad access clear it. The cost-per-DALY benchmark above is more decision-relevant [18]</td></tr>
           <tr><td class="lbl">MMV antimalarials (realized)</td><td class="num">~$13 benefit / $1</td><td>Closest analogue: global deployment sensitivity, not the US-only case [19]</td></tr>
           <tr><td class="lbl">Multiple Myeloma Research Foundation (realized)</td><td class="num">$600M+ → 15+ drugs</td><td>Comparable venture-philanthropy precedent: 15+ drugs and roughly doubled myeloma survival [24]</td></tr>
           <tr><td class="lbl">Cystic Fibrosis Foundation (realized)</td><td class="num">~$150M catalytic → $3.3B royalty</td><td>CFF-scale royalty exit corresponds to AFF's High case, not the base case [20]</td></tr>
           <tr><td class="lbl">Existing addiction meds</td><td class="num">$4.6k–19k/QALY</td><td>Projected new-medicine cost is near or below the current medication cost-effectiveness range [17]</td></tr>
-          <tr><td class="lbl">US ICER anchor / UK NICE payer thresholds</td><td class="num">$104k/QALY; £20–30k</td><td>Clears by ~385×; weak decision bar relative to global-health benchmarks [15][16]</td></tr>
+          <tr><td class="lbl">US ICER anchor / UK NICE payer thresholds</td><td class="num">$104k/QALY; £20–30k</td><td>Clears by ~475×; weak decision bar relative to global-health benchmarks [15][16]</td></tr>
         </tbody>
       </table>
     </div>
@@ -633,7 +635,7 @@
 
 <script>
 (function(){
-  var base = { fund:250, cost:20, pos:15, qaly:75, yrs:12, cred:50, rec:1.5, dev:72 };
+  var base = { fund:250, cost:20, pos:15, qaly:75, yrs:15, cred:50, rec:1.5, dev:72 };
   var ids = Object.keys(base);
   var el = {};
   ids.forEach(function(k){ el[k] = document.getElementById('s-'+k); });
@@ -665,7 +667,7 @@
     var programs = devCap/cost;
     var appr   = programs*pos;
     var qalys  = appr*qy*yrs*cred*rec;
-    // Deaths averted scale off QALYs via the base mortality fraction: base 911k QALYs -> 60.8k deaths averted.
+    // Deaths averted scale off QALYs via the base mortality fraction: base 1.14M QALYs -> 75.9k deaths averted.
     var deaths = qalys * (5000/75000);
     var costDollars = fund*1e6;
     var cpq    = qalys>0 ? costDollars/qalys : 0;
@@ -731,7 +733,7 @@
     cost: {m:20,    lo:12,    hi:35},     // $M per portfolio program
     pos:  {m:0.15,  lo:0.08,  hi:0.25},   // P(approval) per program
     qaly: {m:75000, lo:12000, hi:450000}, // QALYs/yr per medicine at scale
-    yrs:  {m:12,    lo:8,     hi:15},     // effective discounted years
+    yrs:  {m:15,    lo:10,    hi:20},     // effective discounted years
     cred: {m:0.50,  lo:0.25,  hi:0.80},   // AFF credit share
     rec:  {m:1.5,   lo:1.2,   hi:3.0}     // capital recycled into new programs
   };
@@ -786,7 +788,7 @@
   var svg = document.getElementById('tornado');
   if (!svg) return;
   var FUND = 250e6;
-  var B = { programs:9, pos:0.15, qaly:75000, yrs:12, cred:0.50, rec:1.5 };
+  var B = { programs:9, pos:0.15, qaly:75000, yrs:15, cred:0.50, rec:1.5 };
   function val(key,v){ var p={}; for (var k in B) p[k]=B[k]; p[key]=v; return FUND/(p.programs*p.pos*p.qaly*p.yrs*p.cred*p.rec); }
   var base = FUND/(B.programs*B.pos*B.qaly*B.yrs*B.cred*B.rec);
   var rows = [
@@ -795,7 +797,7 @@
     {label:'P(approval) per program', key:'pos',      lo:0.08,  hi:0.25},
     {label:'Portfolio programs',      key:'programs', lo:5,     hi:15},
     {label:'Capital recycled',      key:'rec',   lo:1.2,   hi:3.0},
-    {label:'Years of benefit',      key:'yrs',   lo:8,     hi:15}
+    {label:'Years of benefit',      key:'yrs',   lo:10,    hi:20}
   ];
   rows.forEach(function(r){ var a=val(r.key,r.lo), b=val(r.key,r.hi); r.loV=Math.min(a,b); r.hiV=Math.max(a,b); r.range=r.hiV-r.loV; });
   rows.sort(function(a,b){ return b.range-a.range; });
@@ -838,17 +840,17 @@
       p_approval_per_program: { low: 0.08, base: 0.15, high: 0.25 },
       qalys_per_year_per_medicine: { low: 12000, base: 75000, high: 450000 },
       deaths_averted_per_year_per_medicine: { low: 1000, base: 5000, high: 30000 },
-      effective_years_of_benefit: { low: 8, base: 12, high: 15 },
+      effective_years_of_benefit: { low: 10, base: 15, high: 20 },
       counterfactual_credit_share: { low: 0.25, base: 0.50, high: 0.80 },
       capital_recycled_multiple: { low: 1.2, base: 1.5, high: 3.0 }
     },
     approval_distribution_9_programs_15pct: { expected: 1.35, p_zero: 0.23, p_one: 0.37, p_ge_one: 0.77, p_ge_two: 0.40 },
-    base_outputs: { expected_approvals_first_cycle: 1.35, total_expected_approvals_incl_recycling: 2.03, cumulative_qalys: 911000, deaths_averted: 60750, usd_per_qaly: 274, deaths_averted_cost_usd: 4115, benefit_cost_at_104k_per_qaly: 380 },
+    base_outputs: { expected_approvals_first_cycle: 1.35, total_expected_approvals_incl_recycling: 2.03, cumulative_qalys: 1139000, deaths_averted: 75900, usd_per_qaly: 219, deaths_averted_cost_usd: 3292, benefit_cost_at_104k_per_qaly: 474 },
     deployment_scenarios: {
-      us_only: { burden_multiplier: 1, reachable_multiplier: 1, qalys: 911000, deaths_averted: 60750, usd_per_qaly: 274, open_phil_style_multiple: 365, interpretation: "Counts only US health benefits." },
-      rich_country_diffusion: { burden_multiplier: 3, reachable_multiplier: 2, qalys: 1822000, deaths_averted: 121500, usd_per_qaly: 137, open_phil_style_multiple: 730, interpretation: "Other high-income markets get partial access and uptake, but not a full US-equivalent cascade." },
-      global_partial_access: { burden_multiplier: 15, reachable_multiplier: 5, qalys: 4555000, deaths_averted: 303750, usd_per_qaly: 55, open_phil_style_multiple: 1820, interpretation: "Global uptake reaches roughly one-third of US fractional uptake on a burden-weighted basis." },
-      global_broad_access: { burden_multiplier: 15, reachable_multiplier: 15, qalys: 13665000, deaths_averted: 911250, usd_per_qaly: 18, open_phil_style_multiple: 5480, interpretation: "Aggressive upside case requiring broad regulatory approval, affordability, supply, prescribing, adherence, and procurement." }
+      us_only: { burden_multiplier: 1, reachable_multiplier: 1, qalys: 1139000, deaths_averted: 75900, usd_per_qaly: 219, open_phil_style_multiple: 456, interpretation: "Counts only US health benefits." },
+      rich_country_diffusion: { burden_multiplier: 3, reachable_multiplier: 2, qalys: 2278000, deaths_averted: 151900, usd_per_qaly: 110, open_phil_style_multiple: 911, interpretation: "Other high-income markets get partial access and uptake, but not a full US-equivalent cascade." },
+      global_partial_access: { burden_multiplier: 15, reachable_multiplier: 5, qalys: 5695000, deaths_averted: 379700, usd_per_qaly: 44, open_phil_style_multiple: 2278, interpretation: "Global uptake reaches roughly one-third of US fractional uptake on a burden-weighted basis." },
+      global_broad_access: { burden_multiplier: 15, reachable_multiplier: 15, qalys: 17086000, deaths_averted: 1139100, usd_per_qaly: 15, open_phil_style_multiple: 6834, interpretation: "Aggressive upside case requiring broad regulatory approval, affordability, supply, prescribing, adherence, and procurement." }
     },
     value_conventions: { us_icer_anchor_per_qaly_usd: 104000, us_payer_threshold_per_qaly_usd: [100000,150000], vsly_usd: 495000, vsl_usd: 13100000, givewell_per_daly_usd: 80, openphil_per_daly_usd: 100000 }
   };
