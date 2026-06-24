@@ -150,6 +150,7 @@
   .ctrl label { display: flex; justify-content: space-between; align-items: baseline; font: 700 10.5px/1.4 "Manrope"; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); margin-bottom: 8px; }
   .ctrl label .v { color: var(--accent); font-size: 13px; }
   .ctrl input[type=range] { width: 100%; accent-color: var(--accent); margin: 0; }
+  .ctrl select { width: 100%; border: 1px solid var(--line); background: #fff; color: var(--ink); padding: 8px 10px; font: 700 11px/1.3 "Manrope"; letter-spacing: 0.04em; }
   .ctrl .hint { font-size: 10px; color: var(--muted); margin-top: 4px; letter-spacing: 0.02em; }
   .out-row { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--line); }
   .out-row:last-child { border-bottom: 0; }
@@ -499,13 +500,26 @@
             <input type="range" id="s-dev" min="30" max="90" step="1" value="72">
             <div class="hint">Portion of the fund spent on portfolio programs.</div>
           </div>
+          <div class="ctrl">
+            <label>Deployment scope</label>
+            <select id="s-scope">
+              <option value="1">US-only / narrow case (1×)</option>
+              <option value="2">US + rich-country diffusion (2×)</option>
+              <option value="5" selected>Global partial access (5×)</option>
+              <option value="15">Global broad access (15×)</option>
+            </select>
+            <div class="hint">Applies the reachable-impact multiplier from the deployment table; US-only remains shown below.</div>
+          </div>
         </div>
         <div class="calc-out">
           <div class="out-row"><span class="k">Expected approvals</span><span class="calc-val" id="o-appr">1.35</span></div>
-          <div class="out-row"><span class="k">Cumulative QALYs</span><span class="calc-val" id="o-qaly">1.14M</span></div>
-          <div class="out-row"><span class="k">Deaths averted</span><span class="calc-val" id="o-deaths">75.9k</span></div>
-          <div class="out-row big"><span class="k">Cost / QALY</span><span class="calc-val" id="o-cpq">$220</span></div>
-          <div class="out-row"><span class="k">Benefit–cost @ $104k</span><span class="calc-val" id="o-bcr">474:1</span></div>
+          <div class="out-row"><span class="k">US-only QALYs</span><span class="calc-val" id="o-qaly-us">1.14M</span></div>
+          <div class="out-row"><span class="k">US-only deaths</span><span class="calc-val" id="o-deaths-us">75.9k</span></div>
+          <div class="out-row"><span class="k">US-only cost / QALY</span><span class="calc-val" id="o-cpq-us">$220</span></div>
+          <div class="out-row"><span class="k" id="o-scope-qaly-label">Global partial QALYs</span><span class="calc-val" id="o-qaly">5.7M</span></div>
+          <div class="out-row"><span class="k" id="o-scope-deaths-label">Global partial deaths</span><span class="calc-val" id="o-deaths">379.7k</span></div>
+          <div class="out-row big"><span class="k">Selected cost / QALY</span><span class="calc-val" id="o-cpq">$44</span></div>
+          <div class="out-row"><span class="k">Selected benefit–cost @ $104k</span><span class="calc-val" id="o-bcr">2,369:1</span></div>
           <div class="verdict" id="o-verdict"></div>
         </div>
       </div>
@@ -634,13 +648,19 @@
 
 <script>
 (function(){
-  var base = { fund:250, cost:20, pos:15, qaly:75, yrs:15, cred:50, rec:1.5, dev:72 };
+  var base = { fund:250, cost:20, pos:15, qaly:75, yrs:15, cred:50, rec:1.5, dev:72, scope:5 };
+  var deployments = {
+    1: { label:'US-only / narrow case', short:'US-only', mult:1 },
+    2: { label:'US + rich-country diffusion', short:'Rich-country', mult:2 },
+    5: { label:'Global partial access', short:'Global partial', mult:5 },
+    15: { label:'Global broad access', short:'Global broad', mult:15 }
+  };
   var ids = Object.keys(base);
   var el = {};
   ids.forEach(function(k){ el[k] = document.getElementById('s-'+k); });
 
   function fmt(n){
-    if (n >= 1e6) return (n/1e6).toFixed(2).replace(/\.00$/,'')+'M';
+    if (n >= 1e6) return (n/1e6).toFixed(2).replace(/\.00$/,'').replace(/0$/,'')+'M';
     if (n >= 1e3) return (n/1e3).toFixed(1).replace(/\.0$/,'')+'k';
     return Math.round(n).toString();
   }
@@ -661,14 +681,18 @@
     var cred = +el.cred.value/100;
     var rec  = +el.rec.value;
     var dev  = +el.dev.value/100;
+    var deployment = deployments[el.scope.value] || deployments[1];
 
     var devCap = fund*dev;              // $M
     var programs = devCap/cost;
     var appr   = programs*pos;
-    var qalys  = appr*qy*yrs*cred*rec;
+    var usQalys = appr*qy*yrs*cred*rec;
+    var qalys  = usQalys*deployment.mult;
     // Deaths averted scale off QALYs via the base mortality fraction: base 1.14M QALYs -> 75.9k deaths averted.
+    var usDeaths = usQalys * (5000/75000);
     var deaths = qalys * (5000/75000);
     var costDollars = fund*1e6;
+    var usCpq = usQalys>0 ? costDollars/usQalys : 0;
     var cpq    = qalys>0 ? costDollars/qalys : 0;
     var benefit = qalys*104000;
     var bcr    = benefit/costDollars;
@@ -684,27 +708,25 @@
     document.getElementById('v-dev').textContent  = el.dev.value+'%';
 
     document.getElementById('o-appr').textContent  = appr.toFixed(2);
+    document.getElementById('o-qaly-us').textContent  = fmt(usQalys);
+    document.getElementById('o-deaths-us').textContent = fmt(usDeaths);
+    document.getElementById('o-cpq-us').textContent   = usCpq>0 ? money(usCpq) : '…';
+    document.getElementById('o-scope-qaly-label').textContent = deployment.short+' QALYs';
+    document.getElementById('o-scope-deaths-label').textContent = deployment.short+' deaths';
     document.getElementById('o-qaly').textContent  = fmt(qalys);
     document.getElementById('o-deaths').textContent = fmt(deaths);
     document.getElementById('o-cpq').textContent   = cpq>0 ? money(cpq) : '…';
     document.getElementById('o-bcr').textContent   = Math.round(bcr).toLocaleString()+':1';
 
     var v = document.getElementById('o-verdict');
-    var thresh = 104000;
     if (cpq>0){
-      if (cpq < 80){
-        v.innerHTML = 'At <b>'+money(cpq)+'/QALY</b> this approaches top global-health cost-effectiveness (~$80 per DALY); this occurs only under the most optimistic reach assumptions.';
-      } else if (cpq < thresh){
-        v.innerHTML = 'At <b>'+money(cpq)+'/QALY</b> this clears US payer thresholds easily; the binding comparison is global-health cost-effectiveness (~$80 per DALY), not this bar.';
-      } else {
-        v.innerHTML = 'At '+money(cpq)+'/QALY this is above the US $104k ICER anchor; reachable only by pushing several sliders to pessimistic extremes together.';
-      }
+      v.innerHTML = '<b>'+deployment.label+'</b>: '+money(cpq)+'/QALY after a '+deployment.mult+'× reachable-impact multiplier. US-only remains '+money(usCpq)+'/QALY; compare global rows only if the access assumptions are credible.';
     } else {
       v.innerHTML = 'Set a non-zero reach and probability to see a result.';
     }
   }
 
-  ids.forEach(function(k){ el[k].addEventListener('input', compute); });
+  ids.forEach(function(k){ el[k].addEventListener(k === 'scope' ? 'change' : 'input', compute); });
   document.getElementById('resetBtn').addEventListener('click', function(){
     ids.forEach(function(k){ el[k].value = base[k]; });
     compute();
