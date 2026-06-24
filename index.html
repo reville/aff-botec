@@ -195,9 +195,9 @@
     <div class="label">Summary, best guess</div>
     <ul>
       <li>A rough expected-value BOTEC for a fixed $250M R&amp;D and portfolio-development cost. In the base case it backs ~9 serious portfolio programs, each ~15% likely to win approval: 1.35 first-cycle approvals in expectation, a ~77% chance of at least one, and a ~23% chance of none.</li>
-      <li>In the US-only case, the model produces ~1.14M expected QALYs, ~75.9k deaths averted, and ~$220/QALY using the full $250M denominator.</li>
+      <li>In the default global partial-access case, the model produces ~5.7M expected QALYs, ~380k deaths averted, and ~$44/QALY using the full $250M denominator. The narrow US-only floor is ~1.14M QALYs, ~75.9k deaths averted, and ~$220/QALY.</li>
       <li>The key question is whether AFF can cause a high-reach medicine to exist years earlier than it otherwise would, and deserve meaningful counterfactual credit for that acceleration.</li>
-      <li>Globally, the upside depends on reachable deployment rather than burden alone: rich-country diffusion implies ~$110/QALY, global partial access ~$44/QALY, and broad global access ~$15/QALY, conditional on affordability, regulatory approval, prescribing, adherence, and procurement.</li>
+      <li>The upside depends on reachable deployment rather than burden alone: rich-country diffusion implies ~$110/QALY and broad global access ~$15/QALY, conditional on affordability, regulatory approval, prescribing, adherence, and procurement.</li>
     </ul>
   </div>
 
@@ -438,19 +438,19 @@
       <div class="chart-title">Cost per QALY among portfolios with ≥1 approval (20,000 draws)</div>
       <div class="chart-sub">Conditional on ≥1 approval · log scale · dashed line marks the $104k/QALY ICER anchor</div>
       <svg id="mc-hist" viewBox="0 0 760 240" role="img" aria-label="Monte Carlo distribution of cost per QALY"></svg>
-      <p style="margin:16px 0 0;font-size:13px;line-height:1.6;">About <span id="mc-zero">…</span> of sampled portfolios produce no approval at all, and their realized cost-effectiveness is undefined; the headline ~$220/QALY is the expected-value figure that averages those in. Among portfolios with at least one approval, the median is <span id="mc-med">…</span> and the 90% interval is <span id="mc-ci">…</span>.</p>
+      <p style="margin:16px 0 0;font-size:13px;line-height:1.6;">About <span id="mc-zero">…</span> of sampled portfolios produce no approval at all, and their realized cost-effectiveness is undefined; the US-only ~$220/QALY result is the expected-value figure that averages those in. Among portfolios with at least one approval, the median is <span id="mc-med">…</span> and the 90% interval is <span id="mc-ci">…</span>.</p>
     </div>
-    <h3>Fund-size scaling, US-only base</h3>
+    <h3>Fund-size scaling, global partial access</h3>
     <div class="tbl-wrap">
       <table>
-        <thead><tr><th>Fund size</th><th class="num">Expected approvals (base)</th><th class="num">QALYs (base)</th><th class="num">Deaths averted (base)</th><th class="num">$/QALY</th></tr></thead>
+        <thead><tr><th>Fund size</th><th class="num">Expected approvals (base)</th><th>Global partial result</th></tr></thead>
         <tbody>
-          <tr><td class="lbl">$100M</td><td class="num">0.54</td><td class="num">~456,000</td><td class="num">~30,400</td><td class="num">~$220</td></tr>
-          <tr><td class="lbl">$250M (base)</td><td class="num">1.35</td><td class="num">~1,139,000</td><td class="num">~75,900</td><td class="num">~$220</td></tr>
-          <tr><td class="lbl">$1B</td><td class="num">5.4</td><td class="num">~4,556,000</td><td class="num">~303,800</td><td class="num">~$220*</td></tr>
+          <tr><td class="lbl">$100M</td><td class="num">0.54</td><td>~2.3M QALYs / ~152k deaths / ~$44 per QALY</td></tr>
+          <tr><td class="lbl">$250M (base)</td><td class="num">1.35</td><td>~5.7M QALYs / ~380k deaths / ~$44 per QALY</td></tr>
+          <tr><td class="lbl">$1B</td><td class="num">5.4</td><td>~22.8M QALYs / ~1.52M deaths / ~$44 per QALY*</td></tr>
         </tbody>
       </table>
-      <caption>* Marginal cost-effectiveness likely declines with size: earlier investments fund the most highest-value attempts, over time, and as the market expands, the marginal impact likely declines.</caption>
+      <caption>Global partial access applies the same 5× reachable-impact multiplier used above; the US-only floor remains ~$220/QALY at each size. * Marginal cost-effectiveness likely declines with size: earlier investments fund the highest-value attempts, and as the market expands the marginal impact likely declines.</caption>
     </div>
   </section>
 
@@ -529,13 +529,13 @@
   <!-- 07 -->
   <section class="section">
     <h2>Sensitivity analysis</h2>
-    <p>We vary each parameter from Low to High, holding the rest at base, and recompute the cost per QALY. Longer bars are the parameters that matter most. The base case sits at the dotted line (~$220/QALY); <em>left</em> is cheaper, <em>right</em> is worse.</p>
+    <p>We vary each parameter from Low to High, holding the rest at base, and recompute the cost per QALY under the default global partial-access scope. Longer bars are the parameters that matter most. The base case sits at the dotted line (~$44/QALY); <em>left</em> is cheaper, <em>right</em> is worse.</p>
     <div class="chart-card">
-      <div class="chart-title">Tornado: cost per QALY ($), one parameter swung at a time</div>
-      <div class="chart-sub">Lower is better · base case marked at $220/QALY</div>
+      <div class="chart-title">Tornado: global partial cost per QALY ($), one parameter swung at a time</div>
+      <div class="chart-sub">Lower is better · global partial base case marked at $44/QALY</div>
       <svg id="tornado" viewBox="0 0 760 312" role="img" aria-label="Tornado sensitivity chart of cost per QALY"></svg>
     </div>
-    <p>The dominant lever is per-medicine reach, how many people a new drug actually gets onto effective treatment, followed by the odds of approval and the credit share. One-way sensitivity is a weak robustness test, though: it holds the model structure fixed and moves one parameter at a time. Even the worst single-parameter end stays under the US threshold, but that mostly reflects how weak that threshold is here (see the crux table), not that the estimate is secure.</p>
+    <p>The dominant lever is still per-medicine reach, how many people a new drug actually gets onto effective treatment, followed by the odds of approval and the credit share. One-way sensitivity is a weak robustness test, though: it holds the model structure fixed and moves one parameter at a time. The chart now assumes the 5× global partial-access multiplier, so the key extra uncertainty is whether that reachable deployment assumption is real.</p>
   </section>
 
   <!-- 07b -->
@@ -804,14 +804,15 @@
 </script>
 
 <script>
-// Tornado: one-way sensitivity of $/QALY. Each parameter swung Low<->High, others at base.
+// Tornado: one-way sensitivity of global partial $/QALY. Each parameter swung Low<->High, others at base.
 (function(){
   var svg = document.getElementById('tornado');
   if (!svg) return;
   var FUND = 250e6;
+  var DEPLOY = 5;
   var B = { programs:9, pos:0.15, qaly:75000, yrs:15, cred:0.50, rec:1.5 };
-  function val(key,v){ var p={}; for (var k in B) p[k]=B[k]; p[key]=v; return FUND/(p.programs*p.pos*p.qaly*p.yrs*p.cred*p.rec); }
-  var base = FUND/(B.programs*B.pos*B.qaly*B.yrs*B.cred*B.rec);
+  function val(key,v){ var p={}; for (var k in B) p[k]=B[k]; p[key]=v; return FUND/(p.programs*p.pos*p.qaly*p.yrs*p.cred*p.rec*DEPLOY); }
+  var base = FUND/(B.programs*B.pos*B.qaly*B.yrs*B.cred*B.rec*DEPLOY);
   var rows = [
     {label:'QALYs/yr per medicine', key:'qaly',  lo:12000, hi:450000},
     {label:'Credit share',          key:'cred',  lo:0.25,  hi:0.80},
@@ -823,7 +824,7 @@
   rows.forEach(function(r){ var a=val(r.key,r.lo), b=val(r.key,r.hi); r.loV=Math.min(a,b); r.hiV=Math.max(a,b); r.range=r.hiV-r.loV; });
   rows.sort(function(a,b){ return b.range-a.range; });
   var maxV=0; rows.forEach(function(r){ if(r.hiV>maxV) maxV=r.hiV; });
-  var AX=Math.ceil(maxV/200)*200;
+  var AX=Math.ceil(maxV/50)*50;
   var W=760, padL=162, padR=72, padT=34, top=50, rowH=28, gap=12;
   var plotW=W-padL-padR;
   function X(v){ return padL+(v/AX)*plotW; }
