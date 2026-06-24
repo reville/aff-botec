@@ -461,6 +461,16 @@
       <div class="calc-body">
         <div class="calc-controls">
           <div class="ctrl">
+            <label>Deployment scope</label>
+            <select id="s-scope">
+              <option value="1">US-only / narrow case (1×)</option>
+              <option value="2">US + rich-country diffusion (2×)</option>
+              <option value="5" selected>Global partial access (5×)</option>
+              <option value="15">Global broad access (15×)</option>
+            </select>
+            <div class="hint">Applies the reachable-impact multiplier from the deployment table; US-only remains shown below.</div>
+          </div>
+          <div class="ctrl">
             <label>Fund size <span class="v" id="v-fund">$250M</span></label>
             <input type="range" id="s-fund" min="50" max="1000" step="25" value="250">
             <div class="hint">Total raise, charged in full against the medicines it funds.</div>
@@ -499,16 +509,6 @@
             <label>Dev. capital share <span class="v" id="v-dev">72%</span></label>
             <input type="range" id="s-dev" min="30" max="90" step="1" value="72">
             <div class="hint">Portion of the fund spent on portfolio programs.</div>
-          </div>
-          <div class="ctrl">
-            <label>Deployment scope</label>
-            <select id="s-scope">
-              <option value="1">US-only / narrow case (1×)</option>
-              <option value="2">US + rich-country diffusion (2×)</option>
-              <option value="5" selected>Global partial access (5×)</option>
-              <option value="15">Global broad access (15×)</option>
-            </select>
-            <div class="hint">Applies the reachable-impact multiplier from the deployment table; US-only remains shown below.</div>
           </div>
         </div>
         <div class="calc-out">
