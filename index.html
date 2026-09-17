@@ -361,7 +361,6 @@
 body { padding:32px clamp(20px,3vw,44px) 96px; }
 [id] { scroll-margin-top:28px; }
 .obesity-opening { margin:36px 0 56px; }
-.obesity-opening h2 { font-size:clamp(27px,3.2vw,38px); line-height:1.15; border:0; padding:0; }
 .opening-thesis { font-size:18px; color:var(--ink); line-height:1.6; }
 .growth-grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; margin:32px 0 16px; }
 .growth-figure { min-width:0; margin:0; border-top:2px solid var(--ink); padding-top:15px; }
@@ -398,7 +397,6 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
  .findings { padding:20px 16px; }
  .adoption-share .bar-slot { width:32%; }
  .obesity-evidence,.base-assumptions { min-width:620px; }
- .obesity-opening h2 { font-size:31px; }
  .opening-thesis { font-size:17px; }
 }
 @media print {
@@ -725,11 +723,11 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <table>
 <thead><tr><th>US-only base case</th><th class="num">Value</th></tr></thead>
 <tbody>
-<tr><td>Morbidity QALYs (31% of the US-only chain total)</td><td class="num">~353,000</td></tr>
+<tr><td>Morbidity QALYs (31% of the US-only chain total)</td><td class="num">~471,000</td></tr>
 <tr><td>Full QALY decrement per case-year (Florence)</td><td class="num">0.354</td></tr>
-<tr><td>Disorder case-years averted</td><td class="num">~997,000</td></tr>
+<tr><td>Disorder case-years averted</td><td class="num">~1,329,000</td></tr>
 <tr><td>Tier 2 cost per case-year (2024 USD)</td><td class="num">$27,735</td></tr>
-<tr class="total"><td>Tier 2 dollars averted</td><td class="num">~$27.7B</td></tr>
+<tr class="total"><td>Tier 2 dollars averted</td><td class="num">~$36.9B</td></tr>
 </tbody>
 </table>
 <p class="tbl-note">Tier 2 dollars are about 23% of the health benefit at $104,000 per QALY. Comparing the Society of Actuaries and Florence estimates for overlapping years puts tangible costs at 15 to 20% of quality-of-life-inclusive totals, so 23% lands where it should. Tier 2 does not swamp Tier 1, which is the signal that the calibration holds.</p>
@@ -864,7 +862,7 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <tr><td class="lbl">Cumulative deaths averted</td><td class="num">1,200</td><td class="num">101,300</td><td class="num">5,400,000</td></tr>
 <tr><td class="lbl">Cost per QALY</td><td class="num">~$17,400</td><td class="num">~$160</td><td class="num">~$3</td></tr>
 <tr><td class="lbl">Cost per death averted</td><td class="num">~$208k</td><td class="num">~$2,500</td><td class="num">~$46</td></tr>
-<tr><td class="lbl">Health benefit @ $104k/QALY (ICER level)</td><td class="num">$1.5B</td><td class="num">$158B</td><td class="num">$8.4T</td></tr>
+<tr><td class="lbl">Health benefit @ $104k/QALY (US threshold)</td><td class="num">$1.5B</td><td class="num">$158B</td><td class="num">$8.4T</td></tr>
 <tr class="total"><td class="lbl">Benefit–cost ratio</td><td class="num">~6:1</td><td class="num">~632:1</td><td class="num">~33,700:1</td></tr>
 </tbody>
 </table>
@@ -874,9 +872,9 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <p>The Low and High columns above are scenario corners. The Monte Carlo instead samples each input as a lognormal centered on its Base value with the tabled spread, and samples the number of approvals as a discrete binomial draw (9 programs × 20%) rather than a smooth 1.8.</p>
 <div class="chart-card">
 <div class="chart-title">Cost per QALY among portfolios with ≥1 approval (20,000 draws)</div>
-<div class="chart-sub">Conditional on ≥1 approval · log scale · dashed line marks the $104k/QALY ICER anchor</div>
+<div class="chart-sub">Conditional on ≥1 approval · log scale · dashed line marks the $104k/QALY US threshold (Vanness 2021)</div>
 <svg aria-label="Monte Carlo distribution of cost per QALY" id="mc-hist" role="img" viewbox="0 0 760 240"></svg>
-<p style="margin:16px 0 0;font-size:13px;line-height:1.6;">About <span id="mc-zero">…</span> of sampled portfolios produce no approval at all. Among portfolios with at least one approval, the median is <span id="mc-med">…</span> and the 90% interval is <span id="mc-ci">…</span>.</p>
+<p style="margin:16px 0 0;font-size:13px;line-height:1.6;">About <span id="mc-zero">…</span> of sampled portfolios produce no approval at all. Among portfolios with at least one approval, the median is <span id="mc-med">…</span> and the 90% interval is <span id="mc-ci">…</span>. The zero-approval share runs above the ~13% in the binomial table because the simulation also samples the approval probability and the program count; averaging over that spread raises the chance of an empty portfolio.</p>
 </div>
 <h3>Fund-size scaling, Global impact: Moderate diffusion</h3>
 <div class="tbl-wrap">
@@ -951,10 +949,10 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <div class="calc-out">
 <div class="out-row"><span class="k">Expected approvals</span><span class="calc-val" id="o-appr">1.8</span></div>
 <div class="out-row"><span class="k">QALYs within US</span><span class="calc-val" id="o-qaly-us">1.52M</span></div>
-<div class="out-row"><span class="k">Deaths averted within US</span><span class="calc-val" id="o-deaths-us">75.9k</span></div>
-<div class="out-row"><span class="k">Cost / QALY within US</span><span class="calc-val" id="o-cpq-us">$165</span></div>
-<div class="out-row"><span class="k" id="o-scope-qaly-label">QALYs counted: Global impact: Moderate diffusion</span><span class="calc-val" id="o-qaly">7.6M</span></div>
-<div class="out-row"><span class="k" id="o-scope-deaths-label">Deaths averted counted: Global impact: Moderate diffusion</span><span class="calc-val" id="o-deaths">379.7k</span></div>
+<div class="out-row"><span class="k">Deaths averted within US</span><span class="calc-val" id="o-deaths-us">101.3k</span></div>
+<div class="out-row"><span class="k">Cost / QALY within US</span><span class="calc-val" id="o-cpq-us">$160</span></div>
+<div class="out-row"><span class="k" id="o-scope-qaly-label">QALYs counted: Global impact: Moderate diffusion</span><span class="calc-val" id="o-qaly">7.59M</span></div>
+<div class="out-row"><span class="k" id="o-scope-deaths-label">Deaths averted counted: Global impact: Moderate diffusion</span><span class="calc-val" id="o-deaths">506.3k</span></div>
 <div class="out-row big"><span class="k">Cost / QALY for selected view</span><span class="calc-val" id="o-cpq">$33</span></div>
 <div class="out-row"><span class="k">Benefit-cost for selected view @ $104k</span><span class="calc-val" id="o-bcr">3,159:1</span></div>
 <div class="verdict" id="o-verdict"></div>
@@ -981,9 +979,9 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <p>Obesity shows how better medicines can expand adoption. For AFF, the investment case depends on how much demand a specific addiction medicine can earn, the health benefit it delivers and the fund’s contribution to its development or access. The sensitivity thresholds below show how those assumptions affect the result.</p>
 <div class="tbl-wrap">
 <table>
-<thead><tr><th>Input (base)</th><th>To <em>fail</em> the US $104k/QALY ICER anchor</th><th>To <em>match</em> GiveWell (~$80 per health unit)</th></tr></thead>
+<thead><tr><th>Input (base)</th><th>To <em>fail</em> the US $104k/QALY threshold</th><th>To <em>match</em> GiveWell (~$100 per health unit)</th></tr></thead>
 <tbody>
-<tr><td class="lbl">QALYs/yr per medicine (75,000)</td><td>fall below ~119 (≈630× lower)</td><td>rise to ~154,000 (≈2.1× base)</td></tr>
+<tr><td class="lbl">QALYs/yr per medicine (75,000)</td><td>fall below ~119 (≈630× lower)</td><td>rise to ~123,000 (≈1.65× base)</td></tr>
 <tr><td class="lbl">Counterfactual credit (50%)</td><td>fall below ~0.08%</td><td>cannot close a ~1.6× gap on its own</td></tr>
 <tr><td class="lbl">P(approval) per program (20%)</td><td>fall below ~0.03%</td><td>cannot close it on its own</td></tr>
 </tbody>
@@ -1005,7 +1003,7 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <tr><td class="lbl">Multiple Myeloma Research Foundation (realized)</td><td class="num">$600M+ → 15+ drugs</td><td>Comparable venture-philanthropy precedent: 15+ drugs and roughly doubled myeloma survival [24]</td></tr>
 <tr><td class="lbl">Cystic Fibrosis Foundation (realized)</td><td class="num">~$150M catalytic → $3.3B royalty</td><td>CFF-scale royalty exit corresponds to AFF's High case, not the base case [20]</td></tr>
 <tr><td class="lbl">Existing addiction meds</td><td class="num">$4.6k–19k/QALY</td><td>Projected new-medicine cost is near or below the current medication cost-effectiveness range [17]</td></tr>
-<tr><td class="lbl">US ICER anchor / UK NICE payer thresholds</td><td class="num">$104k/QALY; £20–30k</td><td>Clears by ~632×; weak decision bar relative to global-health benchmarks [15][16]</td></tr>
+<tr><td class="lbl">US $104k threshold (Vanness et al. 2021, cited by ICER) / UK NICE</td><td class="num">$104k/QALY; £20–30k</td><td>Clears by ~632×; weak decision bar relative to global-health benchmarks [15][16]</td></tr>
 </tbody>
 </table>
 </div>
@@ -1096,7 +1094,7 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <li>Thomas D et al., BIO / Informa / QLS, "Clinical Development Success Rates 2011–2020": psychiatry Phase-1→approval LOA 7.3% / Phase-2→approval 13.8%; neurology 5.9% / 12.3%. go.bio.org</li>
 <li>QALYs/yr decomposition: mortality (deaths averted / yr × ~9 quality-adjusted life-years per averted death; OUD life-expectancy gap ~15 yr, Lewer et al. 2020) + morbidity (incremental treated patients × ~0.08 QALY/yr). Lifetime MOUD QALY gain estimated up to ~9.7 (PMC10940194).</li>
 <li>Sordo L et al., BMJ 2017;357:j1550: all-cause mortality ~50–70% lower on MOUD; overdose ~70–80% lower. Wakeman S et al., JAMA Netw Open 2020 (comparative effectiveness). Untreated OUD all-cause mortality ~3.6%/yr.</li>
-<li>ICER, "Perspectives on Cost-Effectiveness Threshold Ranges" (2019/2023): US value-per-QALY ~$100–150k, anchor ~$104k. icer.org</li>
+<li>ICER, "Perspectives on Cost-Effectiveness Threshold Ranges" (2019/2023): US value-per-QALY ~$100–150k. icer.org. The $104k figure is Vanness DJ, Lomas J, Ahn H, "A Health Opportunity Cost Threshold for Cost-Effectiveness Analysis in the United States," Ann Intern Med 2021;174(1):25–32, the health-opportunity-cost estimate ICER cites.</li>
 <li>NICE cost-effectiveness threshold £20–30k/QALY (rising to £25–35k from April 2026). nice.org.uk</li>
 <li>Existing-treatment $/QALY: methadone ~$16–18k, buprenorphine ~$19k (PMC10940194); varenicline ~$4.6k or cost-saving (PMC11059041).</li>
 <li>GiveWell, "Cost to Save a Life" (2024) ~$3,000–5,500/life; ~$80/DALY for best global-health buys; Open Phil 1 DALY ≈ $100k in "OP dollars." givewell.org; openphilanthropy.org</li>
@@ -1301,7 +1299,7 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
     var pos   = Math.min(1, lnorm(P.pos.m,P.pos.s));
     var appr  = binom(programs, pos);               // discrete approvals, lumpy and can be 0
     if (appr === 0){ zero++; continue; }            // no approval -> cost-effectiveness undefined
-    var per = lnorm(P.qaly.m,P.qaly.s) * lnorm(P.yrs.m,P.yrs.s) * lnorm(P.cred.m,P.cred.s) * lnorm(P.rec.m,P.rec.s);
+    var per = lnorm(P.qaly.m,P.qaly.s) * lnorm(P.yrs.m,P.yrs.s) * lnorm(P.cred.m,P.cred.s) * Math.max(1, lnorm(P.rec.m,P.rec.s));
     vals.push(FUND/(appr*per));
   }
   vals.sort(function(a,b){ return a-b; });
@@ -1325,7 +1323,7 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
   for (var d=0;d<bins;d++){ var bh=maxc?counts[d]/maxc*plotH:0; out.push('<rect x="'+(padL+d*bw+0.5).toFixed(1)+'" y="'+(padT+plotH-bh).toFixed(1)+'" width="'+(bw-1).toFixed(1)+'" height="'+bh.toFixed(1)+'" fill="#1a1a1a" opacity="0.78"/>'); }
   var xt=xOf(THRESH);
   out.push('<line x1="'+xt.toFixed(1)+'" y1="'+padT+'" x2="'+xt.toFixed(1)+'" y2="'+(padT+plotH)+'" stroke="#4D52FF" stroke-width="1.5" stroke-dasharray="3 3"/>');
-  out.push('<text x="'+(xt-5).toFixed(1)+'" y="'+(padT+11)+'" text-anchor="end" class="axis" style="fill:#4D52FF">$104k ICER anchor</text>');
+  out.push('<text x="'+(xt-5).toFixed(1)+'" y="'+(padT+11)+'" text-anchor="end" class="axis" style="fill:#4D52FF">$104k US threshold</text>');
   var xm=xOf(med);
   out.push('<line x1="'+xm.toFixed(1)+'" y1="'+padT+'" x2="'+xm.toFixed(1)+'" y2="'+(padT+plotH)+'" stroke="#1a1a1a" stroke-width="1"/>');
   out.push('<text x="'+xm.toFixed(1)+'" y="'+(padT-2)+'" text-anchor="middle" class="axis" style="fill:#1a1a1a">median '+money(med)+'</text>');
@@ -1397,12 +1395,12 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
       capital_recycled_multiple: { low: 1.2, base: 1.5, high: 3.0 }
     },
     approval_distribution_9_programs_20pct: { expected: 1.8, p_zero: 0.13, p_one: 0.30, p_ge_one: 0.87, p_ge_two: 0.56 },
-    base_outputs: { expected_approvals_first_cycle: 1.8, total_expected_approvals_incl_recycling: 2.7, cumulative_qalys: 1519000, deaths_averted: 101300, usd_per_qaly: 165, deaths_averted_cost_usd: 2469, benefit_cost_at_104k_per_qaly: 632 },
+    base_outputs: { expected_approvals_first_cycle: 1.8, total_expected_approvals_incl_recycling: 2.7, cumulative_qalys: 1519000, deaths_averted: 101300, usd_per_qaly: 160, deaths_averted_cost_usd: 2469, benefit_cost_at_104k_per_qaly: 632 },
     geographic_impact_views: {
-      impact_within_us: { burden_multiplier: 1, reachable_multiplier: 1, qalys: 1139000, deaths_averted: 75900, usd_per_qaly: 219, open_phil_style_multiple: 456, interpretation: "Shows US health impact from the overall effort; does not imply the medicine exists only in the US." },
-      impact_within_us_plus_other_high_income_markets: { burden_multiplier: 3, reachable_multiplier: 2, qalys: 2278000, deaths_averted: 151900, usd_per_qaly: 110, open_phil_style_multiple: 911, interpretation: "Other high-income markets get partial access and uptake, but not a full US-equivalent cascade." },
-      moderate_global_diffusion: { burden_multiplier: 15, reachable_multiplier: 5, qalys: 5695000, deaths_averted: 379700, usd_per_qaly: 44, open_phil_style_multiple: 2278, interpretation: "Global uptake reaches roughly one-third of US fractional uptake on a burden-weighted basis." },
-      high_global_diffusion: { burden_multiplier: 15, reachable_multiplier: 15, qalys: 17086000, deaths_averted: 1139100, usd_per_qaly: 15, open_phil_style_multiple: 6834, interpretation: "Aggressive upside case requiring broad regulatory approval, affordability, supply, prescribing, adherence, and procurement." }
+      impact_within_us: { burden_multiplier: 1, reachable_multiplier: 1, qalys: 1519000, deaths_averted: 101300, usd_per_qaly: 160, open_phil_style_multiple: 608, interpretation: "Shows US health impact from the overall effort; does not imply the medicine exists only in the US." },
+      impact_within_us_plus_other_high_income_markets: { burden_multiplier: 3, reachable_multiplier: 2, qalys: 3038000, deaths_averted: 202500, usd_per_qaly: 82, open_phil_style_multiple: 1215, interpretation: "Other high-income markets get partial access and uptake, but not a full US-equivalent cascade." },
+      moderate_global_diffusion: { burden_multiplier: 15, reachable_multiplier: 5, qalys: 7594000, deaths_averted: 506300, usd_per_qaly: 33, open_phil_style_multiple: 3040, interpretation: "Global uptake reaches roughly one-third of US fractional uptake on a burden-weighted basis." },
+      high_global_diffusion: { burden_multiplier: 15, reachable_multiplier: 15, qalys: 22781000, deaths_averted: 1518800, usd_per_qaly: 11, open_phil_style_multiple: 9110, interpretation: "Aggressive upside case requiring broad regulatory approval, affordability, supply, prescribing, adherence, and procurement." }
     },
     value_conventions: { us_icer_anchor_per_qaly_usd: 104000, us_payer_threshold_per_qaly_usd: [100000,150000], vsly_usd: 495000, vsl_usd: 13100000, givewell_per_daly_usd: 80, openphil_per_daly_usd: 100000 }
   };
