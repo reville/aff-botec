@@ -508,10 +508,10 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <table class="scenario-table">
 <thead><tr><th>Geography of impact</th><th class="num">Burden ×</th><th class="num">Reachable ×</th><th class="num">Expected QALYs</th><th class="num">Deaths averted</th><th\1>Philanthropic $/QALY</th><th class="num">OP multiple</th><th>Interpretation</th></tr></thead>
 <tbody>
-<tr><td class="lbl">Global impact: Moderate diffusion</td><td class="num">~15×</td><td class="num">~5×</td><td class="num">~7.6M</td><td class="num">~506k</td><td class="num">~$33</td><td class="num">~3,040×</td><td>Burden-weighted sensitivity where global uptake reaches roughly one-third of US fractional uptake.</td></tr>
-<tr><td class="lbl">Global impact: High diffusion</td><td class="num">~15×</td><td class="num">~15×</td><td class="num">~22.8M</td><td class="num">~1.52M</td><td class="num">~$11</td><td class="num">~9,110×</td><td>Aggressive upside case requiring broad regulatory approval, affordability, supply, prescribing, adherence, and procurement.</td></tr>
-<tr><td class="lbl">Impact within US + other high-income markets</td><td class="num">~3×</td><td class="num">~2×</td><td class="num">~3.0M</td><td class="num">~203k</td><td class="num">~$82</td><td class="num">~1,215×</td><td>Assumes other high-income markets eventually get partial access and uptake, but not a full US-equivalent cascade.</td></tr>
-<tr><td class="lbl">Impact within US</td><td class="num">1×</td><td class="num">1×</td><td class="num">~1.52M</td><td class="num">~101k</td><td class="num">~$160</td><td class="num">~608×</td><td>Shows US health impact from the overall effort; does not imply the medicine exists only in the US.</td></tr>
+<tr><td class="lbl">Global impact: Moderate diffusion</td><td class="num">~15×</td><td class="num">~5×</td><td class="num">~7.6M</td><td class="num">~380k</td><td class="num">~$33</td><td class="num">~3,040×</td><td>Burden-weighted sensitivity where global uptake reaches roughly one-third of US fractional uptake.</td></tr>
+<tr><td class="lbl">Global impact: High diffusion</td><td class="num">~15×</td><td class="num">~15×</td><td class="num">~22.8M</td><td class="num">~1.14M</td><td class="num">~$11</td><td class="num">~9,110×</td><td>Aggressive upside case requiring broad regulatory approval, affordability, supply, prescribing, adherence, and procurement.</td></tr>
+<tr><td class="lbl">Impact within US + other high-income markets</td><td class="num">~3×</td><td class="num">~2×</td><td class="num">~3.0M</td><td class="num">~152k</td><td class="num">~$82</td><td class="num">~1,215×</td><td>Assumes other high-income markets eventually get partial access and uptake, but not a full US-equivalent cascade.</td></tr>
+<tr><td class="lbl">Impact within US</td><td class="num">1×</td><td class="num">1×</td><td class="num">~1.52M</td><td class="num">~76k</td><td class="num">~$160</td><td class="num">~608×</td><td>Shows US health impact from the overall effort; does not imply the medicine exists only in the US.</td></tr>
 </tbody>
 </table>
 <p class="tbl-note">OP-style multiple is approximated as $100,000 per health unit divided by philanthropic dollars per QALY; it is a comparability heuristic, not cash return. Global burden is addiction-mortality-weighted rather than population-weighted: the US is about 4% of world population and about 7% of addiction deaths, while global addiction mortality is roughly 15× the US addiction-mortality burden. The key uncertainty is how much of that burden is actually reachable through access, affordability, regulatory approval, prescribing, adherence, and procurement. [23]</p>
@@ -609,12 +609,12 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <tr><td class="lbl">P(approval) per program</td><td class="num">8%</td><td class="num">20%</td><td class="num">25%</td><td class="src">psychiatry Ph-2→approval 13.8%, neurology 12.3% floor [12]; raised for funding across multiple stages rather than early stage alone, including later-stage and repurposed assets</td></tr>
 <tr style="background:var(--panel)"><td class="lbl"><strong>= Expected approved medicines</strong></td><td class="num">0.4</td><td class="num">1.8</td><td class="num">3.75</td><td class="src">programs × P(approval)</td></tr>
 <tr><td class="lbl">QALYs / year per medicine at US scale</td><td class="num">12k</td><td class="num">75k</td><td class="num">450k</td><td class="src">mortality + morbidity; see note [13]</td></tr>
-<tr><td class="lbl">Deaths averted / year per medicine at scale</td><td class="num">1,000</td><td class="num">5,000</td><td class="num">30,000</td><td class="src">treatment-gap closure × Sordo 55% mortality cut; High = a polysubstance GLP-1 across nicotine, alcohol &amp; opioids [14][22]</td></tr>
+<tr><td class="lbl">Deaths averted / year per medicine at scale</td><td class="num">1,000</td><td class="num">3,750</td><td class="num">30,000</td><td class="src">portfolio-weighted across the four indication builds in the QALYs/year section (OUD ~5,000; AUD ~2,500; tobacco ~6,000 in-window; repurposed ~1,500); Low = a single modest win; High = a polysubstance GLP-1 across nicotine, alcohol &amp; opioids [14][22]</td></tr>
 <tr><td class="lbl">Effective discounted years of benefit</td><td class="num">10</td><td class="num">15</td><td class="num">20</td><td class="src">mix of acceleration and no-counterfactual cases; discounted/ramped</td></tr>
 <tr><td class="lbl">AFF counterfactual credit share</td><td class="num">25%</td><td class="num">50%</td><td class="num">80%</td><td class="src">credit ≈ funding share, raised for catalytic role [8]</td></tr>
 <tr><td class="lbl">Capital recycled into new programs (×)</td><td class="num">1.2×</td><td class="num">1.5×</td><td class="num">3.0×</td><td class="src">exits return capital that funds more programs; High = a CFF/T1D-scale exit [10][20]</td></tr>
 <tr class="total"><td class="lbl">Cumulative QALYs</td><td class="num">14.4k</td><td class="num">1.52M</td><td class="num">81.0M</td><td>product of the chain</td></tr>
-<tr class="total"><td class="lbl">Cumulative deaths averted</td><td class="num">1.2k</td><td class="num">101.3k</td><td class="num">5.40M</td><td>parallel, on deaths averted / yr</td></tr>
+<tr class="total"><td class="lbl">Cumulative deaths averted</td><td class="num">1.2k</td><td class="num">75.9k</td><td class="num">5.40M</td><td>parallel, on deaths averted / yr</td></tr>
 </tbody>
 </table>
 </div>
@@ -662,7 +662,22 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 </tbody>
 </table>
 </div>
-<p><strong>Persistence belongs in the benefit estimate once.</strong> Health benefit reflects time on effective treatment multiplied by the additional benefit per treated year, plus any benefit that persists after treatment ends. If an effect estimate already includes real-world discontinuation, applying another full persistence haircut would double-count it. Patients who switch from an effective existing medicine contribute the improvement over that alternative, not the full gross treatment benefit.</p></section>
+<p><strong>Persistence belongs in the benefit estimate once.</strong> Health benefit reflects time on effective treatment multiplied by the additional benefit per treated year, plus any benefit that persists after treatment ends. If an effect estimate already includes real-world discontinuation, applying another full persistence haircut would double-count it. Patients who switch from an effective existing medicine contribute the improvement over that alternative, not the full gross treatment benefit.</p>
+<h3>Deaths averted per year, by indication</h3>
+<p>The QALY rows above share one mortality convention, but deaths do not scale with QALYs the same way in every indication. The base of 3,750 deaths averted per year per medicine is a portfolio weighting of the four builds below; the OUD build alone gives 5,000.</p>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Indication</th><th class="num">Incremental patients</th><th class="num">Deaths averted / yr, in-window</th><th>How it is built</th></tr></thead>
+<tbody>
+<tr><td class="lbl">OUD retention / adherence</td><td class="num">~250k</td><td class="num">~5,000</td><td>3.6%/yr untreated mortality × 55% reduction on medication [14]</td></tr>
+<tr><td class="lbl">AUD pharmacotherapy</td><td class="num">~1.4M</td><td class="num">~2,000–3,000</td><td>Excess mortality of roughly 0.5–1%/yr among people with AUD × a 20–30% reduction with sustained pharmacotherapy; far lower per person than OUD, but a population five times larger</td></tr>
+<tr><td class="lbl">Tobacco cessation / relapse</td><td class="num">~1.15M</td><td class="num">~5,000–8,000</td><td>A ~10-point absolute gain in sustained quitting gives ~115k extra quitters a year and roughly 35k eventual deaths averted, but most of those deaths fall 15 to 40 years after quitting, outside the credited window</td></tr>
+<tr><td class="lbl">Repurposed / better formulation</td><td class="num">smaller</td><td class="num">~1,000–2,000</td><td>Incremental over existing options</td></tr>
+<tr style="background:var(--panel)"><td class="lbl">Polysubstance GLP-1 (upside)</td><td class="num">multi</td><td class="num">~30,000</td><td>The High case: nicotine, alcohol and opioid mortality in one product</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tbl-note">Tobacco is also the least neglected target: varenicline is generic and cytisine costs a few dollars a course, so a tobacco win deserves counterfactual credit nearer the low end of the 25–80% range, and it is QALY-rich but death-poor inside the model's 15-year window. Deaths on this page are reported beside QALYs and never feed the cost-per-QALY chain.</p></section>
 <!-- AFF-SPLICE:ADOPTION:START -->
 <!-- 04d -->
 <section class="section" id="adoption"><div class="section-num">8</div>
@@ -861,9 +876,9 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <thead><tr><th>Output ($250M fund)</th><th class="num">Low</th><th class="num">Base</th><th class="num">High</th></tr></thead>
 <tbody>
 <tr><td class="lbl">Cumulative QALYs</td><td class="num">14,400</td><td class="num">1,519,000</td><td class="num">81,000,000</td></tr>
-<tr><td class="lbl">Cumulative deaths averted</td><td class="num">1,200</td><td class="num">101,300</td><td class="num">5,400,000</td></tr>
+<tr><td class="lbl">Cumulative deaths averted</td><td class="num">1,200</td><td class="num">75,900</td><td class="num">5,400,000</td></tr>
 <tr><td class="lbl">Philanthropic $ per QALY</td><td class="num">~$17,400</td><td class="num">~$160</td><td class="num">~$3</td></tr>
-<tr><td class="lbl">Philanthropic $ per death averted</td><td class="num">~$208k</td><td class="num">~$2,500</td><td class="num">~$46</td></tr>
+<tr><td class="lbl">Philanthropic $ per death averted</td><td class="num">~$208k</td><td class="num">~$3,300</td><td class="num">~$46</td></tr>
 <tr class="total"><td class="lbl">Coefficient-style multiple (~$100k per health unit ÷ philanthropic $/QALY)</td><td class="num">~6×</td><td class="num">~608×</td><td class="num">~32,000×</td></tr>
 </tbody>
 </table>
@@ -882,9 +897,9 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <table>
 <thead><tr><th>Fund size</th><th class="num">Expected approvals (base)</th><th>Global impact: Moderate diffusion result</th></tr></thead>
 <tbody>
-<tr><td class="lbl">$100M</td><td class="num">0.72</td><td>~3.0M QALYs / ~203k deaths / ~$33 per QALY</td></tr>
-<tr><td class="lbl">$250M (base)</td><td class="num">1.8</td><td>~7.6M QALYs / ~506k deaths / ~$33 per QALY</td></tr>
-<tr><td class="lbl">$1B</td><td class="num">7.2</td><td>~30.4M QALYs / ~2.03M deaths / ~$33 per QALY*</td></tr>
+<tr><td class="lbl">$100M</td><td class="num">0.72</td><td>~3.0M QALYs / ~152k deaths / ~$33 per QALY</td></tr>
+<tr><td class="lbl">$250M (base)</td><td class="num">1.8</td><td>~7.6M QALYs / ~380k deaths / ~$33 per QALY</td></tr>
+<tr><td class="lbl">$1B</td><td class="num">7.2</td><td>~30.4M QALYs / ~1.52M deaths / ~$33 per QALY*</td></tr>
 </tbody>
 </table>
 <p class="tbl-note">The Global impact: Moderate diffusion view applies the same 5× reachable-impact multiplier used above; the Impact within US view remains ~$160/QALY at each size. * Marginal cost-effectiveness likely declines with size: earlier investments fund the highest-value attempts, and as the market expands the marginal impact likely declines.</p>
@@ -950,10 +965,10 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <div class="calc-out">
 <div class="out-row"><span class="k">Expected approvals</span><span class="calc-val" id="o-appr">1.8</span></div>
 <div class="out-row"><span class="k">QALYs within US</span><span class="calc-val" id="o-qaly-us">1.52M</span></div>
-<div class="out-row"><span class="k">Deaths averted within US</span><span class="calc-val" id="o-deaths-us">101.3k</span></div>
+<div class="out-row"><span class="k">Deaths averted within US</span><span class="calc-val" id="o-deaths-us">75.9k</span></div>
 <div class="out-row"><span class="k">Philanthropic $ / QALY within US</span><span class="calc-val" id="o-cpq-us">$160</span></div>
 <div class="out-row"><span class="k" id="o-scope-qaly-label">QALYs counted: Global impact: Moderate diffusion</span><span class="calc-val" id="o-qaly">7.59M</span></div>
-<div class="out-row"><span class="k" id="o-scope-deaths-label">Deaths averted counted: Global impact: Moderate diffusion</span><span class="calc-val" id="o-deaths">506.3k</span></div>
+<div class="out-row"><span class="k" id="o-scope-deaths-label">Deaths averted counted: Global impact: Moderate diffusion</span><span class="calc-val" id="o-deaths">379.7k</span></div>
 <div class="out-row big"><span class="k">Philanthropic $ / QALY for selected view</span><span class="calc-val" id="o-cpq">$33</span></div>
 <div class="out-row"><span class="k">Coefficient-style multiple for selected view</span><span class="calc-val" id="o-bcr">3,038×</span></div>
 <div class="verdict" id="o-verdict"></div>
@@ -1249,9 +1264,9 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
     var appr   = programs*pos;
     var usQalys = appr*qy*yrs*cred*rec;
     var qalys  = usQalys*deployment.mult;
-    // Deaths averted scale off QALYs via the base mortality fraction: base 1.52M QALYs -> 101.3k deaths averted.
-    var usDeaths = usQalys * (5000/75000);
-    var deaths = qalys * (5000/75000);
+    // Deaths averted scale off QALYs via the base mortality fraction: base 1.52M QALYs -> 75.9k deaths averted (3,750 deaths/yr per medicine, portfolio-weighted across indications; the OUD build alone is 5,000).
+    var usDeaths = usQalys * (3750/75000);
+    var deaths = qalys * (3750/75000);
     var costDollars = fund*1e6;
     var usCpq = usQalys>0 ? costDollars/usQalys : 0;
     var cpq    = qalys>0 ? costDollars/qalys : 0;
@@ -1429,18 +1444,18 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
       portfolio_programs_first_round: { low: 5, base: 9, high: 15 },
       p_approval_per_program: { low: 0.08, base: 0.20, high: 0.25 },
       qalys_per_year_per_medicine: { low: 12000, base: 75000, high: 450000 },
-      deaths_averted_per_year_per_medicine: { low: 1000, base: 5000, high: 30000 },
+      deaths_averted_per_year_per_medicine: { low: 1000, base: 3750, high: 30000 },
       effective_years_of_benefit: { low: 10, base: 15, high: 20 },
       counterfactual_credit_share: { low: 0.25, base: 0.50, high: 0.80 },
       capital_recycled_multiple: { low: 1.2, base: 1.5, high: 3.0 }
     },
     approval_distribution_9_programs_20pct: { expected: 1.8, p_zero: 0.13, p_one: 0.30, p_ge_one: 0.87, p_ge_two: 0.56 },
-    base_outputs: { expected_approvals_first_cycle: 1.8, total_expected_approvals_incl_recycling: 2.7, cumulative_qalys: 1519000, deaths_averted: 101300, usd_per_qaly: 160, deaths_averted_cost_usd: 2469, coefficient_style_multiple: 608, perspective: "funder: philanthropic dollars per credited QALY; payer thresholds apply to the launched medicine, not to this chain" },
+    base_outputs: { expected_approvals_first_cycle: 1.8, total_expected_approvals_incl_recycling: 2.7, cumulative_qalys: 1519000, deaths_averted: 75900, usd_per_qaly: 160, deaths_averted_cost_usd: 3293, coefficient_style_multiple: 608, perspective: "funder: philanthropic dollars per credited QALY; payer thresholds apply to the launched medicine, not to this chain" },
     geographic_impact_views: {
-      impact_within_us: { burden_multiplier: 1, reachable_multiplier: 1, qalys: 1519000, deaths_averted: 101300, usd_per_qaly: 160, open_phil_style_multiple: 608, interpretation: "Shows US health impact from the overall effort; does not imply the medicine exists only in the US." },
-      impact_within_us_plus_other_high_income_markets: { burden_multiplier: 3, reachable_multiplier: 2, qalys: 3038000, deaths_averted: 202500, usd_per_qaly: 82, open_phil_style_multiple: 1215, interpretation: "Other high-income markets get partial access and uptake, but not a full US-equivalent cascade." },
-      moderate_global_diffusion: { burden_multiplier: 15, reachable_multiplier: 5, qalys: 7594000, deaths_averted: 506300, usd_per_qaly: 33, open_phil_style_multiple: 3040, interpretation: "Global uptake reaches roughly one-third of US fractional uptake on a burden-weighted basis." },
-      high_global_diffusion: { burden_multiplier: 15, reachable_multiplier: 15, qalys: 22781000, deaths_averted: 1518800, usd_per_qaly: 11, open_phil_style_multiple: 9110, interpretation: "Aggressive upside case requiring broad regulatory approval, affordability, supply, prescribing, adherence, and procurement." }
+      impact_within_us: { burden_multiplier: 1, reachable_multiplier: 1, qalys: 1519000, deaths_averted: 75900, usd_per_qaly: 160, open_phil_style_multiple: 608, interpretation: "Shows US health impact from the overall effort; does not imply the medicine exists only in the US." },
+      impact_within_us_plus_other_high_income_markets: { burden_multiplier: 3, reachable_multiplier: 2, qalys: 3038000, deaths_averted: 151900, usd_per_qaly: 82, open_phil_style_multiple: 1215, interpretation: "Other high-income markets get partial access and uptake, but not a full US-equivalent cascade." },
+      moderate_global_diffusion: { burden_multiplier: 15, reachable_multiplier: 5, qalys: 7594000, deaths_averted: 379700, usd_per_qaly: 33, open_phil_style_multiple: 3040, interpretation: "Global uptake reaches roughly one-third of US fractional uptake on a burden-weighted basis." },
+      high_global_diffusion: { burden_multiplier: 15, reachable_multiplier: 15, qalys: 22781000, deaths_averted: 1139100, usd_per_qaly: 11, open_phil_style_multiple: 9110, interpretation: "Aggressive upside case requiring broad regulatory approval, affordability, supply, prescribing, adherence, and procurement." }
     },
     value_conventions: { us_payer_threshold_vanness_2021_per_qaly_usd: 104000, us_payer_threshold_range_per_qaly_usd: [100000,150000], vsly_usd: 495000, vsl_usd: 13100000, global_health_bar_per_daly_usd: 100, openphil_per_daly_usd: 100000 }
   };
