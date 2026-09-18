@@ -963,19 +963,17 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <section class="section">
 <div class="section-num">12</div>
 <h2>Sensitivity analysis</h2>
-<p>We vary each parameter from Low to High, holding the rest at base, and recompute the cost per QALY under the default Global impact: Moderate diffusion view. Longer bars are the parameters that matter most. The base case sits at the dotted line (~$33/QALY); <em>left</em> is cheaper, <em>right</em> is worse.</p>
+<p>We vary each parameter from Low to High, holding the rest at base, and recompute the cost per QALY under the default Global impact: Moderate diffusion view. Longer bars are the parameters that matter most.</p>
 <div class="chart-card">
 <div class="chart-title">Tornado: Global impact: Moderate diffusion cost per QALY ($), one parameter swung at a time</div>
 <div class="chart-sub">Lower is better · Global impact: Moderate diffusion base case marked at $33/QALY</div>
 <svg aria-label="Tornado sensitivity chart of cost per QALY" id="tornado" role="img" viewbox="0 0 760 312"></svg>
 </div>
-<p>The dominant lever is still per-medicine reach, how many people a new drug actually gets onto effective treatment, followed by the odds of approval and the credit share. One-way sensitivity is a weak robustness test, though: it holds the model structure fixed and moves one parameter at a time. The chart assumes the 5× multiplier in the Global impact: Moderate diffusion view, so the key extra uncertainty is whether that non-US access assumption is real.</p>
 </section>
 <!-- 07b -->
 <section class="section" id="investment-decisions">
 <div class="section-num">13</div>
 <h2>Decision-relevant cruxes</h2>
-<p>Obesity shows how better medicines can expand adoption. For AFF, the investment case depends on how much demand a specific addiction medicine can earn, the health benefit it delivers and the fund’s contribution to its development or access. The sensitivity thresholds below show how those assumptions affect the result.</p>
 <div class="tbl-wrap">
 <table>
 <thead><tr><th>Input (base)</th><th>To <em>fall</em> 10× short of the global-health bar (~$1,000 per QALY)</th><th>To <em>match</em> the global-health bar (~$100 per health unit)</th></tr></thead>
@@ -991,8 +989,7 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <!-- 08 -->
 <section class="section">
 <div class="section-num">14</div>
-<h2>Benchmarking</h2><p class="benchmark-scope"><strong>Two tables, two perspectives.</strong> The first compares the chain's philanthropic dollars per QALY with other funders' bars and precedents. The second asks a different question: once a medicine exists, is it worth paying for at a given price? Numbers from one table are never compared with numbers from the other. Health units, discounting and cost boundaries still differ across rows, so every comparison is approximate.</p>
-<h3>Funder perspective: philanthropic dollars per health unit</h3>
+<h2>Benchmarking</h2><h3>Funder perspective: philanthropic dollars per health unit</h3>
 <div class="tbl-wrap">
 <table>
 <thead><tr><th>Benchmark</th><th class="num">Figure</th><th>AFF comparison</th></tr></thead>
@@ -1006,7 +1003,7 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 </table>
 </div>
 <h3>Payer perspective: is the medicine worth buying once it exists?</h3>
-<p>The chain's dollars never answer this. The payer test divides the medicine's annual net price by the health it buys per treated patient-year. The OUD build above gives about 0.26 QALYs per incremental patient-year: a 2.0-point absolute mortality cut × ~9 QALYs per death averted, plus ~0.08 morbidity QALYs. Medical offsets use the Tier 2 bridge: a treated patient-year resolves roughly 23% of a disorder case-year, and Florence's health-care and treatment lines come to about $21,000 per case-year in 2024 dollars, so roughly $4,700 of medical cost is avoided per patient-year [67].</p>
+<p>The payer test divides the medicine's annual net price by the health it buys per treated patient-year. The OUD build above gives about 0.26 QALYs per incremental patient-year: a 2.0-point absolute mortality cut × ~9 QALYs per death averted, plus ~0.08 morbidity QALYs. Medical offsets use the Tier 2 bridge: a treated patient-year resolves roughly 23% of a disorder case-year, and Florence's health-care and treatment lines come to about $21,000 per case-year in 2024 dollars, so roughly $4,700 of medical cost is avoided per patient-year [67].</p>
 <div class="tbl-wrap">
 <table>
 <thead><tr><th>Annual net price</th><th class="num">Payer $/QALY, gross</th><th class="num">Net of ~$4,700 medical offsets</th><th>Against the payer bars</th></tr></thead>
