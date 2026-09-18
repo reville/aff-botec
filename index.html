@@ -119,6 +119,7 @@
   tr:last-child td { border-bottom: 0; }
   tr.total td { background: var(--ink); color: #fff; font-weight: 700; }
   tr.total td.num { color: #fff; }
+  tr.total.total-soft td, tr.total.total-soft td.num { background: #e8e8ef; color: var(--ink); }
   .src { font-size: 11px; color: var(--muted); }
   caption { caption-side: bottom; text-align: left; font-size: 11px; color: var(--muted); padding: 10px 14px; line-height: 1.5; }
   .scenario-table { table-layout: fixed; font-size: 11px; }
@@ -824,10 +825,9 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <p>Tier 2 dollars above are United States figures and are not multiplied by this page's deployment-scope scenarios. Transplanting US per-case costs and US price levels onto other health systems would be indefensible, and the burden ratios differ by substance in any case: global-to-US addiction mortality runs about 16.7× for tobacco and 14.6× for alcohol but only about 7.5× for drugs, and Tier 2 is drug and alcohol weighted rather than tobacco weighted. Three separate ledgers, never one world total:</p>
 <ul>
 <li><strong>United States.</strong> Dollars and health units, as above.</li>
-<li><strong>European Union.</strong> Alcohol-led and method-based rather than borrowed: at 1.5% to 2.6% of GDP against EU-27 output of €16.9 trillion, alcohol costs the EU roughly <strong>€254B to €439B a year</strong> [77]. Illicit drugs are reported in deaths and health units only, because no credible EU-wide cost total exists; the EU records about 7,600 drug-induced deaths a year on a narrow registry definition that is not comparable to the US count. Two differences matter in Europe: opioid agonist treatment reaches about half of high-risk opioid users in the EU against roughly a quarter in the US, so the treatment-gap argument is weaker there, while alcohol's burden is proportionally larger. EU productivity costing also uses the friction-cost method, which produces materially lower totals than the human-capital method behind every US figure on this page.</li>
-<li><strong>Global.</strong> Health units only. Alcohol is associated with 2.6 million deaths and 116 million DALYs a year, drug use with about 600,000 deaths of which roughly 450,000 are opioid; 63 million people have a drug use disorder and about one in twelve receives treatment [78]. No global economic-cost estimate exists for illicit drugs, and this page does not construct one. Where global figures are used, the US share is netted out, because high-income North America is roughly half the world's opioid-use-disorder burden and would otherwise be counted twice.</li>
+<li><strong>European Union.</strong> Alcohol-led and method-based: at 1.5% to 2.6% of GDP against EU-27 output of €16.9 trillion, alcohol costs the EU roughly <strong>€254B to €439B a year</strong> [77]. Illicit drugs are reported in deaths and health units only, because no credible EU-wide cost total exists; the EU records about 7,600 drug-induced deaths a year on a narrow registry definition that is not comparable to the US count. Two differences matter in Europe: opioid agonist treatment reaches about half of high-risk opioid users in the EU against roughly a quarter in the US, so the treatment-gap argument is weaker there, while alcohol's burden is proportionally larger. EU productivity costing also uses the friction-cost method, which produces materially lower totals than the human-capital method behind every US figure on this page.</li>
+<li><strong>Global.</strong> Alcohol is associated with 2.6 million deaths and 116 million DALYs a year, drug use with about 600,000 deaths of which roughly 450,000 are opioid; 63 million people have a drug use disorder and about one in twelve receives treatment [78]. No global economic-cost estimate exists for illicit drugs, and this page does not construct one. Where global figures are used, the US share is netted out, because high-income North America is roughly half the world's opioid-use-disorder burden and would otherwise be counted twice.</li>
 </ul>
-<div class="concede"><span class="label">Where this sits relative to the iceberg</span>This is a bottom-up, per-case, incremental model. It is <strong>not</strong> a share of the $1.77 trillion annual US cost of addiction, and the two should not be reconciled by addition. The national total motivates the question; it does not feed the arithmetic.</div>
 </section>
 <!-- AFF-SPLICE:TIER2:END -->
 <!-- 04c -->
@@ -845,24 +845,10 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <tr><td class="lbl">OUD patients on medication (the treatment gap)</td><td class="num">~25%</td><td class="src">Dowell et al., MMWR 2024 [25]</td></tr>
 <tr><td class="lbl">AUD on medication / quit attempts using a cessation drug</td><td class="num">&lt;2% / &lt;1 in 3</td><td class="src">PMC8394149; CDC [6][22]</td></tr>
 <tr><td class="lbl">New FDA addiction approvals, 2000–2023 (vs 222 for cancer)</td><td class="num">6</td><td class="src">comparables.html [7]</td></tr>
-<tr class="total"><td class="lbl">US annual cost of addiction (conservative, all-substance incl. tobacco)</td><td class="num">~$1.77T</td><td class="src">CDC + Florence + Sacks + CEA synthesis [1]</td></tr>
+<tr class="total total-soft"><td class="lbl">US annual cost of addiction (conservative, all-substance incl. tobacco)</td><td class="num">~$1.77T</td><td class="src">CDC + Florence + Sacks + CEA synthesis [1]</td></tr>
 </tbody>
 </table>
 </div>
-<!-- AFF-SPLICE:DATANOTE:START -->
-<div class="info-box">
-<div class="label">Updated inputs</div>
-<p>Several figures in the table above have moved since this model was first built, mostly against the thesis:</p>
-<ul style="margin:10px 0 0;padding-left:18px;font-size:13.5px;line-height:1.6;">
-<li><strong>Overdose deaths kept falling.</strong> Provisional data put 2025 at roughly 70,000, down from about 79,000 in 2024 and roughly 36% below the 2022 peak near 110,000, with no new medicine involved. That weakens both the urgency framing and the counterfactual a mid-2030s launch would be measured against.</li>
-<li><strong>Smoking prevalence is lower.</strong> Adult cigarette smoking was 9.9% in 2024, roughly 25.2M people, against the ~28.8M used in the model's tobacco line. Correcting it would reduce that line by roughly 12%.</li>
-<li><strong>The opioid treatment gap is smaller than stated.</strong> The best current federal estimate is that 25.1% of US adults needing opioid use disorder treatment received medication in 2022 [25], not the ~18% used earlier on this page. A smaller gap means less headroom for incremental coverage.</li>
-<li><strong>The alcohol mortality figure is a pandemic-peak vintage.</strong> The ~178,000 figure is a 2020–2021 two-year average from a period when alcohol deaths spiked; alcohol-induced deaths peaked in 2021 and have declined since.</li>
-<li><strong>Federal research funding was not cut.</strong> FY2026 appropriations funded NIH at $47.5B, NIDA at $1.662B and NIAAA at $595M, and Congress rejected the proposed institute consolidation. Any neglect argument has to rest on private capital and on the translational gap, not on a claim that public science funding is disappearing.</li>
-</ul>
-<p style="margin-top:12px;">The 2024 national survey estimates 48.4M people with substance use disorder, 27.9M with alcohol use disorder and 4.8M with opioid use disorder. Smoking accounts for roughly 480,000 deaths annually. The calculation uses rounded population estimates; these introduce uncertainty into the indication-level results.</p>
-</div>
-<!-- AFF-SPLICE:DATANOTE:END -->
 </section>
 <!-- 05 -->
 <section class="section">
@@ -1148,7 +1134,7 @@ body { padding:32px clamp(20px,3vw,44px) 96px; }
 <li>Global addiction mortality: WHO (tobacco &gt;8M deaths/year; alcohol ~2.6M/year, Global status report 2024) + GBD / UNODC (drug use disorders ~0.5–0.6M/year). US is ~4% of world population. who.int</li>
 <li>Multiple Myeloma Research Foundation: $600M+ raised since 1998; the MMRC network helped move 15+ FDA-approved myeloma drugs forward; five-year survival roughly doubled (~32% to over 60%). themmrf.org; see <span class="mono">mmrf-case-study.html</span> in this repo.</li>
 <!-- AFF-SPLICE:SOURCES:START -->
-<li>Dowell D, Brown S, Gyawali S, et al., "Treatment for Opioid Use Disorder: Population Estimates, United States, 2022," MMWR 2024;73(25). Of 9.37M US adults needing OUD treatment, 25.1% received medication and 42.7% did not perceive a need for treatment. This supersedes the ~18% figure used earlier on this page. cdc.gov/mmwr/volumes/73/wr/mm7325a1.htm</li>
+<li>Dowell D, Brown S, Gyawali S, et al., "Treatment for Opioid Use Disorder: Population Estimates, United States, 2022," MMWR 2024;73(25). Of 9.37M US adults needing OUD treatment, 25.1% received medication and 42.7% did not perceive a need for treatment. cdc.gov/mmwr/volumes/73/wr/mm7325a1.htm</li>
 <li>University of Michigan IHPI analysis of buprenorphine prescribing after X-waiver elimination (MAT Act, effective December 2022): prescribers rose by roughly 11,500 to more than 53,600 during 2023 while patients receiving buprenorphine stayed near 810,000–830,000 per month.</li>
 <li>"Removal of Prior Authorization for Buprenorphine Treatment for Opioid Use Disorder," JAMA Health Forum 2023. Serial cross-sectional study of 23 state Medicaid programs, 2015–2019; no substantial overall change in prescribing.</li>
 <li>Jonas DE, Amick HR, Feltner C, et al., "Pharmacotherapy for Adults With Alcohol Use Disorders in Outpatient Settings," JAMA 2014;311(18):1889–1900. 122 studies. Acamprosate NNT 12 (95% CI 8–26) for return to any drinking, no significant effect on heavy drinking; oral naltrexone 50mg NNT 20 (11–500) for any drinking and 12 (8–26) for heavy drinking; number needed to harm for withdrawal due to adverse events 48 (30–112).</li>
